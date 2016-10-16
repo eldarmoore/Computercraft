@@ -8,9 +8,10 @@ use App\Http\Requests;
 
 class PagesController extends MainController
 {
+    static $data = ['title' => 'Home page'];
+
     public function index() {
-        $data = ['title' => 'Home page'];
-        return view('home', $data);
+        return view('home', self::data);
     }
 
     public function about() {
