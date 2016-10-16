@@ -9,10 +9,10 @@ use App\Http\Requests;
 class PagesController extends MainController
 {
     public function index() {
-        return view('home');
+        return view('home', ['title' => 'Home page']);
     }
 
     public function about() {
-        return view('about');
+        return view('about', ['title' => 'About page']);
     }
 }
