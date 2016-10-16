@@ -9,7 +9,7 @@ use App\Http\Requests;
 class PagesController extends MainController
 {
     public function index() {
-        return view('master');
+        return view('home');
     }
 
     public function about() {
