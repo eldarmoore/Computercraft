@@ -8,5 +8,5 @@ use App\Http\Requests;
 
 class MainController extends Controller
 {
-    //
+    static public $data = ['title' => 'Computercraft'];
 }

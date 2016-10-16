@@ -8,13 +8,14 @@ use App\Http\Requests;
 
 class PagesController extends MainController
 {
-    static $data = ['title' => 'Home page'];
 
     public function index() {
-        return view('home', self::data);
+        self::$data['title'] = self::$data['title'] . ' | Home page';
+        return view('home', self::$data);
     }
 
     public function about() {
-        return view('about', ['title' => 'About page']);
+        self::$data['title'] = self::$data['title'] . ' | About us';
+        return view('about', self::$data);
     }
 }
