@@ -60,9 +60,11 @@
 
     @yield('slider')
 
+    <div class="container">
 
-    @yield('content')
+        @yield('content')
 
+    </div>
 
     <hr>
 

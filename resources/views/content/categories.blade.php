@@ -2,7 +2,6 @@
 
 
 @section('content')
-    <div class="container">
 
         <div class="row">
             <div class="col-md-12">
@@ -32,5 +31,4 @@
             @endunless
             </div>
         </div>
-    </div>
 @endsection
