@@ -11,11 +11,11 @@ class PagesController extends MainController
 
     public function index() {
         self::$data['title'] = self::$data['title'] . ' | Home page';
-        return view('home', self::$data);
+        return view('content.home', self::$data);
     }
 
     public function about() {
         self::$data['title'] = self::$data['title'] . ' | About us';
-        return view('about', self::$data);
+        return view('content.about', self::$data);
     }
 }
