@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Categorie;
+use App\Product;
 
 class ShopController extends MainController
 {
@@ -15,8 +16,7 @@ class ShopController extends MainController
     }
 
     public function products($category_url, $sub_category_url){
-        echo $category_url;
-        echo '<br>';
-        echo $sub_category_url;
+        Product::getProducts($sub_category_url, self::$data);
+        dd(self::$data);
     }
 }
