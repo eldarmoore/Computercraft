@@ -13,4 +13,10 @@ class ShopController extends MainController
         self::$data['categories'] = Categorie::all()->toArray();
         return view('content.categories', self::$data);
     }
+
+    public function products($category_url, $sub_category_url){
+        echo $category_url;
+        echo '<br>';
+        echo $sub_category_url;
+    }
 }

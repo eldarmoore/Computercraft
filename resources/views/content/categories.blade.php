@@ -8,10 +8,10 @@
             <div class="col-md-12">
             @unless($categories)
                 <h1>No Categories found.</h1>
-                    <hr>
+                <hr>
             @else
-                    <h1>Categories</h1>
-                        <hr>
+                <h1>Categories</h1>
+                <hr>
             @foreach($categories as $row)
                 @unless($row['sub_category'])
                     <div class="col-md-4">
