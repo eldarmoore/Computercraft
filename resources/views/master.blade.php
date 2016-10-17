@@ -38,6 +38,40 @@
         </div>
     </nav>
 
+    <!-- NAVBAR
+    ==================================================
+    <body>
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Computercraft</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="{{ url('about') }}">About</a></li>
+                            <li><a href="{{ url('shop') }}">Shop</a></li>
+                            <li><a href="{{ url('contact') }}">Contact</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav pull-right">
+                            <li><a href="{{ url('user/signin') }}">Sign in</a></li>
+                            <li><a href="{{ url('user/signup') }}">Sign up</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div> -->
+
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -49,7 +83,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img class="first-slide" src="{{ asset('images/Computer_Cases_Alienwire_freecomputerdesktopwallpaper_1024.jpg') }}" alt="First slide">
+                <img class="first-slide" src="{{ asset('images/Cases-TLC-HeroShot01.jpg') }}" alt="First slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Example headline.</h1>
@@ -59,7 +93,7 @@
                 </div>
             </div>
             <div class="item">
-                <img class="second-slide" src="{{ asset('images/c72ae28cae09aaec723a52fad413c690.jpg') }}" alt="Second slide">
+                <img class="second-slide" src="{{ asset('images/Cases-TLC-HeroShot02.jpg') }}" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Another example headline.</h1>
@@ -69,7 +103,7 @@
                 </div>
             </div>
             <div class="item">
-                <img class="third-slide" src="{{ asset('images/cooler-master-font-b-computer-b-font-font-b-system-b-font-font-b-unit-b.jpg') }}" alt="Third slide">
+                <img class="third-slide" src="{{ asset('images/Cases-TLC-HeroShot03.jpg') }}" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>One more for good measure.</h1>
