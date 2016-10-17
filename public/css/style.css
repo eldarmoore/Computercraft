@@ -1,0 +1,8 @@
+/*
+    Override Bootstrap Navigation Bar.
+*/
+.navbar {
+    background-color: rgba(0, 0, 0, 0.0);
+    background-image: none;
+    border:none;
+}
