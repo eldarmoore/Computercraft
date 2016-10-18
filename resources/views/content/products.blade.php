@@ -3,11 +3,12 @@
 
 @section('content')
 
-        <div class="row">
-            <div class="col-md-12">
-                <h1>{{ $cat_title }}</h1>
-            </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{ $cat_title }}</h1>
         </div>
+    </div>
+
     <div class="row">
 
         @if($products)
@@ -26,9 +27,9 @@
             @endforeach
 
         @else
-
+            <div class="col-md-12">
             <p><i>No products found...</i></p>
-
+            </div>
         @endif
 
 
