@@ -36,7 +36,7 @@
                                 <li class="text-uppercase"><a href="{{ url('shop') }}">{{ $row['title'] }}</a></li>
                                     @foreach($categories as $sub_row)
                                         @if($sub_row['sub_category'] == $row['id'])
-                                            <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title'] }}</a></li>
+                                            <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title']}}</a></li>
                                             @endif
                                     @endforeach
                                     <li role="separator" class="divider"></li>
