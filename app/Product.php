@@ -26,9 +26,14 @@ class Product extends Model {
 
             }
         }
+    }
 
-
-
+    static public function getItem($product_url, &$data){
+        $data['item'] = [];
+        if($product = self::where('url', '=', $product_url)->first()){
+            $data['item'] = $product->toArray();
+            $data['title'] = $data['title'] . ' | ' . $data['item']['title'];
+        }
     }
 
 }

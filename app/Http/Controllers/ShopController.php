@@ -18,4 +18,9 @@ class ShopController extends MainController
         Product::getProducts($sub_category_url, self::$data);
         return view('content.products', self::$data);
     }
+
+    public function item($category_url, $sub_category_url, $product_url){
+        Product::getItem($product_url, self::$data);
+        return view('content.item', self::$data);
+    }
 }
