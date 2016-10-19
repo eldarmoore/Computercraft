@@ -1,6 +1,5 @@
 @extends('master')
 
-
 @section('content')
 
     <div class="row">
@@ -28,22 +27,17 @@
                                         <img src="{{ asset('/images/' . $row['manufacturer'] . '/' . $row['url'] . '/' . $row['image']) }}" alt="">
                                         <div class="caption">
 
-
                                             @if(strlen($row['title']) > 10)
 
                                             <h4><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ substr($row['title'], 0, 40) . '...' }}</a></h4>
 
                                             @endif
 
-
-
                                             @if(strlen($row['article']) > 10)
 
                                                 <p>{{ substr($row['article'], 0, 100) . '...' }}</p>
 
                                             @endif
-
-
 
                                             <p class="pull-right">6 reviews</p>
                                             <p>
@@ -54,10 +48,9 @@
                                                 <span class="glyphicon glyphicon-star-empty"></span>
                                             </p>
 
-                                                <hr>
+                                            <hr>
 
-                                            <h4 class="text-center"><b>{{ $row['price'] }}$</b></h4>
-
+                                            <h4 class="text-center">{{ $row['price'] }}$</h4>
 
                                         </div>
                                     </div>
@@ -78,7 +71,6 @@
             <p><i>No products to display...</i></p>
             </div>
         @endif
-
 
     </div>
 
