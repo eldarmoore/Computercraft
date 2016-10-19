@@ -2,12 +2,13 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-md-12">
-            <h1>{{ $cat_title }}</h1>
+    @if(isset($cat_title))
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{ $cat_title }}</h1>
+            </div>
         </div>
-    </div>
-
+    @endif
     <div class="row">
 
         @if($products)
@@ -51,6 +52,8 @@
                                             <hr>
 
                                             <h4 class="text-center">{{ $row['price'] }}$</h4>
+
+                                                <input data-id="{{ $row['id'] }}" type="button" class="btn-add-to-cart" value="+ Add To Cart">
 
                                         </div>
                                     </div>

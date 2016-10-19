@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>{{ $title }}</title>
+        <script> var BASE_URL = "{{ url('') }}/";</script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
@@ -47,6 +48,9 @@
                     </li>
                     <li><a href="{{ url('contact') }}">Contact</a></li>
                     <li><a href="{{ url('about') }}">About</a></li>
+                    @if($total_cart = Cart::getTotalQuantity() )
+                    <li><a href="{{ url('shop/checkout') }}"><img border="0" width="20" src="{{ asset('images/cart.svg') }}" alt="Shoping Cart Logo"> <div class="total-cart">{{ $total_cart }}</div></a></li>
+                    @endif
                 </ul>
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="{{ url('user/signin') }}">Sign in</a></li>

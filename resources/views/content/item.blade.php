@@ -14,7 +14,7 @@
                 <p>{!! $item['article'] !!}</p>
                 <p><b>Price: </b>{{ $item['price'] }}$</p>
                 <p>
-                    <input type="button" class="add-to-cart-btn btn btn-success" value="+ Add To Cart">
+                    <input data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn btn-success" value="+ Add To Cart">
                     <a href="{{ url('shop/checkout') }}" class="btn btn-primary">Checkout</a>
                 </p>
 

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cart;
 
 class Product extends Model {
 
@@ -37,6 +38,18 @@ class Product extends Model {
         if($product = self::where('url', '=', $product_url)->first()){
             $data['item'] = $product->toArray();
             $data['title'] = $data['title'] . ' | ' . $data['item']['title'];
+        }
+    }
+
+    static public function cartAdd($product_id){
+        
+        if(is_numeric($product_id) ){
+
+            if($product = self::find($product_id)){
+                $product = $product->first()->toArray();
+                Cart::add($product_id, $product['title'], $product['price'], 1,[]);
+            }
+
         }
     }
 

@@ -23,4 +23,11 @@ class ShopController extends MainController
         Product::getItem($product_url, self::$data);
         return view('content.item', self::$data);
     }
+
+    public function addToCart(Request $request){ // Transfer me object from Request class!!!
+
+        if(isset($request['product_id'])){ // if exist Transfering to the Product Model
+            Product::cartAdd($request['product_id']);
+        }
+    }
 }

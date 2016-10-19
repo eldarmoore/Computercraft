@@ -1,3 +1,14 @@
-/**
- * Created by Eldarus on 10/16/2016.
- */
+
+$('.btn-add-to-cart').on('click', function(){
+
+    $.ajax({
+        url: BASE_URL + 'shop/add-to-cart',
+        type: "GET",
+        dataType: "html",
+        data: { product_id: $(this).data('id') },
+        success: function (response) {
+            location.reload();
+        }
+    });
+
+});
