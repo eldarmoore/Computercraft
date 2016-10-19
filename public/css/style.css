@@ -27,15 +27,11 @@
     left: 5px;
 }
 
-.btn-add-to-cart {
+.add-to-cart-btn {
     width: 100%;
     background-color: #419641;
     color: #FFFFFF;
     border:none;
     border-radius: 3px;
     padding:10px 0px;
-}
-
-.btn-add-to-cart:hover {
-    background-color: #77c877;
 }

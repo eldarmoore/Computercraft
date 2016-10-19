@@ -53,7 +53,7 @@
 
                                             <h4 class="text-center">{{ $row['price'] }}$</h4>
 
-                                                <input data-id="{{ $row['id'] }}" type="button" class="btn-add-to-cart" value="+ Add To Cart">
+                                                <input @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn btn-success" value="+ Add To Cart">
 
                                         </div>
                                     </div>

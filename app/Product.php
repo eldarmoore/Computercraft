@@ -42,8 +42,8 @@ class Product extends Model {
     }
 
     static public function cartAdd($product_id){
-        
-        if(is_numeric($product_id) ){
+
+        if(is_numeric($product_id) && ! Cart::get($product_id) ){
 
             if($product = self::find($product_id)){
                 $product = $product->first()->toArray();

@@ -1,5 +1,5 @@
 
-$('.btn-add-to-cart').on('click', function(){
+$('.add-to-cart-btn').on('click', function(){
 
     $.ajax({
         url: BASE_URL + 'shop/add-to-cart',

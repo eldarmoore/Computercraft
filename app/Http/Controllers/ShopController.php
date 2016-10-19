@@ -11,6 +11,7 @@ class ShopController extends MainController
 {
     public function categories(){
         self::$data['title'] = self::$data['title'] . ' | Shop categories';
+        self::$data['categories'] = Categorie::all()->toArray();
         return view('content.categories', self::$data);
     }
 
