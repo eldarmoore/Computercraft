@@ -95,7 +95,6 @@
 
         <script type="text/javascript" src="{{ asset('lib/jquery/jquery-1.11.2.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('lib/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('lib/bootstrap-modal.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>

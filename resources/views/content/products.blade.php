@@ -36,7 +36,7 @@
 
                                             @if(strlen($row['article']) > 10)
 
-                                                <p>{{ substr($row['article'], 0, 100) . '...' }}</p>
+                                                <p class="text-limit">{{ substr($row['article'], 0, 130) . '...' }}</p>
 
                                             @endif
 

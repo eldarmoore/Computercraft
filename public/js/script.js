@@ -14,3 +14,15 @@ $('.add-to-cart-btn').on('click', function(){
     });
 
 });
+
+$('.update-cart').on('click', function(){
+    $.ajax({
+        url: BASE_URL + 'shop/update-cart',
+        type: "GET",
+        dataType: "html",
+        data: { op: $(this).data('op'), id: $(this).data('id') },
+        success: function (response) {
+            location.reload();
+        }
+    });
+});

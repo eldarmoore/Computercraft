@@ -55,4 +55,39 @@ class Product extends Model {
         }
     }
 
+    static public function updateCart($request){
+
+        if(!empty($request['id'])){
+
+            if($product = Cart::get($request['id'])){
+
+                $product = $product->toArray();
+
+                if(!empty($request['op'])){
+
+                    if($request['op'] == 'plus'){
+
+                        Cart::update($request['id'], [ 'quantity' => 1, ]);
+
+                    } elseif($request['op'] == 'minus') {
+
+                        if($product['quantity'] - 1 == 0){
+
+                            Cart::remove($request['id']);
+
+                        } else {
+
+                            Cart::update($request['id'], ['quantity' => - 1, ]);
+
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
 }
