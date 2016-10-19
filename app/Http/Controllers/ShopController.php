@@ -52,7 +52,7 @@ class ShopController extends MainController
     }
 
     public function saveOrder(){
-
+        echo __METHOD__;
     }
 
 }
