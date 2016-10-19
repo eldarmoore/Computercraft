@@ -17,9 +17,13 @@ Route::get('/', function () {
 
 */
 
+/* Pages */
 Route::get('/','PagesController@index');
 Route::get('about', 'PagesController@about');
+
+/* Shop */
 Route::get('shop', 'ShopController@categories');
+Route::get('shop/order', 'ShopController@saveOrder');
 Route::get('shop/checkout', 'ShopController@checkout');
 Route::get('shop/cart-clear', 'ShopController@cartClear');
 Route::get('shop/add-to-cart', 'ShopController@addToCart');
@@ -27,3 +31,5 @@ Route::get('shop/update-cart', 'ShopController@updateCart');
 Route::get('shop/{category_url}', 'ShopController@categories');
 Route::get('shop/{category_url}/{sub_category_url}', 'ShopController@products');
 Route::get('shop/{category_url}/{sub_category_url}/{product_url}', 'ShopController@item');
+
+/* User */

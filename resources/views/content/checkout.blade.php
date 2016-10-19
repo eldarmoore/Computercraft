@@ -40,7 +40,7 @@
                     <td><a class="btn btn-default" href="{{ url('shop/cart-clear') }}">Clear Cart</a></td>
                 </tr>
             </table>
-            <p><a href="#" class="btn btn-primary">Order now</a></p>
+            <p><a href="{{ url('shop/order') }}" class="btn btn-primary">Order now</a></p>
         </div>
 
     @else

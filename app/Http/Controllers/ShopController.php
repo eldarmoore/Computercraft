@@ -51,4 +51,8 @@ class ShopController extends MainController
         Product::updateCart($request);
     }
 
+    public function saveOrder(){
+
+    }
+
 }
