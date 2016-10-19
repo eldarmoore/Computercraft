@@ -1,4 +1,6 @@
 
+$('.sm-box').delay(3000).slideUp();
+
 $('.add-to-cart-btn').on('click', function(){
 
     $.ajax({

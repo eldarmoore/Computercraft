@@ -65,7 +65,15 @@
     @yield('slider')
 
     <div class="container">
+        @if( Session::has('sm'))
+        <div class="row sm-box">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert">{{ Session::get('sm') }}</div>
+            </div>
+        </div>
+        @endif
 
+        <!-- Content -->
         @yield('content')
 
     </div>
@@ -87,6 +95,7 @@
 
         <script type="text/javascript" src="{{ asset('lib/jquery/jquery-1.11.2.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('lib/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('lib/bootstrap-modal.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>

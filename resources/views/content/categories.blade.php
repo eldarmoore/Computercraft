@@ -3,14 +3,14 @@
 
 @section('content')
 
-        <div class="row">
-            <div class="col-md-12">
-            @unless($categories)
-                <h1>No Categories found.</h1>
-                <hr>
-            @else
-                <h1>Categories</h1>
-                <hr>
+    <div class="row">
+        <div class="col-md-12">
+        @unless($categories)
+            <h1>No Categories found.</h1>
+            <hr>
+        @else
+            <h1>Categories</h1>
+            <hr>
             @foreach($categories as $row)
                 @unless($row['sub_category'])
                     <div class="col-md-4">
@@ -28,7 +28,8 @@
                     </div>
                 @endunless
             @endforeach
-            @endunless
-            </div>
+        @endunless
         </div>
+    </div>
+
 @endsection

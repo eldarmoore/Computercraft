@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cart;
+use Illuminate\Support\Facades\Session;
 
 class Product extends Model {
 
@@ -46,8 +47,9 @@ class Product extends Model {
         if(is_numeric($product_id) && ! Cart::get($product_id) ){
 
             if($product = self::find($product_id)){
-                $product = $product->first()->toArray();
+                $product = $product->toArray();
                 Cart::add($product_id, $product['title'], $product['price'], 1,[]);
+                Session::flash('sm', $product['title'] . ' added to cart');
             }
 
         }
