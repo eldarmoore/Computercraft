@@ -2,9 +2,9 @@
     Override Bootstrap Navigation Bar.
 */
 .navbar {
-    background-color: #2e3436;
+    background-color: rgba(16,16,16,0.9);
     background-image: none;
-    border:none;
+    border: none;
 }
 
 .btn-cc {

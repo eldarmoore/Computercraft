@@ -7,7 +7,6 @@ body {
     color: #5a5a5a;
 }
 
-
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -39,8 +38,12 @@ body {
 
 /* Carousel base class */
 .carousel {
-    height: 500px;
+    height: 100px;
     margin-bottom: 60px;
+}
+
+.carousel-inner {
+    height: 100px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -52,6 +55,7 @@ body {
     height: 500px;
     background-color: #777;
 }
+
 .carousel-inner > .item > img {
     position: absolute;
     top: 0;
@@ -98,6 +102,15 @@ body {
 
 @media (min-width: 768px) {
     /* Navbar positioning foo */
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-inner {
+        height: 300px;
+    }
+
     .navbar-wrapper {
         margin-top: 20px;
     }
@@ -130,5 +143,13 @@ body {
 @media (min-width: 992px) {
     .featurette-heading {
         margin-top: 120px;
+    }
+
+    .carousel {
+        height: 500px;
+    }
+
+    .carousel-inner {
+        height: 500px;
     }
 }
