@@ -40,3 +40,8 @@ body {
     border-radius: 3px;
     padding:10px 0px;
 }
+
+.err-nav {
+    color: #FFFFFF;
+    background-color: #419641;
+}

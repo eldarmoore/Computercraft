@@ -33,3 +33,4 @@ Route::get('shop/{category_url}/{sub_category_url}', 'ShopController@products');
 Route::get('shop/{category_url}/{sub_category_url}/{product_url}', 'ShopController@item');
 
 /* User */
+Route::controller('user', 'UserController');

@@ -58,17 +58,20 @@
             </div><!--/.nav-collapse -->
         </div>
     </nav>
-
-    @yield('slider')
-
-    <div class="container">
-        @if( Session::has('sm'))
+    @if( Session::has('sm'))
+        <div class="container">
         <div class="row sm-box">
             <div class="col-md-12">
                 <div class="alert alert-success" role="alert">{{ Session::get('sm') }}</div>
             </div>
         </div>
-        @endif
+        </div>
+    @endif
+
+    @yield('slider')
+
+    <div class="container">
+
 
         <!-- Content -->
         @yield('content')
