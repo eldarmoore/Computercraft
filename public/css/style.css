@@ -1,6 +1,11 @@
 /*
     Override Bootstrap Navigation Bar.
 */
+
+body {
+    padding-top: 50px;
+}
+
 .navbar {
     background-color: rgba(16,16,16,0.9);
     background-image: none;

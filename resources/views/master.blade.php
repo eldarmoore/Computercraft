@@ -8,7 +8,6 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/carousel.css') }}">
     </head>
     <body>
 
@@ -59,8 +58,6 @@
             </div><!--/.nav-collapse -->
         </div>
     </nav>
-
-    <br><br><br>
 
     @yield('slider')
 
