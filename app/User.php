@@ -17,11 +17,9 @@ class User extends Model
                 . "JOIN user_roles r ON u.id = r.user_id "
                 . "WHERE email = ?";
 
-        if($user = DB::select($sql, ['email'])){
+        if($user = DB::select($sql, [$email])){
 
             $user = $user[0];
-
-            dd($user);
 
             if(Hash::check($password, $user->password)) {
 
