@@ -11,12 +11,12 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <form action="" method="post">
                 {{ csrf_field() }} {{-- Token --}}
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="text" class="form-control" name="email">
+                    <input type="text" class="form-control" name="email" value="{{ Illuminate\Support\Facades\Input::old('email') }}">
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>

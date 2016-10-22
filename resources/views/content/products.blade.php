@@ -11,6 +11,8 @@
     @endif
     <div class="row">
 
+        <br>
+
         @if($products)
 
             @foreach($products as $row)
@@ -29,15 +31,12 @@
                                         <div class="caption">
 
                                             @if(strlen($row['title']) > 10)
-
-                                            <h4><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ substr($row['title'], 0, 40) . '...' }}</a></h4>
-
+                                                <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 7, "...") }}</a></h4>
                                             @endif
 
                                             @if(strlen($row['article']) > 10)
-
-                                                <p class="text-limit">{{ substr($row['article'], 0, 130) . '...' }}</p>
-
+                                                <p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 20, "...") }}</p>
+                                                {{--<p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
                                             @endif
 
                                             <p class="pull-right">6 reviews</p>
@@ -49,9 +48,9 @@
                                                 <span class="glyphicon glyphicon-star-empty"></span>
                                             </p>
 
-                                            <hr>
+                                            <hr class="no-margin">
 
-                                            <h4 class="text-center">{{ $row['price'] }}$</h4>
+                                            <h4 class="text-center price-tag">{{ $row['price'] }}$</h4>
 
                                                 <input @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn btn-success" value="+ Add To Cart">
 

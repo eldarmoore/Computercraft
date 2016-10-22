@@ -28,4 +28,5 @@ class SigninRequest extends Request
             'password' => 'required|min:6|max:10'
         ];
     }
+
 }
