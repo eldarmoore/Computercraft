@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Categorie;
 use App\Product;
 use Cart;
+use Session;
 
 class ShopController extends MainController
 {
@@ -52,7 +53,18 @@ class ShopController extends MainController
     }
 
     public function saveOrder(){
-        echo __METHOD__;
+
+        if( Cart::isEmpty() ){                  // If cart is empty
+
+            return redirect('shop/checkout');
+
+        } elseif( !session::has('user_id')){    // If user not signed in
+
+            Session::flash('sm', 'Please signin before order');
+            return redirect('user/signin?des=shop/checkout');
+
+        }
+
     }
 
 }
