@@ -47,8 +47,12 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{ url('contact') }}">Contact</a></li>
-                        <li><a href="{{ url('about') }}">About</a></li>
+                        @if($menu)
+                            @foreach($menu as $item)
+                                <li><a href="{{ url($item['url']) }}">{{ $item['link'] }}</a></li>
+                            @endforeach
+                        @endif
+
                         @if($total_cart = Cart::getTotalQuantity() )
                         <li><a href="{{ url('shop/checkout') }}"><img border="0" width="20" src="{{ asset('images/cart.svg') }}" alt="Shoping Cart Logo"> <div class="total-cart">{{ $total_cart }}</div></a></li>
                         @endif

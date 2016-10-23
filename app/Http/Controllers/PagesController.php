@@ -14,8 +14,8 @@ class PagesController extends MainController
         return view('content.home', self::$data);
     }
 
-    public function about() {
-        self::$data['title'] = self::$data['title'] . ' | About us';
-        return view('content.about', self::$data);
+    public function boot($url){
+        echo __METHOD__ . ' -----' . $url;
     }
+
 }

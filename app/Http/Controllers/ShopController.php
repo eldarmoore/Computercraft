@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Categorie;
 use App\Product;
+use App\Order;
 use Cart;
 use Session;
 
@@ -62,6 +63,11 @@ class ShopController extends MainController
 
             Session::flash('sm', 'Please signin before order');
             return redirect('user/signin?des=shop/checkout');
+
+        } else {
+
+            Order::saveOrder();
+            return redirect('shop');
 
         }
 

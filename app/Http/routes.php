@@ -17,9 +17,7 @@ Route::get('/', function () {
 
 */
 
-/* Pages */
-Route::get('/','PagesController@index');
-Route::get('about', 'PagesController@about');
+
 
 /* Shop */
 Route::get('shop', 'ShopController@categories');
@@ -34,3 +32,7 @@ Route::get('shop/{category_url}/{sub_category_url}/{product_url}', 'ShopControll
 
 /* User */
 Route::controller('user', 'UserController');
+
+/* Pages */
+Route::get('/','PagesController@index');
+Route::get('{url}', 'PagesController@boot');
