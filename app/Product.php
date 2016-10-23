@@ -15,15 +15,11 @@ class Product extends Model {
         if($sub_category = Categorie::where('url', '=', $sub_category_url)->first()){
 
             $sub_category = $sub_category->toArray();
-
             $category = Categorie::where('sub_category', '=', $sub_category_url)->first();
-
             $category = $category->toArray();
 
             $data['title'] = $data['title'] . ' | ' . $sub_category['title'] . ' products';
-
             $data['cat_title'] = $sub_category['title'] . ' products';
-
             $data['cat_url'] = $sub_category_url;
 
             if($products = Categorie::find($sub_category['id'])->products){

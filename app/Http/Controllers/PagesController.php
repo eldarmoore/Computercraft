@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Categorie;
+use App\Content;
 
 class PagesController extends MainController
 {
@@ -15,7 +15,8 @@ class PagesController extends MainController
     }
 
     public function boot($url){
-        echo __METHOD__ . ' -----' . $url;
+        Content::getContent($url, self::$data);
+        return view('content.boot', self::$data);
     }
 
 }
