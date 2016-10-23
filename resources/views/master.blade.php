@@ -54,11 +54,21 @@
                         @endif
                     </ul>
                     <ul class="nav navbar-nav pull-right">
-                        <li><a href="{{ url('user/signin') }}">Sign in</a></li>
-                        <li><a href="{{ url('user/signup') }}">Sign up</a></li>
+                        @if( !Session::has('user_id') )
+                            <li><a href="{{ url('user/signin') }}">Sign in</a></li>
+                            <li><a href="{{ url('user/signup') }}">Sign up</a></li>
+                        @else
+                            <li><a href="{{ url('user/profile') }}">Welcome, {{ Session::get('user_name') }}</a></li>
+                            @if(Session::has('is_admin'))
+                                <li><a href="{{ url('cms/dashboard') }}">CMS DASHBOARD</a></li>
+                            @endif
+                            <li><a href="{{ url('user/logout') }}">Logout</a></li>
+                        @endif
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
+            @if($errors->any()) @include('includes.errors') @endif
+            @if( Session::has('sm')) @include('includes.sm') @endif
         </nav>
 
         @yield('slider')
@@ -69,8 +79,7 @@
 
     <div class="container">
 
-        @if($errors->any()) @include('includes.errors') @endif
-        @if( Session::has('sm')) @include('includes.sm') @endif
+
 
         <!-- Content -->
         @yield('content')
