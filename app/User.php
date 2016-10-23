@@ -41,4 +41,15 @@ class User extends Model
 
         return $valid;
     }
+
+    static public function saveUser($request){
+        $user = new self();
+        $user->name = $request['name'];
+        $user->email = $request['email'];
+        $user->password = bcrypt($request['password']);
+        $user->save();
+        $uid = $user->id;
+        DB::insert("INSERT INTO user_roles VALUES($uid, 4)");
+        Session::flash('sm', 'Your account has been successfully created.');
+    }
 }

@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\SigninRequest;
+use App\Http\Requests\SignupRequest;
 use App\User;
 use Session;
 
 class UserController extends MainController
 {
+    function __construct()
+    {
+        parent::__construct();
+        $this->middleware('userLoged', ['except'=> ['getLogout', 'getProfile']]);
+    }
+
     public function getSignin(){
         // echo bcrypt('123456'); die();
         self::$data['title'] = self::$data['title'] . ' | signin page';
@@ -18,7 +25,12 @@ class UserController extends MainController
 
     public function getSignup(){
         self::$data['title'] = self::$data['title'] . ' | signup page';
-        return view('forms.signin', self::$data);
+        return view('forms.signup', self::$data);
+    }
+
+    public function postSignup(SignupRequest $request){
+        User::saveUser($request);
+        return redirect('user/signin');
     }
 
     public function postSignin(SigninRequest $request){

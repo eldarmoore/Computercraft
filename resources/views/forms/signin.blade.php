@@ -22,7 +22,7 @@
                     <label for="password">Password:</label>
                     <input type="password" class="form-control" name="password">
                 </div>
-                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary">Sign in</button>
                 <a href="#">Forgot your password?</a>
             </form>
         </div>
