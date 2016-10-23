@@ -4,7 +4,8 @@
 
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+    <div class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
 
         <div class="carousel-inner" role="listbox">
@@ -46,6 +47,7 @@
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         </a>
     </div><!-- /.carousel -->
+
 
 @section('content')
 

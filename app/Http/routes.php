@@ -17,8 +17,6 @@ Route::get('/', function () {
 
 */
 
-
-
 /* Shop */
 Route::get('shop', 'ShopController@categories');
 Route::get('shop/order', 'ShopController@saveOrder');
@@ -32,6 +30,9 @@ Route::get('shop/{category_url}/{sub_category_url}/{product_url}', 'ShopControll
 
 /* User */
 Route::controller('user', 'UserController');
+
+/* CMS */
+Route::controller('cms', 'CmsController');
 
 /* Pages */
 Route::get('/','PagesController@index');

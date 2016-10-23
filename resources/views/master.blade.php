@@ -75,9 +75,9 @@
             @if( Session::has('sm')) @include('includes.sm') @endif
         </nav>
 
-        @yield('slider')
-
     </header>
+
+    @yield('slider')
 
     <br><br><br>
 
