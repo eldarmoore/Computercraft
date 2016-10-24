@@ -1,3 +1,7 @@
+$(document).ready(function () {
+    $('#summernote').summernote();
+});
+
 $('.my-source-field').on('keyup', function(){
     var sr = $(this).val();
     sr = sr.trim();

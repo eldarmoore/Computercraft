@@ -83,8 +83,6 @@
 
     <div class="container">
 
-
-
         <!-- Content -->
         @yield('content')
 
@@ -104,6 +102,7 @@
 
     </div>
     <!-- /.container -->
+
 
         <script type="text/javascript" src="{{ asset('lib/jquery/jquery-1.11.2.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('lib/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
