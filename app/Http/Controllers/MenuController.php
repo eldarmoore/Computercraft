@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\MenuRequest;
 use App\Menu;
+use Illuminate\Support\Facades\Session;
 
 class MenuController extends MainController
 {
@@ -57,7 +58,8 @@ class MenuController extends MainController
      */
     public function show($id)
     {
-        //
+        self::$data['menu_id'] = $id;
+        return view('cms.delete_menu', self::$data);
     }
 
     /**
@@ -91,6 +93,8 @@ class MenuController extends MainController
      */
     public function destroy($id)
     {
-        //
+        Menu::destroy($id);
+        Session::flash('sm', 'Menu has been deleted');
+        return redirect('cms/menu');
     }
 }

@@ -23,7 +23,7 @@
                             <td>{{ $row['updated_at'] }}</td>
                             <td>
                                 <a href="#">Edit</a> |
-                                <a href="#">Delete</a>
+                                <a href="{{ url('cms/menu/' . $row['id']) }}">Delete</a>
                             </td>
                         </tr>
                     @endforeach
