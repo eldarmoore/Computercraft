@@ -22,7 +22,7 @@
                             <td><a target="_blank" href="{{ url( $row['url']) }}">{{ $row['url'] }}</a></td>
                             <td>{{ $row['updated_at'] }}</td>
                             <td>
-                                <a href="#">Edit</a> |
+                                <a href="{{ url('cms/menu/' . $row['id'] . '/edit') }}">Edit</a> |
                                 <a href="{{ url('cms/menu/' . $row['id']) }}">Delete</a>
                             </td>
                         </tr>

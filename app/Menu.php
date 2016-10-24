@@ -19,4 +19,13 @@ class Menu extends Model
         $menu->save();
         Session::flash('sm', 'New menu has been added');
     }
+
+    static public function updateMenu($request, $id){
+        $menu = self::find($id);
+        $menu->link = $request['link'];
+        $menu->url = $request['url'];
+        $menu->title = $request['title'];
+        $menu->save();
+        Session::flash('sm', 'Menu has been updated');
+    }
 }

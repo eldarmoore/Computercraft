@@ -70,7 +70,8 @@ class MenuController extends MainController
      */
     public function edit($id)
     {
-        //
+        self::$data['menu'] = Menu::find($id)->toArray();
+        return view('cms.edit_menu', self::$data);
     }
 
     /**
@@ -80,9 +81,10 @@ class MenuController extends MainController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MenuRequest $request, $id)
     {
-        //
+        Menu::updateMenu($request, $id);
+        return redirect('cms/menu');
     }
 
     /**
