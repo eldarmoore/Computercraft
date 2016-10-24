@@ -1,3 +1,10 @@
+$('.my-source-field').on('keyup', function(){
+    var sr = $(this).val();
+    sr = sr.trim();
+    sr = sr.toLowerCase();
+    sr = sr.replace(/\s/g, '-');
+    $('.my-target-field').val(sr);
+});
 
 $('.sm-box').delay(3000).slideUp();
 

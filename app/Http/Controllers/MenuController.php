@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use App\Http\Requests\MenuRequest;
+use App\Menu;
 
 class MenuController extends MainController
 {
@@ -22,6 +23,7 @@ class MenuController extends MainController
      */
     public function index()
     {
+        // self::$data['menu'] = [];
         return view('cms.menu', self::$data);
     }
 
@@ -32,7 +34,7 @@ class MenuController extends MainController
      */
     public function create()
     {
-        //
+        return view('cms.add_menu', self::$data);
     }
 
     /**
@@ -41,9 +43,10 @@ class MenuController extends MainController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MenuRequest $request)
     {
-        //
+        Menu::saveMenu($request);
+        return redirect('cms/menu');
     }
 
     /**

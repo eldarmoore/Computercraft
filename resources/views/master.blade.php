@@ -54,7 +54,7 @@
                         @endif
 
                         @if($total_cart = Cart::getTotalQuantity() )
-                        <li><a href="{{ url('shop/checkout') }}"><img border="0" width="20" src="{{ asset('images/cart.svg') }}" alt="Shoping Cart Logo"> <div class="total-cart">{{ $total_cart }}</div></a></li>
+                        <li><a class="glyphicon glyphicon-shopping-cart" href="{{ url('shop/checkout') }}"><div class="total-cart">{{ $total_cart }}</div></a></li>
                         @endif
                     </ul>
                     <ul class="nav navbar-nav pull-right">
@@ -95,7 +95,7 @@
     <div class="container">
         <!-- Footer -->
         <footer>
-            <div class="row">
+            <div class="row foot">
                 <div class="col-md-12">
                     <p class="text-center">Copyright &copy; Computercraft {{ date('Y') }}</p>
                 </div>

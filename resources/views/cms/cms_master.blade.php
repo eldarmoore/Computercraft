@@ -50,9 +50,9 @@
             </div>
 
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
+                @if($errors->any()) @include('includes.errors') @endif
+                @if( Session::has('sm')) @include('includes.sm') @endif
                 @yield('cms_content')
-
             </div>
         </div>
     </div>
