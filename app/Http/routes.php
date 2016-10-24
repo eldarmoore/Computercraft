@@ -32,6 +32,7 @@ Route::get('shop/{category_url}/{sub_category_url}/{product_url}', 'ShopControll
 Route::controller('user', 'UserController');
 
 /* CMS */
+Route::resource('cms/menu', 'MenuController');
 Route::controller('cms', 'CmsController');
 
 /* Pages */

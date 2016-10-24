@@ -9,9 +9,15 @@ use App\Content;
 class CmsController extends MainController
 {
 
+    function __construct()
+    {
+        parent::__construct();
+        $this->middleware('adminLoged');
+    }
+
     public function getDashboard(){
 
-        return view('cms.cms_master', self::$data);
+        return view('cms.dashboard', self::$data);
 
     }
 
