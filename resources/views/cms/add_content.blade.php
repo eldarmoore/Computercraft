@@ -5,21 +5,36 @@
     <h1 class="page-header">Add new content -</h1>
 
     <div class="row">
-        <div class="col-md-4">
+        @if($menu)
+        <div class="col-md-6">
             <form action="{{ url('cms/content') }}" method="post">
                 {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="menu">Menu:</label>
+                    <select class="form-control" name="menu" >
+                        <option value="">Choose menu...</option>
+                        @foreach($menu as $row)
+                            <option value="{{ $row['id'] }}">{{ $row['link'] }}</option>
+                        @endforeach
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="title">Title:</label>
                     <input type="text" name="title" value="{{ Illuminate\Support\Facades\Input::old('title') }}" class="form-control" id="title" placeholder="Title">
                 </div>
                 <div class="form-group">
                     <label for="article">Article:</label>
-                    <textarea id="summernote" class="form-control" rows="10"></textarea>
+                    <div name="article" id="summernote" class="form-control" col="30" rows="10">{{ Illuminate\Support\Facades\Input::old('article') }}</div>
                 </div>
                 <a href="{{ url('cms/content') }}" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-primary">Save content</button>
             </form>
         </div>
+        @else
+            <div class="col-md-12">
+                <p>No menu item <a href="{{ url('cms/menu/create') }}">Click here to add menu </a></p>
+            </div>
+        @endif
     </div>
 
 @endsection

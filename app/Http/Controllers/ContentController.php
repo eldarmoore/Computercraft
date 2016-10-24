@@ -36,6 +36,7 @@ class ContentController extends MainController
      */
     public function create()
     {
+        //self::$data['menu'] = []; //NO MENU SIMULATION!!!
         return view('cms.add_content', self::$data);
     }
 
@@ -45,10 +46,10 @@ class ContentController extends MainController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MenuRequest $request)
+    public function store(ContentRequest $request)
     {
-        Menu::saveMenu($request);
-        return redirect('cms/menu');
+        Content::saveContent($request);
+        return redirect('cms/content');
     }
 
     /**

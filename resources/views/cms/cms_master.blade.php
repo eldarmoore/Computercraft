@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Computercraft Admin Panel</title>
         <script> var BASE_URL = "{{ url('') }}/";</script>
@@ -7,8 +7,8 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('lib/summernote-master/dist/summernote.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('lib/summernote-master/dist/summernote.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     </head>
     <body>
@@ -57,7 +57,11 @@
             </div>
         </div>
     </div>
-
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
     <script type="text/javascript" src="{{ asset('lib/jquery/jquery-1.11.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('lib/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('lib/summernote-master/dist/summernote.js') }}"></script>

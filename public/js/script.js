@@ -1,6 +1,10 @@
 
-$(document).ready(function () {
-    $('#summernote').summernote();
+$(document).ready(function() {
+    $('#summernote').summernote({
+        height: 300,
+        minHeight: 300,             // set minimum height of editor
+        maxHeight: 300,             // set maximum height of editor
+    });
 });
 
 $('.my-source-field').on('keyup', function(){
