@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <label for="article">Article:</label>
-                    <div name="article" id="summernote" class="form-control" col="30" rows="10">{{ Illuminate\Support\Facades\Input::old('article') }}</div>
+                    <textarea name="article" id="summernote" class="form-control" col="30" rows="10">{{ Illuminate\Support\Facades\Input::old('article') }}</textarea>
                 </div>
                 <a href="{{ url('cms/content') }}" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-primary">Save content</button>

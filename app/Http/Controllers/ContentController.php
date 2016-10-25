@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Requests\MenuRequest;
+use App\Http\Requests\ContentRequest;
 use App\Menu;
 use App\Content;
 use Illuminate\Support\Facades\Session;
@@ -60,8 +60,8 @@ class ContentController extends MainController
      */
     public function show($id)
     {
-        self::$data['menu_id'] = $id;
-        return view('cms.delete_menu', self::$data);
+        self::$data['content_id'] = $id;
+        return view('cms.delete_content', self::$data);
     }
 
     /**
@@ -72,8 +72,9 @@ class ContentController extends MainController
      */
     public function edit($id)
     {
-        self::$data['menu'] = Menu::find($id)->toArray();
-        return view('cms.edit_menu', self::$data);
+        self::$data['content'] = Content::find($id)->toArray();
+        self::$data['menu'] = Menu::getAllOrdered( self::$data['content']['menu_id'] );
+        return view('cms.edit_content', self::$data);
     }
 
     /**
@@ -83,10 +84,10 @@ class ContentController extends MainController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MenuRequest $request, $id)
+    public function update(ContentRequest $request, $id)
     {
-        Menu::updateMenu($request, $id);
-        return redirect('cms/menu');
+        Content::updateContent($request, $id);
+        return redirect('cms/content');
     }
 
     /**
@@ -97,8 +98,8 @@ class ContentController extends MainController
      */
     public function destroy($id)
     {
-        Menu::destroy($id);
-        Session::flash('sm', 'Menu has been deleted');
-        return redirect('cms/menu');
+        Content::destroy($id);
+        Session::flash('sm', 'Content has been deleted');
+        return redirect('cms/content');
     }
 }

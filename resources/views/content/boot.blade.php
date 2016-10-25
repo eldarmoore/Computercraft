@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>{{ $row['title'] }}</h1>
-                    <p>{!! $row['article'] !!}</p>
+                    <p>{!! $row['article'] !!}</p> <!-- Unfiltered data pull from CMS -->
                 </div>
             </div>
         @endforeach
