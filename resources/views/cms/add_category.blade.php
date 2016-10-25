@@ -5,7 +5,7 @@
     <h1 class="page-header">Add new category -</h1>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-8">
             <form action="{{ url('cms/categories') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -16,8 +16,16 @@
                     <label for="url">Url:</label>
                     <input type="text" name="url" value="{{ Illuminate\Support\Facades\Input::old('url') }}" class="form-control my-target-field" id="url" placeholder="Url">
                 </div>
-                <a href="{{ url('cms/menu') }}" class="btn btn-default">Cancel</a>
-                <button type="submit" class="btn btn-primary">Save menu</button>
+                <div class="form-group">
+                    <label for="article">Article:</label>
+                    <textarea name="article" id="summernote" class="form-control" col="30" rows="10">{{ Illuminate\Support\Facades\Input::old('article') }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Category image:</label>
+                    <input type="file" name="image">
+                </div>
+                <a href="{{ url('cms/categories') }}" class="btn btn-default">Cancel</a>
+                <button type="submit" class="btn btn-primary">Save category</button>
             </form>
         </div>
     </div>

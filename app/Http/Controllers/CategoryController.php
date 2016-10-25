@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Requests\MenuRequest;
+use App\Http\Requests\CategoryRequest;
 use App\Categorie;
 use Illuminate\Support\Facades\Session;
 
@@ -35,7 +35,7 @@ class CategoryController extends MainController
      */
     public function create()
     {
-        return view('cms.add_menu', self::$data);
+        return view('cms.add_category', self::$data);
     }
 
     /**
@@ -44,10 +44,10 @@ class CategoryController extends MainController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MenuRequest $request)
+    public function store(CategoryRequest $request)
     {
-        Menu::saveMenu($request);
-        return redirect('cms/menu');
+        Categorie::saveCategory($request);
+        return redirect('cms/categories');
     }
 
     /**
