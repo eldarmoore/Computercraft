@@ -18,24 +18,35 @@
                     </tr>
                     @foreach($categories as $cat)
 
-                            @foreach($categories as $sub_cat)
+                        @if($cat['sub_category'] == 0)
+                        <tr>
+                            <td>{{ $cat['title'] }}</td>
+                            <td><a target="_blank" href="{{ url( 'shop/' . $cat['url'] ) }}">shop/{{ $cat['url'] }}</a></td>
+                            <td>{{ $cat['updated_at'] }}</td>
+                            <td>
+                                <a href="{{ url('cms/menu/' . $cat['id'] . '/edit') }}">Edit</a> |
+                                <a href="{{ url('cms/menu/' . $cat['id']) }}">Delete</a>
+                            </td>
+                        </tr>
+                        @endif
 
-                                @if($sub_cat['sub_category'] == $cat['id'])
+                        @foreach($categories as $sub_cat)
 
-                                    <?php $cat_url = $cat['url'] . "/" . $sub_cat['url']  ?>
+                            @if($sub_cat['sub_category'] == $cat['id'])
 
-                                    <tr>
-                                        <td>{{ $sub_cat['title'] }}</td>
-                                        <td><a target="_blank" href="{{ url( 'shop/' . $cat_url ) }}">shop/{{ $cat_url }}</a></td>
-                                        <td>{{ $sub_cat['updated_at'] }}</td>
-                                        <td>
-                                            <a href="{{ url('cms/menu/' . $sub_cat['id'] . '/edit') }}">Edit</a> |
-                                            <a href="{{ url('cms/menu/' . $sub_cat['id']) }}">Delete</a>
-                                        </td>
-                                    </tr>
+                                <?php $cat_url = $cat['url'] . "/" . $sub_cat['url']  ?>
 
-                                @endif
-                            @endforeach
+                                <tr>
+                                    <td>{{ $sub_cat['title'] }}</td>
+                                    <td><a target="_blank" href="{{ url( 'shop/' . $cat_url ) }}">shop/{{ $cat_url }}</a></td>
+                                    <td>{{ $sub_cat['updated_at'] }}</td>
+                                    <td>
+                                        <a href="{{ url('cms/menu/' . $sub_cat['id'] . '/edit') }}">Edit</a> |
+                                        <a href="{{ url('cms/menu/' . $sub_cat['id']) }}">Delete</a>
+                                    </td>
+                                </tr>
+                            @endif
+                        @endforeach
                     @endforeach
                 </table>
             @endif

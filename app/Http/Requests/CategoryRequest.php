@@ -32,7 +32,8 @@ class CategoryRequest extends Request
         return [
             'title' => 'required',
             'url' => 'required|unique:categories,url' . $category_id,
-            'image' => 'image'
+            'title' => 'required',
+            'image' => 'image',
         ];
     }
 
