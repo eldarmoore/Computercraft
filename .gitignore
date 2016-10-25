@@ -5,3 +5,10 @@ Homestead.yaml
 Homestead.json
 .env
 .idea/
+.DS_Store
+app/.DS_Store
+bootstrap/.DS_Store
+database/.DS_Store
+public/.DS_Store
+resources/.DS_Store
+storage/.DS_Store
