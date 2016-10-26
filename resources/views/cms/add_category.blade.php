@@ -9,6 +9,17 @@
             <form action="{{ url('cms/categories') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
+                    <label for="sub_category">Sub Category:</label>
+                    <select class="form-control" name="sub_category" >
+                        <option value="">Choose main category...</option>
+                        @foreach($categories as $cat)
+                            @if($cat['sub_category'] == 0)
+                                <option value="{{ $cat['id'] }}">{{ $cat['title'] }}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="title">Title:</label>
                     <input type="text" name="title" value="{{ Illuminate\Support\Facades\Input::old('title') }}" class="form-control" id="title" placeholder="Title">
                 </div>

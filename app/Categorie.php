@@ -23,6 +23,7 @@ class Categorie extends Model
         }
 
         $category = new self();
+        $category->sub_category = $request['sub_category'];
         $category->title = $request['title'];
         $category->article = $request['article'];
         $category->url = $request['url'];

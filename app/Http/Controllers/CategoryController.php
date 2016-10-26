@@ -35,6 +35,7 @@ class CategoryController extends MainController
      */
     public function create()
     {
+        self::$data['categories'] = Categorie::all()->toArray();
         return view('cms.add_category', self::$data);
     }
 
