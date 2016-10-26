@@ -85,20 +85,14 @@ p {
 }
 
 /* Dropdown with columns */
-.dropdown-menu {
+
+.navbar-nav>li>.dropdown-menu {
     width: 800px;
     border:none;
     border-radius: 0;
     background-color: #8c8c8c;
     box-shadow: none;
     padding:0;
-}
-.dropdown-menu-2 {
-
-}
-
-.dropdown-menu-3 {
-
 }
 .dropdown-menu li a {
     padding: 5px 5px;
