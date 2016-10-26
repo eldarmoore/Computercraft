@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\Session;
 class Categorie extends Model
 {
 
+    static public function getCategorie($category_url, &$data){
+        $data['category'] = [];
+        if($category = self::where('url', '=', $category_url)->first()){
+            $data['category'] = $category->toArray();
+            $data['title'] = $data['title'] . ' | ' . $data['category']['title'];
+        }
+
+    }
+
     public function products(){
         return $this->hasMany('App\Product');
     }
