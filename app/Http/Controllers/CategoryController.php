@@ -59,8 +59,8 @@ class CategoryController extends MainController
      */
     public function show($id)
     {
-        self::$data['menu_id'] = $id;
-        return view('cms.delete_menu', self::$data);
+        self::$data['category_id'] = $id;
+        return view('cms.delete_category', self::$data);
     }
 
     /**
@@ -96,8 +96,8 @@ class CategoryController extends MainController
      */
     public function destroy($id)
     {
-        Menu::destroy($id);
-        Session::flash('sm', 'Menu has been deleted');
-        return redirect('cms/menu');
+        Categorie::destroy($id);
+        Session::flash('sm', 'Category has been deleted');
+        return redirect('cms/categories');
     }
 }

@@ -91,7 +91,7 @@ p {
     border:none;
     border-radius: 0;
     background-color: #8c8c8c;
-    box-shadow: none;
+    /*box-shadow: none;*/
     padding:0;
 }
 .dropdown-menu li a {

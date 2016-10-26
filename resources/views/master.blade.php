@@ -30,15 +30,15 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
-                            <ul class="dropdown-menu multi-column">
+                            <ul class="dropdown-menu multi-column" style="width: 800px">
 
                                 @foreach($categories as $row)
 
                                     @unless($row['sub_category'])
 
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-12" style="width: 120px">
                                                 <div class="row">
-                                                <ul class="multi-column-dropdown">
+                                                    <ul class="multi-column-dropdown">
 
                                                     <li class="text-uppercase"><a href="{{ url('shop/' . $row['url']) }}"><b>{{ $row['title'] }}</b></a></li>
                                                     {{--<li class="divider"></li>--}}
@@ -48,10 +48,9 @@
                                                         @endif
                                                     @endforeach
 
-                                                </ul>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
-
                                     @endunless
 
                                 @endforeach
