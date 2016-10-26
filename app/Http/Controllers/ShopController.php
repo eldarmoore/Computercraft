@@ -12,10 +12,13 @@ use Session;
 
 class ShopController extends MainController
 {
-    public function categories(){
-        self::$data['title'] = self::$data['title'] . ' | Shop categories';
-        self::$data['categories'] = Categorie::all()->toArray();
-        return view('content.categories', self::$data);
+    public function categories($category_url){
+        Categorie::getCategorie($category_url, self::$data);
+        return view('content.category', self::$data);
+
+//        self::$data['title'] = self::$data['title'] . ' | Shop categories';
+//        self::$data['categories'] = Categorie::all()->toArray();
+//        return view('content.categories', self::$data);
     }
 
     public function products($category_url, $sub_category_url){

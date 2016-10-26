@@ -29,22 +29,33 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-column">
 
                                 @foreach($categories as $row)
 
                                     @unless($row['sub_category'])
-                                    <li class="text-uppercase"><a href="{{ url('shop/' . $row['url']) }}">{{ $row['title'] }}</a></li>
-                                        @foreach($categories as $sub_row)
-                                            @if($sub_row['sub_category'] == $row['id'])
-                                                <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title']}}</a></li>
-                                                @endif
-                                        @endforeach
-                                        <li role="separator" class="divider"></li>
+
+                                            <div class="col-sm-2">
+                                                <div class="row">
+                                                <ul class="multi-column-dropdown">
+
+                                                    <li class="text-uppercase"><a href="{{ url('shop/' . $row['url']) }}"><b>{{ $row['title'] }}</b></a></li>
+                                                    {{--<li class="divider"></li>--}}
+                                                    @foreach($categories as $sub_row)
+                                                        @if($sub_row['sub_category'] == $row['id'])
+                                                            <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title']}}</a></li>
+                                                        @endif
+                                                    @endforeach
+
+                                                </ul>
+                                            </div>
+                                        </div>
+
                                     @endunless
 
                                 @endforeach
+
                             </ul>
                         </li>
                         @if($menu)

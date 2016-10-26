@@ -3,6 +3,8 @@
 
 @section('content')
 
+    {{--{{ dd($categories) }}--}}
+
     <div class="row">
 
         @if($category)
@@ -14,6 +16,17 @@
                 <p>{!! $category['article'] !!}</p>
 
             </div>
+
+            @if($categories)
+                @foreach($categories as $cat)
+                    @if($category['id'] == $cat['sub_category'])
+                        <div class="container">
+                            <p><a href="{{ url('shop/' . $category['url']) . '/' . $cat['url'] }}">- {{ $cat['title'] }}</a></p>
+                        </div>
+                    @endif
+                @endforeach
+
+            @endif
 
         @else
             <p>No category details found...</p>
