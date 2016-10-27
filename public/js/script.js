@@ -15,7 +15,7 @@ $('.my-source-field').on('keyup', function(){
     $('.my-target-field').val(sr);
 });
 
-$('.sm-box').delay(3000).slideUp();
+
 
 $('.add-to-cart-btn').on('click', function(){
 

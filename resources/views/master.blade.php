@@ -77,7 +77,7 @@
                         @endif
 
                         @if($total_cart = Cart::getTotalQuantity() )
-                        <li><a class="glyphicon glyphicon-shopping-cart" href="{{ url('shop/checkout') }}"><div class="total-cart">{{ $total_cart }}</div></a></li>
+                        <li class="fixer"><a class="glyphicon glyphicon-shopping-cart" href="{{ url('shop/checkout') }}"></a><span class="badge total-cart">{{ $total_cart }}</span></li>
                         @endif
                     </ul>
                     <ul class="nav navbar-nav pull-right">

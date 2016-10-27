@@ -25,17 +25,17 @@
 
                             @if($sub_cat['sub_category'] == $cat['id'])
 
-                                <div class="col-sm-3 col-lg-3 col-md-3">
+                                <div class="col-sm-2 col-lg-2 col-md-2">
                                     <div class="thumbnail">
                                         <img src="{{ asset('/images/' . $row['manufacturer'] . '/' . $row['url'] . '/' . $row['image']) }}" alt="">
                                         <div class="caption">
 
                                             @if(strlen($row['title']) > 10)
-                                                <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 7, "...") }}</a></h4>
+                                                <h6 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 6, "...") }}</a></h6>
                                             @endif
 
                                             @if(strlen($row['article']) > 10)
-                                                <p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 20, "...") }}</p>
+                                                <p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 10, "...") }}</p>
                                                 {{--<p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
                                             @endif
 
@@ -52,7 +52,7 @@
 
                                             <h4 class="text-center price-tag">{{ $row['price'] }}$</h4>
 
-                                                <input @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn btn-success" value="+ Add To Cart">
+                                                <input @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn bg-success" value="+ Add To Cart">
 
                                         </div>
                                     </div>
