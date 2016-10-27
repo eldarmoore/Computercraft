@@ -65,4 +65,10 @@ class Categorie extends Model
         Session::flash('sm', 'Category has been updated');
 
     }
+
+    static public function getAllOrdered( $categorie_id ){
+        $sql = "SELECT * FROM categories "
+            . "ORDER BY CASE WHEN id = $categorie_id THEN 0 ELSE id END";
+        return DB::select($sql);
+    }
 }

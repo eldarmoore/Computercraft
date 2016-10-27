@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Requests\ContentRequest;
-use App\Menu;
-use App\Content;
+use App\Http\Requests\ProductRequest;
+use App\Categorie;
+use App\Product;
 use Illuminate\Support\Facades\Session;
 
-class ContentController extends MainController
+class ProductController extends MainController
 {
 
     function __construct()
@@ -25,8 +25,8 @@ class ContentController extends MainController
      */
     public function index()
     {
-        self::$data['content'] = Content::all()->toArray();
-        return view('cms.content', self::$data);
+        self::$data['products'] = Product::all()->toArray();
+        return view('cms.products', self::$data);
     }
 
     /**
@@ -36,8 +36,6 @@ class ContentController extends MainController
      */
     public function create()
     {
-        //self::$data['menu'] = []; //NO MENU SIMULATION!!!
-        self::$data['categories'] = Categorie::all()->toArray();
         return view('cms.add_product', self::$data);
     }
 
@@ -47,10 +45,10 @@ class ContentController extends MainController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ContentRequest $request)
+    public function store(ProductRequest $request)
     {
-        Content::saveContent($request);
-        return redirect('cms/content');
+        Product::saveProduct($request);
+        return redirect('cms/products');
     }
 
     /**
@@ -61,8 +59,8 @@ class ContentController extends MainController
      */
     public function show($id)
     {
-        self::$data['content_id'] = $id;
-        return view('cms.delete_content', self::$data);
+        self::$data['product_id'] = $id;
+        return view('cms.delete_product', self::$data);
     }
 
     /**
@@ -73,9 +71,9 @@ class ContentController extends MainController
      */
     public function edit($id)
     {
-        self::$data['content'] = Content::find($id)->toArray();
-        self::$data['menu'] = Menu::getAllOrdered( self::$data['content']['menu_id'] );
-        return view('cms.edit_content', self::$data);
+        self::$data['product'] = Product::find($id)->toArray();
+        self::$data['categories'] = Categorie::getAllOrdered( self::$data['product']['categorie_id'] );
+        return view('cms.edit_product', self::$data);
     }
 
     /**

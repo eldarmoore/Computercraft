@@ -86,4 +86,27 @@ class Product extends Model {
 
     }
 
+    static public function saveProduct($request){
+
+        $image_name = 'default.jpg';
+
+        if ( $request->hasFile('image') && $request->file('image')->isValid() ) {
+            $file = $request->file('image');
+            $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
+            //dd($image_name);
+            $request->file('image')->move( public_path() . '/images' , $image_name);
+        }
+
+        $product = new self();
+        $product->title = $request['title'];
+        $product->article = $request['article'];
+        $product->url = $request['url'];
+        $product->image = $image_name;
+        $product->price = $request['price'];
+        $product->categorie_id = $request['categorie_id'];
+        $product->save();
+        Session::flash('sm', 'Product has been saved');
+
+    }
+
 }
