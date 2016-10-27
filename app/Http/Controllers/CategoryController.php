@@ -71,8 +71,8 @@ class CategoryController extends MainController
      */
     public function edit($id)
     {
-        self::$data['menu'] = Menu::find($id)->toArray();
-        return view('cms.edit_menu', self::$data);
+        self::$data['category'] = Categorie::find($id)->toArray();
+        return view('cms.edit_category', self::$data);
     }
 
     /**
@@ -82,10 +82,10 @@ class CategoryController extends MainController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MenuRequest $request, $id)
+    public function update(CategoryRequest $request, $id)
     {
-        Menu::updateMenu($request, $id);
-        return redirect('cms/menu');
+        Categorie::updateCategory($request, $id);
+        return redirect('cms/categories');
     }
 
     /**

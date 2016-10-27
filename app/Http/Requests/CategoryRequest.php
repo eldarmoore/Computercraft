@@ -27,7 +27,7 @@ class CategoryRequest extends Request
         $all = Input::all();
         $category_id = isset($all['category_id']) ? ',' . $all['category_id'] : '';
 
-        //$image_validate = ($category_id) ? 'image' : 'required|image';
+//        $image_validate = ($category_id) ? 'image' : 'required|image';
 
         return [
             'title' => 'required',

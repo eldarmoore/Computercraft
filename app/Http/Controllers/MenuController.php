@@ -83,6 +83,7 @@ class MenuController extends MainController
      */
     public function update(MenuRequest $request, $id)
     {
+        //dd($request)->toArray();
         Menu::updateMenu($request, $id);
         return redirect('cms/menu');
     }
