@@ -30,7 +30,21 @@
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
-                            <ul class="dropdown-menu multi-column" style="width: 800px">
+                            <ul class="dropdown-menu multi-column" style="width: <?php
+
+                                    $count = 0;
+
+                                    foreach ($categories as $cat){
+                                        if($cat['sub_category'] == 0){
+                                            if($count < 7){
+                                                ++$count;
+                                            }
+                                        }
+                                    }
+
+                                    echo 120 * $count;
+
+                            ?>px">
 
                                 @foreach($categories as $row)
 
@@ -47,7 +61,6 @@
                                                             <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title']}}</a></li>
                                                         @endif
                                                     @endforeach
-
                                                     </ul>
                                                 </div>
                                             </div>

@@ -8,7 +8,7 @@ body {
     /*padding-top: 70px;*/
     font-family: "Roboto Slab", sans-serif;
     font-weight: 100;
-    font-size: 1.5em;
+    font-size: 1.3em;
     position: relative;
 }
 
@@ -30,11 +30,14 @@ p {
 }
 
 .navbar {
-    background-color: rgba(16,16,16,0.9);
+    background-color: rgba(26,26,26,0.9);
     background-image: none;
     border: none;
 }
 
+.nav>ul>a {
+    padding: 5px;
+}
 .btn-cc {
     display: block;
     margin:0 auto;
@@ -87,7 +90,7 @@ p {
 /* Dropdown with columns */
 
 .navbar-nav>li>.dropdown-menu {
-    width: 800px;
+    /*width: 800px;*/
     border:none;
     border-radius: 0;
     background-color: #8c8c8c;
@@ -101,7 +104,7 @@ p {
 .multi-column-dropdown {
     list-style: none;
     /*background-color: #8c8c8c;*/
-    min-height: 215px;
+    /*min-height: 215px;*/
 }
 .multi-column-dropdown {
     padding:0;
