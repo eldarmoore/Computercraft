@@ -112,6 +112,9 @@ p {
 .no-margin {
     margin:0;
 }
+.thumbnail a > img, .thumbnail > img {
+    height: 155px;
+}
 
 /* Dropdown with columns */
 

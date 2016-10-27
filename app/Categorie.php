@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Session;
+use DB;
 
 class Categorie extends Model
 {
@@ -44,7 +45,7 @@ class Categorie extends Model
 
     static public function updateCategory($request, $id){
 
-        $image_name = '';
+        $image_name = 'default.jpg';
 
         if ( $request->hasFile('image') && $request->file('image')->isValid() ) {
             $file = $request->file('image');

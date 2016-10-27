@@ -83,10 +83,10 @@ class ProductController extends MainController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ContentRequest $request, $id)
+    public function update(ProductRequest $request, $id)
     {
-        Content::updateContent($request, $id);
-        return redirect('cms/content');
+        Product::updateProduct($request, $id);
+        return redirect('cms/products');
     }
 
     /**

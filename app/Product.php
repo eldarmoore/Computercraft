@@ -78,6 +78,7 @@ class Product extends Model {
                         }
 
                     }
+
                 }
 
             }
@@ -94,7 +95,7 @@ class Product extends Model {
             $file = $request->file('image');
             $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
             //dd($image_name);
-            $request->file('image')->move( public_path() . '/images' , $image_name);
+            $request->file('image')->move( public_path() . '/images/products' , $image_name);
         }
 
         $product = new self();
@@ -106,6 +107,32 @@ class Product extends Model {
         $product->categorie_id = $request['categorie_id'];
         $product->save();
         Session::flash('sm', 'Product has been saved');
+
+    }
+
+    static public function updateProduct($request, $id){
+
+        $image_name = 'default.png';
+
+        if ( $request->hasFile('image') && $request->file('image')->isValid() ) {
+            $file = $request->file('image');
+            $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
+            $request->file('image')->move( public_path() . '/images/products' , $image_name);
+        }
+
+        $product = self::find($id);
+        $product->title = $request['title'];
+        $product->article = $request['article'];
+        $product->url = $request['url'];
+
+        if($image_name){
+            $product->image = $image_name;
+        }
+
+        $product->price = $request['price'];
+        $product->categorie_id = $request['categorie_id'];
+        $product->save();
+        Session::flash('sm', 'Product has been updated');
 
     }
 

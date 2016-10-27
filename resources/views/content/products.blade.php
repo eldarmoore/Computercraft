@@ -27,17 +27,17 @@
 
                                 <div class="col-sm-2 col-lg-2 col-md-2">
                                     <div class="thumbnail">
-                                        <img src="{{ asset('/images/' . $row['manufacturer'] . '/' . $row['url'] . '/' . $row['image']) }}" alt="">
+                                        <img src="{{ asset('/images/products/' . $row['image']) }}" alt="">
                                         <div class="caption">
 
                                             @if(strlen($row['title']) > 10)
                                                 <h6 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 6, "...") }}</a></h6>
                                             @endif
 
-                                            @if(strlen($row['article']) > 10)
-                                                <p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 10, "...") }}</p>
+                                            {{--@if(strlen($row['article']) > 10)--}}
+                                                {{--<p class="text-limit">{!! \Illuminate\Support\Str::words($row['article'], 10, "...")  !!}</p>--}}
                                                 {{--<p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
-                                            @endif
+                                            {{--@endif--}}
 
                                             <p class="pull-right">6 reviews</p>
                                             <p>
