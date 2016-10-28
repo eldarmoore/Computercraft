@@ -28,7 +28,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a target="_blank" href="https://www.google.com/analytics/">Google analytics</a></li>
                     <li><a href="{{ url('') }}">Back to site</a></li>
-                    <li><a href="{{ url('user/logout') }}">Logout</a></li>
+                    <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     <input type="text" class="form-control" placeholder="Search...">

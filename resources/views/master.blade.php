@@ -12,7 +12,6 @@
     <body>
 
     <header>
-
         <!-- Fixed navbar -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -26,6 +25,7 @@
 
                     <a class="navbar-brand" href="{{ url('') }}"><img src="{{ asset('images/logo.svg') }}" alt="" height="20"></a>
                 </div>
+
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
@@ -42,23 +42,29 @@
                                         }
                                     }
 
-                                    echo 120 * $count;
+                                    echo 180 * $count;
 
                             ?>px">
-
+                                <?php $counter = 0; ?>
                                 @foreach($categories as $row)
 
                                     @unless($row['sub_category'])
-
-                                            <div class="col-sm-12" style="width: 120px">
+                                            <div class="col-sm-12" style="width: 180px">
                                                 <div class="row">
                                                     <ul class="multi-column-dropdown">
 
                                                     <li class="text-uppercase"><a href="{{ url('shop/' . $row['url']) }}"><b>{{ $row['title'] }}</b></a></li>
                                                     {{--<li class="divider"></li>--}}
                                                     @foreach($categories as $sub_row)
+
                                                         @if($sub_row['sub_category'] == $row['id'])
-                                                            <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title']}}</a></li>
+                                                                @foreach($products as $product)
+                                                                    @if($sub_row['id'] == $product['categorie_id'])
+                                                                        <?php ++$counter; ?>
+                                                                    @endif
+                                                                @endforeach
+                                                            <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title']}}<span class="badge pull-right" style="position: relative; top: -2;font-size: 0.8em">{{ $counter }}</span></a></li>
+                                                            <?php $counter = 0; ?>
                                                         @endif
                                                     @endforeach
                                                     </ul>
@@ -89,7 +95,7 @@
                             @if(Session::has('is_admin'))
                                 <li><a href="{{ url('cms/dashboard') }}">CMS DASHBOARD</a></li>
                             @endif
-                            <li><a href="{{ url('user/logout') }}">Logout</a></li>
+                            <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                         @endif
                     </ul>
                 </div><!--/.nav-collapse -->

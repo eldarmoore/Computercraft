@@ -1,7 +1,6 @@
 @extends('cms.cms_master')
 
 @section('cms_content')
-
     <h1 class="page-header">Product</h1>
     <p>Here you can edit site products</p>
 

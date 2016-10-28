@@ -99,8 +99,8 @@ class ContentController extends MainController
      */
     public function destroy($id)
     {
-        Product::destroy($id);
-        Session::flash('sm', 'Product has been deleted');
-        return redirect('cms/products');
+        Content::destroy($id);
+        Session::flash('sm', 'Content has been deleted');
+        return redirect('cms/content');
     }
 }
