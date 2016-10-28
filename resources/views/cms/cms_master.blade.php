@@ -30,9 +30,6 @@
                     <li><a href="{{ url('') }}">Back to site</a></li>
                     <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">
-                </form>
             </div>
         </div>
         @if($errors->any()) @include('includes.errors') @endif
@@ -43,12 +40,12 @@
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <li><a href="{{ url('cms/dashboard') }}">Dashboard</a></li>
-                    <li><a href="{{ url('cms/menu') }}">Menu</a></li>
-                    <li><a href="{{ url('cms/content') }}">Content</a></li>
-                    <li><a href="{{ url('cms/categories') }}">Categories</a></li>
-                    <li><a href="{{ url('cms/products') }}">Products</a></li>
-                    <li><a href="{{ url('cms/orders') }}">Orders</a></li>
+                    <li><a href="{{ url('cms/dashboard') }}"><span class="glyphicon glyphicon-th-large"></span> Dashboard</a></li>
+                    <li><a href="{{ url('cms/menu') }}"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu</a></li>
+                    <li><a href="{{ url('cms/content') }}"><span class=" glyphicon glyphicon-file"></span> Content</a></li>
+                    <li><a href="{{ url('cms/categories') }}"><span class="glyphicon glyphicon-list-alt"></span> Categories</a></li>
+                    <li><a href="{{ url('cms/products') }}"><span class="glyphicon glyphicon-apple"></span> Products</a></li>
+                    <li><a href="{{ url('cms/orders') }}"><span class="glyphicon glyphicon-inbox"></span> Orders</a></li>
                 </ul>
             </div>
 

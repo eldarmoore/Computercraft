@@ -12,6 +12,7 @@
     <body>
 
     <header>
+
         <!-- Fixed navbar -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -42,14 +43,14 @@
                                         }
                                     }
 
-                                    echo 180 * $count;
+                                    echo 120 * $count;
 
                             ?>px">
                                 <?php $counter = 0; ?>
                                 @foreach($categories as $row)
 
                                     @unless($row['sub_category'])
-                                            <div class="col-sm-12" style="width: 180px">
+                                            <div class="col-sm-12" style="width: 120px">
                                                 <div class="row">
                                                     <ul class="multi-column-dropdown">
 
@@ -58,13 +59,7 @@
                                                     @foreach($categories as $sub_row)
 
                                                         @if($sub_row['sub_category'] == $row['id'])
-                                                                @foreach($products as $product)
-                                                                    @if($sub_row['id'] == $product['categorie_id'])
-                                                                        <?php ++$counter; ?>
-                                                                    @endif
-                                                                @endforeach
-                                                            <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title']}}<span class="badge pull-right" style="position: relative; top: -2;font-size: 0.8em">{{ $counter }}</span></a></li>
-                                                            <?php $counter = 0; ?>
+                                                            <li><a href="{{ url('shop/' . $row['url']) . '/' . $sub_row['url'] }}">- {{ $sub_row['title']}}</a></li>
                                                         @endif
                                                     @endforeach
                                                     </ul>
@@ -81,19 +76,19 @@
                                 <li><a href="{{ url($item['url']) }}">{{ $item['link'] }}</a></li>
                             @endforeach
                         @endif
-
-                        @if($total_cart = Cart::getTotalQuantity() )
-                        <li class="fixer"><a class="glyphicon glyphicon-shopping-cart" href="{{ url('shop/checkout') }}"></a><span class="badge total-cart">{{ $total_cart }}</span></li>
-                        @endif
                     </ul>
                     <ul class="nav navbar-nav pull-right">
+                        @if($total_cart = Cart::getTotalQuantity() )
+                            <li style="background-color: #666666;" class="fixer"><a style="color: rgb(26,26,26);" href="{{ url('shop/checkout') }}"><span class="glyphicon glyphicon-shopping-cart"></span> <span style="font-size: 14px;"><b>{{ $total_cart }}</b></span></a></li>
+                        @endif
                         @if( !Session::has('user_id') )
                             <li><a href="{{ url('user/signin') }}">Sign in</a></li>
                             <li><a href="{{ url('user/signup') }}">Sign up</a></li>
                         @else
-                            <li><a href="{{ url('user/profile') }}">Welcome, {{ Session::get('user_name') }}</a></li>
+                            <li><a href="{{ url('user/profile') }}"><span class="glyphicon glyphicon-user"></span> Welcome, {{ Session::get('user_name') }}</a></li>
+
                             @if(Session::has('is_admin'))
-                                <li><a href="{{ url('cms/dashboard') }}">CMS DASHBOARD</a></li>
+                                <li><a href="{{ url('cms/dashboard') }}"><span class="glyphicon glyphicon-th-large"></span> Dashboard</a></li>
                             @endif
                             <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                         @endif

@@ -16,6 +16,5 @@ class MainController extends Controller
     {
         self::$data['menu'] = Menu::all()->toArray();
         self::$data['categories'] = Categorie::all()->toArray();
-        self::$data['products'] = Product::all()->toArray();
     }
 }
