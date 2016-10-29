@@ -1,2 +1,3 @@
 * When Delete Category make sure any other category that inherit follow.
 * Redesign Images Saving Process
+* BUG * Add new product, unable to save image file.

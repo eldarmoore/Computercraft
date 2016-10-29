@@ -101,7 +101,11 @@ p {
     background-color: #99cb84;
     color: #FFFFFF;
 }
-
+.button, input, select, textarea {
+    border-radius: 10px;
+    border: 1px;
+    width: 20px;
+}
 .add-to-cart-btn {
     background-color: #419641;
     color: #FFFFFF;

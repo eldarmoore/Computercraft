@@ -14,8 +14,8 @@
     @if($cart)
 
         <div class="col-md-12">
-            <table class="table table-bordered">
-                <tr>
+            <table class="table">
+                <tr style="background-color: #2e3436; color: #FFFFFF;">
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Price</th>
@@ -33,14 +33,13 @@
                         <td>{{ $row['price'] * $row['quantity'] }}$</td>
                     </tr>
                 @endforeach
-                <tr>
-                    <td><b>Total: </b>{{ Cart::getTotal() }}$</td>
-                    <td></td>
-                    <td></td>
-                    <td><a class="btn btn-default" href="{{ url('shop/cart-clear') }}">Clear Cart</a></td>
                 </tr>
             </table>
-            <p><a href="{{ url('shop/order') }}" class="btn btn-primary">Order now</a></p>
+                <h3>Total: {{ Cart::getTotal() }}$</h3>
+
+
+
+            <p><a href="{{ url('shop/order') }}" class="btn btn-primary">Order now</a>  <a class="btn btn-default" href="{{ url('shop/cart-clear') }}">Clear Cart</a></p>
         </div>
 
     @else

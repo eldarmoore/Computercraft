@@ -37,7 +37,7 @@ class ContentController extends MainController
     public function create()
     {
         //self::$data['menu'] = []; //NO MENU SIMULATION!!!
-        self::$data['categories'] = Categorie::all()->toArray();
+        self::$data['content'] = Content::all()->toArray();
         return view('cms.add_product', self::$data);
     }
 
