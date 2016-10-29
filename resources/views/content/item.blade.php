@@ -26,8 +26,8 @@
                         <p><h4>Price: </h4><span class="price-tag-item">{{ $item['price'] }}$</span></p>
 
                         <p>
-                            <input @if(Cart::get($item['id'])) disabled="disabled" @endif data-id="{{ $item['id'] }}" type="button" class="btn add-to-cart-btn" value="+ Add To Cart">
-                            <a href="{{ url('shop/checkout') }}" class="btn add-to-cart-btn "></span>Checkout</a>
+                            <button @if(Cart::get($item['id'])) disabled="disabled" @endif data-id="{{ $item['id'] }}" type="button" class="btn add-to-cart-btn w200"><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
+                            {{--<a href="{{ url('shop/checkout') }}" class="btn add-to-cart-btn "></span>Checkout</a>--}}
                         </p>
 
                     </div>

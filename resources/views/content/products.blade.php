@@ -26,7 +26,7 @@
                             @if($sub_cat['sub_category'] == $cat['id'])
 
                                 <div class="col-sm-2 col-lg-2 col-md-2">
-                                    <div class="thumbnail">
+                                    <div class="thumbnail product">
                                         <img src="{{ asset('/images/products/' . $row['image']) }}" alt="">
                                         <div class="caption">
 
@@ -52,7 +52,7 @@
 
                                             <h4 class="text-center price-tag">{{ $row['price'] }}$</h4>
 
-                                                <input @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn bg-success" value="+ Add To Cart">
+                                                <button @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn bg-success w151" value=""><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
 
                                         </div>
                                     </div>

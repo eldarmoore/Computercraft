@@ -86,9 +86,17 @@ p {
 }
 .btn {
     border-radius: 0;
-    width:151px;
+}
+.product p {
+    font-size: 0.9em;
 }
 
+.w151 {
+    width: 151px;
+}
+.w200 {
+    width: 200px;
+}
 .bg-success:hover {
     background-color: #99cb84;
     color: #FFFFFF;
@@ -107,7 +115,7 @@ p {
 }
 
 .title-limit {
-    height: 24px;
+    height: 26px;
     overflow-y: hidden;
 }
 
