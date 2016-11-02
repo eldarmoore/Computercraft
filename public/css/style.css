@@ -7,9 +7,65 @@
 body {
     /*padding-top: 70px;*/
     font-family: "Roboto Slab", sans-serif;
-    font-weight: 100;
-    font-size: 1.3em;
+    font-weight: 300;
+    font-size: 2em;
     position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    margin: 0;
+}
+
+img {
+    max-width: 400px;
+}
+
+/* Header navigation */
+
+header .navbar {
+    /*padding: 30px 0;*/
+    font-size: 0.7em;
+}
+
+header .navbar-default {
+    background-color: rgba(24,24,24, .9);
+    background-image: none;
+    border: none;
+}
+
+header .navbar-default .navbar-nav a {
+    color: #FFFFFF;
+}
+
+header .navbar-default .navbar-nav a:hover {
+    color: #FFFFFF;
+}
+/* END - Header navigation */
+
+/** Navbar Toggle **/
+@media only screen and (max-width: 768px) {
+    header .navbar-collapse.in {
+        background-color: rgba(0,0,0, .5);
+    }
+}
+
+/** Page **/
+.page {
+    padding: 50px 0;
+}
+
+.page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/** Page - Mission **/
+#mission {
+    background-color: #E4D29D;
+    background-image: linear-gradient(to bottom, #EEF08A, #819A2D);
+    border-top: 20px solid rgba(238, 200, 86, .5);
 }
 
 .price-tag {
@@ -24,17 +80,6 @@ body {
     font-size: 2em;
     margin: 1em 0;
     line-height: 0;
-}
-
-p {
-    font-weight: 100;
-    font-size: 1.4em;
-}
-
-.navbar {
-    background-color: rgba(26,26,26,1.0);
-    background-image: none;
-    border: none;
 }
 
 .nav>ul>a {
@@ -90,10 +135,6 @@ p {
 .product p {
     font-size: 0.9em;
 }
-
-.w151 {
-    width: 151px;
-}
 .w200 {
     width: 200px;
 }
@@ -101,7 +142,7 @@ p {
     background-color: #99cb84;
     color: #FFFFFF;
 }
-.button, input, select, textarea {
+.small-button {
     border-radius: 10px;
     border: 1px;
     width: 20px;
@@ -119,20 +160,24 @@ p {
 }
 
 .title-limit {
-    height: 26px;
+    font-weight: bolder;
+    font-size: 1em;
+    height: 46px;
     overflow-y: hidden;
 }
 
 .text-limit {
-    height: 42px;
+    height: 82px;
     overflow-y: hidden;
 }
-
+.w151 {
+    width: 100%;
+}
 .no-margin {
     margin:0;
 }
 .thumbnail a > img, .thumbnail > img {
-    height: 155px;
+    max-height: 252.5px;
 }
 
 /* Dropdown with columns */
@@ -156,6 +201,9 @@ p {
 }
 .multi-column-dropdown {
     padding:0;
+}
+.navbar-nav > li > .dropdown-menu a {
+    color: #2e3436;
 }
 .multi-column-dropdown li a {
     display: block;

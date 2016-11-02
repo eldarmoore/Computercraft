@@ -8,13 +8,14 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-3.3.7-dist/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('lib/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+        <script src="{{ asset('js/prefixfree.min.css') }}"></script>
     </head>
     <body>
 
     <header>
 
         <!-- Fixed navbar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,6 +26,7 @@
                     </button>
 
                     <a class="navbar-brand" href="{{ url('') }}"><img src="{{ asset('images/logo.svg') }}" alt="" height="20"></a>
+
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
@@ -103,13 +105,9 @@
 
     @yield('slider')
 
-    <br><br><br>
-
     <div class="container">
-
         <!-- Content -->
         @yield('content')
-
     </div>
 
     <hr>

@@ -7,7 +7,7 @@
     @if($contents)
 
         @foreach($contents as $row)
-            <div class="row">
+            <div class="row" id="{{ $row['title'] }}">
                 <div class="col-md-12">
                     <h1>{{ $row['title'] }}</h1>
                     <p>{!! $row['article'] !!}</p> <!-- Unfiltered data pull from CMS -->

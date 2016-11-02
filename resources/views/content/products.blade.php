@@ -2,6 +2,8 @@
 
 @section('content')
 
+<div class="container page">
+
     @if(isset($cat_title))
         <div class="row">
             <div class="col-md-12">
@@ -9,6 +11,7 @@
             </div>
         </div>
     @endif
+
     <div class="row">
 
         <br>
@@ -25,18 +28,18 @@
 
                             @if($sub_cat['sub_category'] == $cat['id'])
 
-                                <div class="col-sm-2 col-lg-2 col-md-2">
+                                <div class="col-sm-3 col-lg-3 col-md-3">
                                     <div class="thumbnail product">
-                                        <img src="{{ asset('/images/products/' . $row['image']) }}" alt="">
+                                        <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['image']) }}" alt=""></a>
                                         <div class="caption">
 
                                             @if(strlen($row['title']) > 10)
-                                                <h6 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 6, "...") }}</a></h6>
+                                                <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 6, "...") }}</a></h4>
                                             @endif
 
                                             {{--@if(strlen($row['article']) > 10)--}}
-                                                {{--<p class="text-limit">{!! \Illuminate\Support\Str::words($row['article'], 10, "...")  !!}</p>--}}
-                                                {{--<p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
+                                                {{--<p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 10, "...")  }}</p>--}}
+{{--                                                <p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
                                             {{--@endif--}}
 
                                             <p class="pull-right">6 reviews</p>
@@ -57,7 +60,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             @endif
 
                         @endforeach
@@ -76,4 +78,5 @@
 
     </div>
 
+</div>
 @endsection

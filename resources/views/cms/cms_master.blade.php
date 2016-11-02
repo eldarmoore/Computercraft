@@ -38,7 +38,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-2 col-md-1 sidebar">
+            <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
                     <li><a href="{{ url('cms/dashboard') }}"><span class="glyphicon glyphicon-th-large"></span> Dashboard</a></li>
                     <li><a href="{{ url('cms/menu') }}"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu</a></li>
@@ -49,7 +49,7 @@
                 </ul>
             </div>
 
-            <div class="col-sm-10 col-sm-offset-2 col-md-11 col-md-offset-1 main">
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
                 @yield('cms_content')
             </div>

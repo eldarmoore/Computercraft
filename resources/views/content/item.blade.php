@@ -8,22 +8,19 @@
         @if($item)
 
             <div class="col-md-12">
-                <br>
-                <h1>{{ $item['title'] }}</h1>
-                <br>
-                <br>
                 <div class="row">
 
                     <div class="col-md-4">
-                        <img width="300" src="{{ asset('/images/products/' . $item['image']) }}" alt="">
+                        <img width="400" src="{{ asset('/images/products/' . $item['image']) }}" alt="">
                     </div>
 
                     <div class="col-md-8">
-
-
-                        <p></p>
-
-                        <p><h4>Price: </h4><span class="price-tag-item">{{ $item['price'] }}$</span></p>
+                        <h2>{{ $item['title'] }}</h2>
+                        <hr>
+                        <br>
+                        <br>
+                        <br>
+                        <p><span class="price-tag-item">Price: {{ $item['price'] }}$</span></p>
 
                         <p>
                             <button @if(Cart::get($item['id'])) disabled="disabled" @endif data-id="{{ $item['id'] }}" type="button" class="btn add-to-cart-btn w200"><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
