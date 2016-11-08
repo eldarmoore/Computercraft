@@ -7,7 +7,7 @@
     <div class="row">
         @if($categories)
         <div class="col-md-6">
-            <form action="{{ url('cms/products') }}" method="post">
+            <form action="{{ url('cms/products') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="categorie_id">Category:</label>

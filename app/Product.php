@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\File;
 use Illuminate\Database\Eloquent\Model;
 use Cart;
 use Illuminate\Support\Facades\Session;
@@ -94,8 +95,9 @@ class Product extends Model {
         if ( $request->hasFile('image') && $request->file('image')->isValid() ) {
             $file = $request->file('image');
             $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
-            //dd($image_name);
-            $request->file('image')->move( public_path() . '/images/products' , $image_name);
+            //dd($request['url']);
+            $request->file('image')->move( public_path() . '/images/products/' . $image_name );
+
         }
 
         $product = new self();
@@ -117,7 +119,8 @@ class Product extends Model {
         if ( $request->hasFile('image') && $request->file('image')->isValid() ) {
             $file = $request->file('image');
             $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
-            $request->file('image')->move( public_path() . '/images/products' , $image_name);
+            $img_path = public_path() . '/images/products/';
+            $request->file('image')->move( $img_path . '/' . $image_name );
         }
 
         $product = self::find($id);

@@ -2,8 +2,6 @@
 
 @section('content')
 
-<div class="container page">
-
     @if(isset($cat_title))
         <div class="row">
             <div class="col-md-12">
@@ -17,6 +15,10 @@
         <br>
 
         @if($products)
+
+            <form action="" method="get">
+                <input type="submit" class="btn btn-primary" value="orderby" name="obbtn">
+            </form>
 
             @foreach($products as $row)
 
@@ -78,5 +80,4 @@
 
     </div>
 
-</div>
 @endsection

@@ -36,9 +36,9 @@
                     <input type="price" name="price" value="{{ $product['price'] }}" class="form-control" id="url" placeholder="Price">
                 </div>
                 <div class="form-group">
-                    <img src="{{ asset('images/products' . $product['image']) }}" width="80" border="0" alt="">
+                    <img src="{{ asset('images/products/' . $product['image']) }}" width="80" border="0" alt="" style="margin-bottom: 20px">
                     <label for="image">Change image:</label>
-                    <input type="file" name="image">
+                    <input type="file" name="image" value="{{ asset('images/products/' . $product['image']) }}">
                 </div>
                 <a href="{{ url('cms/products') }}" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-primary">Save products</button>
