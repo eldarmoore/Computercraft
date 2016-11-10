@@ -96,8 +96,7 @@ class Product extends Model {
             $file = $request->file('image');
             $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
             //dd($request['url']);
-            $request->file('image')->move( public_path() . '/images/products/' . $image_name );
-
+            $request->file('image')->move( public_path() . '/images/products/' , $image_name );
         }
 
         $product = new self();
@@ -114,13 +113,12 @@ class Product extends Model {
 
     static public function updateProduct($request, $id){
 
-        $image_name = 'default.png';
+        $image_name = '';
 
         if ( $request->hasFile('image') && $request->file('image')->isValid() ) {
             $file = $request->file('image');
             $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
-            $img_path = public_path() . '/images/products/';
-            $request->file('image')->move( $img_path . '/' . $image_name );
+            $request->file('image')->move( public_path() . '/images/products/' . $request['url'] , $image_name );
         }
 
         $product = self::find($id);

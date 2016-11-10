@@ -32,7 +32,7 @@
 
                                 <div class="col-sm-3 col-lg-3 col-md-3">
                                     <div class="thumbnail product">
-                                        <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['image']) }}" alt=""></a>
+                                        <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['url'] . '/' . $row['image']) }}" alt=""></a>
                                         <div class="caption">
 
                                             @if(strlen($row['title']) > 10)

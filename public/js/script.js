@@ -12,6 +12,7 @@ $('.my-source-field').on('keyup', function(){
     sr = sr.trim();
     sr = sr.toLowerCase();
     sr = sr.replace(/\s/g, '-');
+    sr = sr.replace(/\W/g, '');
     $('.my-target-field').val(sr);
 });
 
@@ -28,7 +29,6 @@ $('.add-to-cart-btn').on('click', function(){
             location.reload();
         }
     });
-
 });
 
 $('.update-cart').on('click', function(){
