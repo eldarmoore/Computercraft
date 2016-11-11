@@ -24,10 +24,16 @@ class Product extends Model {
             $data['cat_url'] = $sub_category_url;
 
             if($products = Categorie::find($sub_category['id'])->products){
-
                 $data['products'] = $products->toArray();
-
             }
+
+            $get = \Request::input('order');
+
+            if($get && ($get == 'asc' || $get == 'desc') ){
+                $products = Categorie::find($sub_category['id'])->products()->orderBy('price', $get)->get();
+            }
+
+            $data['products'] = $products->toArray();
         }
     }
 

@@ -11,11 +11,11 @@
                 <div class="row">
 
                     <div class="col-md-4">
-                        <img width="400" src="{{ asset('/images/products/' . $item['image']) }}" alt="">
-                        <a href="{{ asset('/images/products/' . $item['image']) }}" data-lightbox="roadtrip"><img
-                                    src="{{ asset('/images/products/' . $item['image']) }}" alt="" style="width: 80px; margin-top: 10px; border: 1px solid #2e3436;"></a>
-                        <a href="{{ asset('/images/products/' . $item['image']) }}" data-lightbox="roadtrip">Image #3</a>
-                        <a href="{{ asset('/images/products/' . $item['image']) }}" data-lightbox="roadtrip">Image #4</a>
+                        <img width="400" src="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" alt="">
+                        <a href="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" data-lightbox="roadtrip"><img
+                                    src="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" alt="" style="width: 80px; margin-top: 10px; border: 1px solid #2e3436;"></a>
+                        <a href="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" data-lightbox="roadtrip">Image #3</a>
+                        <a href="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" data-lightbox="roadtrip">Image #4</a>
                     </div>
 
                     <div class="col-md-8">

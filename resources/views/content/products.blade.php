@@ -16,10 +16,11 @@
 
         @if($products)
 
-            <form action="" method="get">
-                <input type="submit" class="btn btn-primary" value="orderby" name="obbtn">
-            </form>
-
+            <div class="col-md-12">
+                <a href="?order=desc" class="btn btn-default"><span class="glyphicon glyphicon-sort-by-attributes"></span> <b>Low to High</b></a>
+                <a href="?order=asc" class="btn btn-default"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span> <b>High to Low</b></a>
+            </div>
+            <br><br>
             @foreach($products as $row)
 
                 @foreach($categories as $sub_cat)
