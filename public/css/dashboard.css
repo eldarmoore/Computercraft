@@ -25,6 +25,10 @@ body {
  * Top navigation
  * Hide default border to remove 1px line.
  */
+.navbar {
+    background-color: #2e3436;
+    background-image: none;
+}
 .navbar-fixed-top {
     border: 0;
 }
@@ -104,6 +108,9 @@ table {
     border: none;
 }
 
+table li {
+    list-style: none;
+}
 .table-bordered {
 
 }

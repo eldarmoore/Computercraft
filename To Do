@@ -1,3 +1,10 @@
 * When Delete Category make sure any other category that inherit follow.
-* Redesign Images Saving Process
-* BUG * Add new product, unable to save image file.
+* Redesign Images Saving Process for multiple images per product.
+V BUG * Add new product, unable to save image file.
+* Improve item page
+* Facebook SDK
+* Users page
+* Inventory
+* Modify index page
+* Modify CMS
+* Migration

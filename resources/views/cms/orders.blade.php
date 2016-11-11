@@ -9,7 +9,7 @@
         <div class="col-md-12">
             <table class="table table-bordered">
                 <tr>
-                    <th>User</th>
+                    <th width="150">User</th>
                     <th>Order details</th>
                     <th>Total</th>
                     <th>Date</th>
@@ -24,7 +24,7 @@
                             @endforeach
                         </td>
                         <td>{{ $row->total }}$</td>
-                        <td>{{ $row->created_at }}</td>
+                        <td style="font-size: 0.8em; width: 120px;">{{ $row->created_at }}</td>
                     </tr>
                 @endforeach
             </table>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d691b9ed5dd8944e2ffaac7313b94262",
+    "hash": "d0fd7d6819767c9708c1c7a4df1cd741",
     "content-hash": "90225b635dd51172e0dd4c534c7dfd93",
     "packages": [
         {
@@ -67,16 +67,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/darryldecode/laravelshoppingcart.git",
-                "reference": "6cdff019ac3e9c0c1ade1538ab059ae36e1de5cd"
+                "reference": "a262cd443a3a8e13757cc7bccace41a2b44396db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darryldecode/laravelshoppingcart/zipball/6cdff019ac3e9c0c1ade1538ab059ae36e1de5cd",
-                "reference": "6cdff019ac3e9c0c1ade1538ab059ae36e1de5cd",
+                "url": "https://api.github.com/repos/darryldecode/laravelshoppingcart/zipball/a262cd443a3a8e13757cc7bccace41a2b44396db",
+                "reference": "a262cd443a3a8e13757cc7bccace41a2b44396db",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "illuminate/translation": "5.0.*|5.1.*|5.2.*|5.3.*",
                 "illuminate/validation": "5.0.*|5.1.*|5.2.*|5.3.*",
                 "php": ">=5.4.0"
             },
@@ -107,7 +108,7 @@
                 "laravel",
                 "shopping cart"
             ],
-            "time": "2016-09-14 12:38:00"
+            "time": "2016-11-11 00:47:21"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1126,16 +1127,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.1.5",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "c0c00c80b3a69132c4e55c3e7db32b4a387615e5"
+                "reference": "28b0832b2553ffb80cabef6a7a812ff1e670c0bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/c0c00c80b3a69132c4e55c3e7db32b4a387615e5",
-                "reference": "c0c00c80b3a69132c4e55c3e7db32b4a387615e5",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/28b0832b2553ffb80cabef6a7a812ff1e670c0bc",
+                "reference": "28b0832b2553ffb80cabef6a7a812ff1e670c0bc",
                 "shasum": ""
             },
             "require": {
@@ -1182,7 +1183,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-19 10:45:57"
+            "time": "2016-10-13 06:28:43"
         },
         {
             "name": "symfony/finder",
@@ -3112,16 +3113,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.1.5",
+            "version": "v3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3"
+                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/368b9738d4033c8b93454cb0dbd45d305135a6d3",
-                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/7ff51b06c6c3d5cc6686df69004a42c69df09e27",
+                "reference": "7ff51b06c6c3d5cc6686df69004a42c69df09e27",
                 "shasum": ""
             },
             "require": {
@@ -3157,7 +3158,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-25 08:27:07"
+            "time": "2016-10-24 18:41:13"
         },
         {
             "name": "webmozart/assert",
