@@ -12,19 +12,18 @@
                     <th width="150">User</th>
                     <th>Order details</th>
                     <th>Total</th>
-                    <th>Date</th>
                 </tr>
 
                 @foreach($orders as $row)
                     <tr>
-                        <td>{{ $row->name }}</td>
+                        <td><div><b>{{ $row->name }}</b></div><div style="font-size: 0.8em;">{{ $row->created_at }}</div></td>
                         <td>
+                            <?php $i = 0; ?>
                             @foreach( json_decode($row->data) as $item)
-                                <li> {{ $item->name }}, quantity: x {{ $item->quantity }}, price: {{ $item->price }}$ </li>
+                                <li> <b>{{ ++$i }}</b> {{ $item->name }}, <b>quantity:</b> x {{ $item->quantity }}, <b>price:</b> {{ $item->price }}$ </li>
                             @endforeach
                         </td>
-                        <td>{{ $row->total }}$</td>
-                        <td style="font-size: 0.8em; width: 120px;">{{ $row->created_at }}</td>
+                        <td style="text-align: center;"><b>{{ $row->total }}$</b></td>
                     </tr>
                 @endforeach
             </table>

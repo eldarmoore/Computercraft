@@ -17,8 +17,8 @@
         @if($products)
 
             <div class="col-md-12">
-                <a href="?order=desc" class="btn btn-default"><span class="glyphicon glyphicon-sort-by-attributes"></span> <b>Low to High</b></a>
-                <a href="?order=asc" class="btn btn-default"><span class="glyphicon glyphicon-sort-by-attributes-alt"></span> <b>High to Low</b></a>
+                <a href="?order=asc" class="btn btn-default"><span class="glyphicon glyphicon-sort-by-attributes" style="height: 10px"></span> Low to High</a>
+                <a href="?order=desc" class="btn btn-default"><span class="glyphicon glyphicon-sort-by-attributes-alt" style="height: 10px"></span> High to Low</a>
             </div>
             <br><br>
             @foreach($products as $row)

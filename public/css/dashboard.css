@@ -6,6 +6,7 @@
 body {
     padding-top: 50px;
     background-color: #EEEEEE;
+    color: #5e5e5e;
 }
 
 .form-control {
@@ -105,14 +106,39 @@ body {
 table {
     background-color: #FFFFFF;
     text-decoration: none;
-    border: none;
 }
 
 table li {
     list-style: none;
 }
+
+table th {
+    background-color: #dcdcdc;
+    color: #5e5e5e;
+    text-align: center;
+    }
 .table-bordered {
 
+}
+
+/*
+ * Buttons
+ */
+
+.btn-primary {
+    background-image: none;
+    background-color: #2a88bd;
+    border:none;
+}
+
+.btn-danger {
+    background-image: none;
+    border:none;
+}
+
+.btn-default {
+    background-image: none;
+    border:none;
 }
 /*
  * Placeholder dashboard ideas

@@ -102,6 +102,19 @@ header .navbar-default .navbar-nav a:hover {
 .thumbnail .caption {
     padding: 2px;
 }
+
+.carousel-inner {
+    height: 500px;
+}
+
+.btn-default {
+    background-image: none;
+    background-color: #FFFFFF;
+    /*border:none;*/
+    color: #8c8c8c;
+    font-weight: 100;
+}
+
 .btn-cc {
     display: block;
     margin:0 auto;

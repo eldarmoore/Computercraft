@@ -28,7 +28,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a target="_blank" href="https://www.google.com/analytics/">Google analytics</a></li>
+
                     <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                 </ul>
             </div>
@@ -47,6 +47,8 @@
                     <li><a href="{{ url('cms/categories') }}"><span class="glyphicon glyphicon-list-alt"></span> Categories</a></li>
                     <li><a href="{{ url('cms/products') }}"><span class="glyphicon glyphicon-apple"></span> Products</a></li>
                     <li><a href="{{ url('cms/orders') }}"><span class="glyphicon glyphicon-inbox"></span> Orders</a></li>
+                    <hr>
+                    <li><a target="_blank" href="https://www.google.com/analytics/"><img src="{{ asset('images/logo_lockup_analytics_icon_horizontal_black_2x.png') }}" alt="" height="40"></a></li>
                 </ul>
             </div>
 
