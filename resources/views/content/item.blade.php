@@ -11,9 +11,23 @@
                 <div class="row">
                     <br>
                     <div class="col-md-4">
-                        <img width="320" style="border: 1px solid #EEEEEE;padding: 5px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" alt="">
-                        <a href="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" data-lightbox="roadtrip"><img
-                                    src="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" alt="" style="width: 80px; margin-top: 10px; border: 1px solid #2e3436;"></a>
+
+                        <?php
+
+                        $img = $item['image'];
+
+                        $img = explode(',',$item['image']);
+
+                        ?>
+
+                        <img width="320" style="border: 1px solid #EEEEEE;padding: 5px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $img[0]) }}" alt="">
+
+                        @foreach($img as $pic)
+                            <a href="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" data-lightbox="roadtrip"><img
+                                        src="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" alt="" style="width: 80px; margin-top: 10px; border: 1px solid #2e3436;"></a>
+                        @endforeach
+
+
                         <a href="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" data-lightbox="roadtrip">Image #3</a>
                         <a href="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" data-lightbox="roadtrip">Image #4</a>
                     </div>

@@ -65,6 +65,16 @@ header .navbar-default .navbar-nav a:hover {
     margin-bottom: 30px;
 }
 
+/** nav inbody **/
+
+header .inbody {
+    background: #2e3436;
+}
+
+hr {
+    border-color: #999999;
+}
+
 /** Page - Mission **/
 #mission {
     background-color: #E4D29D;
@@ -208,7 +218,7 @@ header .navbar-default .navbar-nav a:hover {
     padding:0;
 }
 .dropdown-menu li a {
-    padding: 5px 5px;
+    padding: 10px 5px;
     font-weight: 100;
 }
 .multi-column-dropdown {

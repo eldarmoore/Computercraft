@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <script src="{{ asset('js/prefixfree.min.css') }}"></script>
     </head>
-    <body>
+    <body data-spy="scroll" data-target=".navbar-fixed-top">
 
     <header>
 

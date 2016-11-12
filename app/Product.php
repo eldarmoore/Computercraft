@@ -97,19 +97,33 @@ class Product extends Model {
     static public function saveProduct($request){
 
         $image_name = 'default.jpg';
+        $images = '';
 
-        if ( $request->hasFile('image') && $request->file('image')->isValid() ) {
-            $file = $request->file('image');
-            $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
-            //dd($request['url']);
-            $request->file('image')->move( public_path() . '/images/products/' , $image_name );
+//        dd($request['image']);
+
+        if ( $request->hasFile('image') ) {
+
+            foreach ($request['image'] as $image) {
+
+                if ($image->isValid()) {
+
+                    $file = $image;
+                    $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
+                    $images .= $image_name . ',';
+                    //dd($request['url']);
+                    $image->move( public_path() . '/images/products/' . $request['url'] , $image_name );
+
+                }
+
+            }
+
         }
 
         $product = new self();
         $product->title = $request['title'];
         $product->article = $request['article'];
         $product->url = $request['url'];
-        $product->image = $image_name;
+        $product->image = $images;
         $product->price = $request['price'];
         $product->categorie_id = $request['categorie_id'];
         $product->save();

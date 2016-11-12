@@ -8,7 +8,7 @@
         @if($categories)
         <div class="col-md-6">
             <form action="{{ url('cms/products') }}" method="post" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="categorie_id">Category:</label>
                     <?php $pick = Illuminate\Support\Facades\Input::old('categorie_id') ?>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form-group">
                     <label for="image">Product image:</label>
-                    <input type="file" name="image">
+                    <input type="file" name="image[]" multiple>
                 </div>
                 <a href="{{ url('cms/products') }}" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-primary">Save products</button>

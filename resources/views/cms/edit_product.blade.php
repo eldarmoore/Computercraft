@@ -36,7 +36,14 @@
                     <input type="price" name="price" value="{{ $product['price'] }}" class="form-control" id="url" placeholder="Price">
                 </div>
                 <div class="form-group">
-                    <img src="{{ asset('images/products/' . $product['url'] . '/' . $product['image']) }}" width="80" border="0" alt="" style="margin-bottom: 20px">
+                    <?php
+
+                        $img = $product['image'];
+
+                    $img = explode(",",$img);
+
+                    ?>
+                    <img src="{{ asset('images/products/' . $product['url'] . '/' . $img[0]) }}" width="80" border="0" alt="" style="margin-bottom: 20px">
                     <label for="image">Change image:</label>
                     <input type="file" name="image">
                 </div>

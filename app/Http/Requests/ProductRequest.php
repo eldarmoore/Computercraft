@@ -32,7 +32,7 @@ class ProductRequest extends Request
             'title' => 'required',
             'url' => 'required|unique:products,url' . $product_id,
             'price' => 'required|numeric',
-            'image' => 'image',
+//            'image' => 'image',
         ];
     }
 
