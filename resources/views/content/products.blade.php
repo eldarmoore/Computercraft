@@ -31,7 +31,7 @@
 
                             @if($sub_cat['sub_category'] == $cat['id'])
 
-                                <div class="col-sm-3 col-lg-3 col-md-3">
+                                <div class="col-sm-2 col-lg-2 col-md-2">
                                     <div class="thumbnail product">
                                         <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['url'] . '/' . $row['image']) }}" alt=""></a>
                                         <div class="caption">

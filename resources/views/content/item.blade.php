@@ -27,9 +27,6 @@
                                         src="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" alt="" style="width: 80px; margin-top: 10px; border: 1px solid #2e3436;"></a>
                         @endforeach
 
-
-                        <a href="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" data-lightbox="roadtrip">Image #3</a>
-                        <a href="{{ asset('/images/products/' . $item['url'] . '/' . $item['image']) }}" data-lightbox="roadtrip">Image #4</a>
                     </div>
 
                     <div class="col-md-8">

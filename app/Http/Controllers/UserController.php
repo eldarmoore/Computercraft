@@ -14,7 +14,13 @@ class UserController extends MainController
     function __construct()
     {
         parent::__construct();
-        $this->middleware('userLoged', ['except'=> ['getLogout', 'getProfile']]);
+        $this->middleware('userLoged', ['except'=> ['getLogout', 'getProfile', 'index']]);
+    }
+
+    public function index()
+    {
+        self::$data['users'] = User::all()->toArray();
+        return view('cms.users', self::$data);
     }
 
     public function getSignin(){

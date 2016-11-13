@@ -52,4 +52,6 @@ class User extends Model
         DB::insert("INSERT INTO user_roles VALUES($uid, 4)");
         Session::flash('sm', 'Your account has been successfully created.');
     }
+
+
 }
