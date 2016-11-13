@@ -28,6 +28,10 @@
                     <input type="text" name="url" value="{{ $product['url'] }}" class="form-control my-target-field" id="url" placeholder="Url">
                 </div>
                 <div class="form-group">
+                    <label for="sn">Serial Number:</label>
+                    <input type="text" name="sn" value="{{ Illuminate\Support\Facades\Input::old('sn') }}" class="form-control" id="sn" placeholder="sn">
+                </div>
+                <div class="form-group">
                     <label for="article">Article:</label>
                     <textarea name="article" id="summernote" class="form-control" col="30" rows="10">{{ $product['article'] }}</textarea>
                 </div>

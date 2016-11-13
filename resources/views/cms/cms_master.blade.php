@@ -48,7 +48,6 @@
                     <li><a href="{{ url('cms/products') }}"><span class="glyphicon glyphicon-apple"></span> Products</a></li>
                     <li><a href="{{ url('cms/orders') }}"><span class="glyphicon glyphicon-inbox"></span> Orders</a></li>
                     <li><a href="{{ url('cms/users') }}"><span class="glyphicon glyphicon-user"></span> Users</a></li>
-                    <li><a href="{{ url('cms/users') }}"><span class="glyphicon glyphicon-piggy-bank"></span> Inventory</a></li>
                     <hr>
                     <li><a target="_blank" href="https://www.google.com/analytics/"><img src="{{ asset('images/logo_lockup_analytics_icon_horizontal_black_2x.png') }}" alt="" height="40"></a></li>
                 </ul>

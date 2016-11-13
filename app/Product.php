@@ -125,6 +125,7 @@ class Product extends Model {
         $product->url = $request['url'];
         $product->image = $images;
         $product->price = $request['price'];
+        $product->sn = $request['sn'];
         $product->categorie_id = $request['categorie_id'];
         $product->save();
         Session::flash('sm', 'Product has been saved');
@@ -151,6 +152,7 @@ class Product extends Model {
         }
 
         $product->price = $request['price'];
+        $product->sn = $request['sn'];
         $product->categorie_id = $request['categorie_id'];
         $product->save();
         Session::flash('sm', 'Product has been updated');

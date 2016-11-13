@@ -20,11 +20,11 @@
 
                         ?>
 
-                        <img width="320" style="border: 1px solid #EEEEEE;padding: 5px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $img[0]) }}" alt="">
+                        <img width="319" style="border: 1px solid #EEEEEE;padding: 10px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $img[0]) }}" alt="">
 
                         @foreach($img as $pic)
                             <a href="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" data-lightbox="roadtrip"><img
-                                        src="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" alt="" style="width: 80px; margin-top: 10px; border: 1px solid #2e3436;"></a>
+                                        src="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" alt="" style="width: 77px; margin-top: 10px; border: 1px solid #EEEEEE;"></a>
                         @endforeach
 
                     </div>
