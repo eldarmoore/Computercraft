@@ -10,7 +10,7 @@
             <form action="{{ url('cms/products/' . $product['id']) }}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="product_id" value="{{ $product['id'] }}">
-                {{ csrf_field() }}
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <div class="form-group">
                     <label for="categorie_id">Category:</label>
                     <select name="categorie_id" class="form-control" >
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <label for="sn">Serial Number:</label>
-                    <input type="text" name="sn" value="{{ Illuminate\Support\Facades\Input::old('sn') }}" class="form-control" id="sn" placeholder="sn">
+                    <input type="text" name="sn" value="{{ $product['sn'] }}" class="form-control" id="sn" placeholder="sn">
                 </div>
                 <div class="form-group">
                     <label for="article">Article:</label>
@@ -41,15 +41,15 @@
                 </div>
                 <div class="form-group">
                     <?php
-
                         $img = $product['image'];
-
-                    $img = explode(",",$img);
-
+                        $img = explode(",",$img);
                     ?>
-                    <img src="{{ asset('images/products/' . $product['url'] . '/' . $img[0]) }}" width="80" border="0" alt="" style="margin-bottom: 20px">
-                    <label for="image">Change image:</label>
-                    <input type="file" name="image">
+                    @foreach($img as $i)
+                        <img src="{{ asset('images/products/' . $product['url'] . '/' . $i) }}" width="80" alt="" style="margin-bottom: 20px;background: #FFFFFF;padding: 2px;">
+                    @endforeach
+                        <br>
+                        <label for="image[]">Change image:</label>
+                    <input type="file" name="image[]" multiple>
                 </div>
                 <a href="{{ url('cms/products') }}" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-primary">Save products</button>

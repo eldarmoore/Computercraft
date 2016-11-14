@@ -135,11 +135,26 @@ class Product extends Model {
     static public function updateProduct($request, $id){
 
         $image_name = '';
+        $images = '';
 
-        if ( $request->hasFile('image') && $request->file('image')->isValid() ) {
-            $file = $request->file('image');
-            $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
-            $request->file('image')->move( public_path() . '/images/products/' . $request['url'] , $image_name );
+        if ( $request->hasFile('image') ) {
+
+            //dd($request['image']);
+
+            foreach ($request['image'] as $image) {
+
+                if ($image->isValid()) {
+
+                    $file = $image;
+                    $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
+                    $images .= $image_name . ',';
+                    //dd($request['url']);
+                    $image->move( public_path() . '/images/products/' . $request['url'] , $image_name );
+
+                }
+
+            }
+
         }
 
         $product = self::find($id);
@@ -147,8 +162,8 @@ class Product extends Model {
         $product->article = $request['article'];
         $product->url = $request['url'];
 
-        if($image_name){
-            $product->image = $image_name;
+        if($images){
+            $product->image = $images;
         }
 
         $product->price = $request['price'];
