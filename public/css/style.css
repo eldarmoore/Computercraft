@@ -253,3 +253,21 @@ hr {
         overflow-x: hidden;
     }
 }
+
+.radio {
+    opacity: 0;
+    position: absolute;
+}
+.label {
+    background: #FFFFFF;
+    padding: 2px;
+    max-height: 80px;
+    max-width: 80px;
+    border: 1px solid white;
+    display: block;
+    float: left;
+    margin: 10px;
+}
+input[type="radio"]:checked + label {
+    border: 1px solid orange;
+}

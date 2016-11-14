@@ -45,10 +45,16 @@
                         $img = explode(",",$img);
                         $selected_picture = '';
                     ?>
+
                     @foreach($img as $key=>$i)
-                        <img src="{{ asset('images/products/' . $product['url'] . '/' . $i) }}" alt="" style="margin-bottom: 20px;background: #FFFFFF;padding: 2px;max-height: 80px;max-width: 80px">
-                        <input type="radio" name="primary_image" id="primary_image" value="{{ $key }}" <?php if($selected_picture == $key){echo("selected");}?>>
+
+                        @if($i !== '')
+                            <input type="radio" class="radio" name="primary_image" id="{{ $key }}" value="{{ $key }}" <?php if($selected_picture == $key){echo("selected");}?> />
+                            <label for="{{ $key }}" class="label"><img src="{{ asset('images/products/' . $product['url'] . '/' . $i) }}" alt="" style="padding: 2px;max-height: 80px;max-width: 80px"></label>
+                        @endif
+
                     @endforeach
+
                         <br>
                         <label for="image[]">Change image:</label>
                     <input type="file" name="image[]" multiple>
