@@ -43,9 +43,11 @@
                     <?php
                         $img = $product['image'];
                         $img = explode(",",$img);
+                        $selected_picture = '';
                     ?>
-                    @foreach($img as $i)
-                        <img src="{{ asset('images/products/' . $product['url'] . '/' . $i) }}" width="80" alt="" style="margin-bottom: 20px;background: #FFFFFF;padding: 2px;">
+                    @foreach($img as $key=>$i)
+                        <img src="{{ asset('images/products/' . $product['url'] . '/' . $i) }}" alt="" style="margin-bottom: 20px;background: #FFFFFF;padding: 2px;max-height: 80px;max-width: 80px">
+                        <input type="radio" name="primary_image" id="primary_image" value="{{ $key }}" <?php if($selected_picture == $key){echo("selected");}?>>
                     @endforeach
                         <br>
                         <label for="image[]">Change image:</label>

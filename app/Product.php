@@ -139,8 +139,6 @@ class Product extends Model {
 
         if ( $request->hasFile('image') ) {
 
-            //dd($request['image']);
-
             foreach ($request['image'] as $image) {
 
                 if ($image->isValid()) {
@@ -161,6 +159,7 @@ class Product extends Model {
         $product->title = $request['title'];
         $product->article = $request['article'];
         $product->url = $request['url'];
+        $product->primary_image = $request['primary_image'];
 
         if($images){
             $product->image = $images;

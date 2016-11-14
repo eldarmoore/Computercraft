@@ -115,7 +115,7 @@ hr {
 }
 
 .carousel-inner {
-    height: 500px;
+    max-height: 500px;
 }
 
 .btn-default {
@@ -204,7 +204,8 @@ hr {
     margin:0;
 }
 .thumbnail a > img, .thumbnail > img {
-    max-height: 252.5px;
+    max-height: 155px;
+    max-width: 155px;
 }
 
 /* Dropdown with columns */

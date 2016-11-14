@@ -19,14 +19,17 @@
                         $img = explode(',',$item['image']);
 
                         ?>
-
-                        <img width="319" style="border: 1px solid #EEEEEE;padding: 10px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $img[0]) }}" alt="">
-
+                        <div style="height: 322px; width: 322px; border: 1px solid #EEEEEE;text-align: center">
+                            <img style="max-height: 319px; max-width: 319px; padding: 10px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $img[$item['primary_image']]) }}" alt="">
+                        </div>
+                        <div>
                         @foreach($img as $pic)
-                            <a href="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" data-lightbox="roadtrip"><img
-                                        src="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" alt="" style="width: 77px; margin-top: 10px; border: 1px solid #EEEEEE;"></a>
+                            <div style="padding: 2px; margin:2px 0; margin-right: 2px; height: 79px; width: 79px; border: 1px solid #EEEEEE;text-align: center" class="pull-left">
+                                <a href="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" data-lightbox="roadtrip"><img
+                                        src="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" alt="" style="max-height: 70px; max-width: 70px;"></a>
+                            </div>
                         @endforeach
-
+                        </div>
                     </div>
 
                     <div class="col-md-8">
