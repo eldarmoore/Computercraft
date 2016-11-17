@@ -16,7 +16,7 @@
 
                         $img = $item['image'];
 
-                        $img = explode(',',$item['image']);
+                        $img = array_filter( explode(",", $item['image'] ));
 
                         ?>
                         <div style="height: 322px; width: 322px; border: 1px solid #EEEEEE;text-align: center">
@@ -37,14 +37,20 @@
                         <hr>
                         <br>
                         <br>
-                        <br>
                         <p><span class="price-tag-item">Price: {{ $item['price'] }}$</span></p>
 
+                        @if($item['quantity'])
+                            <h4>In Stock!</h4>
+                        @else
+                            <h4>Out of Stock!</h4>
+                        @endif
+                        <br>
                         <p>
                             <button @if(Cart::get($item['id'])) disabled="disabled" @endif data-id="{{ $item['id'] }}" type="button" class="btn add-to-cart-btn w200"><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
                             {{--<a href="{{ url('shop/checkout') }}" class="btn add-to-cart-btn "></span>Checkout</a>--}}
                         </p>
-
+                        <br>
+                        <br>
                         <hr>
                         <h3>Product description</h3>
                         <p>{!! $item['article'] !!}</p>
