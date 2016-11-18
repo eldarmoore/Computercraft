@@ -82,7 +82,7 @@
                     </ul>
                     <ul class="nav navbar-nav pull-right">
                         @if($total_cart = Cart::getTotalQuantity() )
-                            <li style="background-color: #666666;" class="fixer"><a style="color: rgb(26,26,26);" href="{{ url('shop/checkout') }}"><span class="glyphicon glyphicon-shopping-cart"></span> <span style="font-size: 14px;"><b>{{ $total_cart }}</b></span></a></li>
+                            <li class="fixer"><a style="background-color: #FFFFFF; color: #a94442;" href="{{ url('shop/checkout') }}"><span class="glyphicon glyphicon-shopping-cart"></span> <span style="font-size: 14px;"><b>{{ $total_cart }}</b></span></a></li>
                         @endif
                         @if( !Session::has('user_id') )
                             <li><a href="{{ url('user/signin') }}">Sign in</a></li>

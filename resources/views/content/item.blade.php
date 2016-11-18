@@ -34,23 +34,30 @@
 
                     <div class="col-md-8">
                         <h2>{{ $item['title'] }}</h2>
-                        <hr>
-                        <br>
-                        <br>
-                        <p><span class="price-tag-item">Price: {{ $item['price'] }}$</span></p>
 
-                        @if($item['quantity'])
-                            <h4>In Stock!</h4>
-                        @else
-                            <h4>Out of Stock!</h4>
-                        @endif
-                        <br>
-                        <p>
-                            <button @if(Cart::get($item['id'])) disabled="disabled" @endif data-id="{{ $item['id'] }}" type="button" class="btn add-to-cart-btn w200"><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
-                            {{--<a href="{{ url('shop/checkout') }}" class="btn add-to-cart-btn "></span>Checkout</a>--}}
-                        </p>
-                        <br>
-                        <br>
+                        <div style="background-color: #e0e0e0; margin: 15px 0; padding: 20px 10px">
+
+                            <p><span class="price-tag-item">Price: <b>{{ $item['price'] }}$</b></span></p>
+
+                            @if($item['quantity'])
+                                <div style="background-color: #FFFFFF; padding: 4px; width: 150px;">
+                                    <h4><span style="color: #2ca02c;" class="glyphicon glyphicon-ok-circle"></span> In Stock!</h4>
+                                </div>
+                            @else
+                                <div style="background-color: #FFFFFF; padding: 4px; width: 150px;">
+                                    <h4><span style="color: #a94442;" class="glyphicon glyphicon-remove-circle"></span> Out of Stock!</h4>
+                                </div>
+                            @endif
+
+                            <br>
+
+                            <p>
+                                <button @if(Cart::get($item['id']) || $item['quantity'] == 0) disabled="disabled" @endif data-id="{{ $item['id'] }}" type="button" class="btn add-to-cart-btn w200"><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
+                                {{--<a href="{{ url('shop/checkout') }}" class="btn add-to-cart-btn "></span>Checkout</a>--}}
+                            </p>
+
+                        </div>
+
                         <hr>
                         <h3>Product description</h3>
                         <p>{!! $item['article'] !!}</p>
