@@ -27,6 +27,10 @@ img {
 
 /* Header navigation */
 
+.navbar-brand {
+    padding: 15px 0;
+}
+
 header .navbar {
     /*padding: 30px 0;*/
     /*font-size: 0.7em;*/
@@ -113,9 +117,51 @@ hr {
 .thumbnail .caption {
     padding: 2px;
 }
+/* Carousel */
+.form-group-search input {
+    border: none;
+}
 
+.form-group-search button {
+    border: none;
+}
+
+.form-group-search {
+    width: 400px;
+    position: absolute;
+    top:48%;
+    left:36%;
+}
+
+.form-group-search input.form-control {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.form-group-search button.btn.btn-default {
+    background-color: #2a88bd;
+    color: #FFFFFF;
+    border: 1px solid #2a88bd;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: none;
+    text-shadow: none;
+}
 .carousel-inner {
     max-height: 500px;
+}
+
+div.carousel-example-generic {
+    position:relative;
+}
+
+div.form-group-carousel {
+    position:absolute;
+    z-index:9999999;
+    top:20px; /* change to whatever you want */
+    left:10px; /* change to whatever you want */
+    right:auto; /* change to whatever you want */
+    bottom:auto; /* change to whatever you want */
 }
 
 .btn-default {
@@ -271,3 +317,51 @@ hr {
 input[type="radio"]:checked + label {
     border: 1px solid orange;
 }
+
+/* Sign In Form */
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #e1e1e1;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.form-signin .checkbox {
+    font-weight: normal;
+}
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 16px;
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.form-signin input {
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+}
+.btn-group-lg > .btn, .btn-lg {
+    margin: 10px 0;
+    padding: 8px 0;
+    font-size: 14px;
+    line-height: 1.3333333;
+    border:none;
+    border-radius: 0;
+    background-image: none;
+}
+
+/* END - Sign In Form */

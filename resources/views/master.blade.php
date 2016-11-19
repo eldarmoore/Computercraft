@@ -98,6 +98,7 @@
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
+            {{-- Error Message --}}
             @if($errors->any()) @include('includes.errors') @endif
             @if( Session::has('sm')) @include('includes.sm') @endif
         </nav>
