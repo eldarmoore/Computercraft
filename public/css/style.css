@@ -139,12 +139,11 @@ hr {
     border-bottom-right-radius: 3px;
 }
 
-.search-result li a {
-    text-decoration: none;
+.search-result a {
 }
 
-.search-result li:hover {
-    background-color: #EEEEEE;
+.search-result li a {
+    text-decoration: none;
 }
 
 .form-group-search button {
@@ -249,7 +248,7 @@ div.form-group-carousel {
     background-color: #419641;
     color: #FFFFFF;
     border:none;
-    padding:5px 5;
+    padding:5px 5px;
     font-weight: inherit;
     font-size:1em;
 }

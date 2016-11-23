@@ -20,7 +20,7 @@
 
                         ?>
                         <div style="height: 322px; width: 322px; border: 1px solid #EEEEEE;text-align: center">
-                            <img style="max-height: 319px; max-width: 319px; padding: 10px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $img[$item['primary_image']]) }}" alt="">
+                            <img style="max-height: 319px; max-width: 319px; padding: 10px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $item['primary_image']) }}" alt="">
                         </div>
                         <div>
                         @foreach($img as $pic)

@@ -25,7 +25,6 @@
     }
 
     ?>
-
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
         <div class="form-group-search">
             <div class="row">

@@ -51,7 +51,7 @@
                         @foreach($img as $key=>$i)
 
                             @if($i !== '')
-                                <input type="radio" class="radio" name="primary_image" id="{{ $key }}" value="{{ $key }}" <?php if($selected_picture == $key){echo("selected");}?> />
+                                <input type="radio" class="radio" name="primary_image" id="{{ $key }}" value="{{ $i }}" <?php if($selected_picture == $key){echo("selected");}?> />
                                 <label for="{{ $key }}" class="label"><img src="{{ asset('images/products/' . $product['url'] . '/' . $i) }}" alt="" style="padding: 2px;max-height: 70px;max-width: 70px"></label>
                             @endif
 

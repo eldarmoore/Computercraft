@@ -45,11 +45,11 @@ $(document).ready(function() {
 
                     if (response) {
 
-                        var autoList = '<ul>';
+                        var autoList = '<ul style="padding: 0;margin: 0">';
 
                         $.each(response, function (key, val) {
 
-                            autoList += '<li><a href="shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></li>';
+                            autoList += '<li><img width="40" src="images/products/'+val.url+'/'+val.primary_image+'"><a href="shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></li>';
 
                         });
 
