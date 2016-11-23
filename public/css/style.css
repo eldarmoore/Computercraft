@@ -129,6 +129,7 @@ hr {
 /* Search Results */
 .search-result {
     margin-top: -13px;
+    padding: 0;
     position: absolute;
     display:block;
     background-color: #FFFFFF;
@@ -136,6 +137,14 @@ hr {
     width: 400px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+}
+
+.search-result li a {
+    text-decoration: none;
+}
+
+.search-result li:hover {
+    background-color: #EEEEEE;
 }
 
 .form-group-search button {

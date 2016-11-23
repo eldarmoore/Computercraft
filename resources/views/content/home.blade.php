@@ -27,7 +27,7 @@
     ?>
 
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
-        <div class="form-group-search" style="margin: 0 auto;">
+        <div class="form-group-search">
             <div class="row">
                 <div class="col-md-12">
                     <form action="" method="get" autocomplete="off" class="input-group">
