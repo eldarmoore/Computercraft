@@ -117,9 +117,25 @@ hr {
 .thumbnail .caption {
     padding: 2px;
 }
-/* Carousel */
+/*** Carousel ***/
 .form-group-search input {
     border: none;
+}
+
+.form-group-search ul {
+    list-style: none;
+}
+
+/* Search Results */
+.search-result {
+    margin-top: -13px;
+    position: absolute;
+    display:block;
+    background-color: #FFFFFF;
+    z-index:1000;
+    width: 400px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .form-group-search button {

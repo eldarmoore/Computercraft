@@ -29,12 +29,63 @@ $(function () {
 });
 
 $(document).ready(function() {
+
+    $('input.search').keyup(function () {
+
+        var userText = $.trim( $(this).val() );
+
+        if (userText.length > 0) {
+
+            $.ajax({
+                url: BASE_URL + 'search_like.php',
+                type: "GET",
+                dataType: "json",
+                data: {search: userText},
+                success: function (response) {
+
+                    if (response) {
+
+                        var autoList = '<ul>';
+
+                        $.each(response, function (key, val) {
+
+                            autoList += '<li><a href="shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></li>';
+
+                        });
+
+                        autoList += '</ul>';
+                        $('div.search-result').html(autoList).fadeIn(200);
+
+                    } else {
+
+                        $('div.search-result').fadeOut(200);
+
+                    }
+
+                }
+            });
+
+        } else {
+
+            $('div.search-result').fadeOut(200);
+
+        }
+
+    });
+
+    $('input.search').focusout(function(){
+        if(!$('div.search-result').is(":hover")){
+            $('div.search-result').fadeOut(200);
+        }
+    });
+
     $('#summernote').summernote({
         height: 300,
         minHeight: 300,             // set minimum height of editor
         maxHeight: 300,             // set maximum height of editor
     });
 });
+
 
 $('.my-source-field').on('keyup', function(){
     var sr = $(this).val();
@@ -71,3 +122,4 @@ $('.update-cart').on('click', function(){
         }
     });
 });
+

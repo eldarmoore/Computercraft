@@ -2,16 +2,41 @@
 
 @section('slider')
 
+    <?php
+
+    $products = [];
+
+    if(!empty($_GET['search'])){
+
+        $user_search = filter_var( trim($_GET['search']), FILTER_SANITIZE_STRING);
+
+        if($user_search){
+
+            $db = new PDO('mysql:host=localhost;dbname=computercraft;charset=utf8', 'root', 'root');
+            $sql = "SELECT * FROM products WHERE title LIKE ? OR article LIKE ?";
+            $query = $db->prepare($sql);
+            $query->setFetchMode(PDO::FETCH_OBJ);
+            $query->execute( ["%$user_search%", "%$user_search%"] );
+            $result = $query->fetchAll();
+            $products = (count($result) > 0) ? $result : false;
+
+        }
+
+    }
+
+    ?>
+
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
         <div class="form-group-search" style="margin: 0 auto;">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="input-group">
-                        <input type="text" id="search-input" class="form-control" placeholder="Search for...">
+                    <form action="" method="get" autocomplete="off" class="input-group">
+                        <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Search</button>
+                            <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
                         </span>
-                    </div><!-- /input-group -->
+                    </form>
+                    <div class="search-result"></div>
                 </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
         </div>
@@ -28,6 +53,30 @@
 
 @section('content')
 
+    <h3>My page header demo</h3>
+    <p>Demo text for page article</p>
+
+    <div class="product-result">
+
+        <?php if( is_array($products) && count($products) > 0): ?>
+        <hr>
+        <?php foreach($products as $row): ?>
+
+        <h4><?= $row->title; ?></h4>
+        <p><?= $row->body; ?></p>
+
+        <?php endforeach; ?>
+
+        <?php else: ?>
+
+        <?php if($products === false): ?>
+        <hr>
+        <p>No result...</p>
+        <?php endif; ?>
+
+        <?php endif; ?>
+
+    </div>
 
 
 @endsection
