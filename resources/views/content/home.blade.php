@@ -1,30 +1,6 @@
 @extends('master')
 
 @section('slider')
-
-    <?php
-
-    $products = [];
-
-    if(!empty($_GET['search'])){
-
-        $user_search = filter_var( trim($_GET['search']), FILTER_SANITIZE_STRING);
-
-        if($user_search){
-
-            $db = new PDO('mysql:host=localhost;dbname=computercraft;charset=utf8', 'root', 'root');
-            $sql = "SELECT * FROM products WHERE title LIKE ? OR article LIKE ?";
-            $query = $db->prepare($sql);
-            $query->setFetchMode(PDO::FETCH_OBJ);
-            $query->execute( ["%$user_search%", "%$user_search%"] );
-            $result = $query->fetchAll();
-            $products = (count($result) > 0) ? $result : false;
-
-        }
-
-    }
-
-    ?>
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
         <div class="form-group-search">
             <div class="row">
@@ -52,30 +28,57 @@
 
 @section('content')
 
-    <h3>My page header demo</h3>
-    <p>Demo text for page article</p>
+    <h3 class="text-center">New products</h3>
+    <hr>
+    @if($new_products)
 
-    <div class="product-result">
+        @foreach($new_products as $row)
 
-        <?php if( is_array($products) && count($products) > 0): ?>
-        <hr>
-        <?php foreach($products as $row): ?>
+            @foreach($categories as $sub_cat)
 
-        <h4><?= $row->title; ?></h4>
-        <p><?= $row->body; ?></p>
+                @if($sub_cat['id'] == $row['categorie_id'])
 
-        <?php endforeach; ?>
+                    @foreach($categories as $cat)
 
-        <?php else: ?>
+                        @if($sub_cat['sub_category'] == $cat['id'])
 
-        <?php if($products === false): ?>
-        <hr>
-        <p>No result...</p>
-        <?php endif; ?>
+                            <div class="col-sm-2 col-lg-2 col-md-2">
+                                <div class="thumbnail product">
+                                    <?php $image = explode(',', $row['image']); ?>
+                                    <div style="height: 155px; width: 155px;">
+                                        <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['url'] . '/' . $row['primary_image']) }}" alt=""></a>
+                                    </div>
+                                    <div class="caption">
 
-        <?php endif; ?>
+                                        @if(strlen($row['title']) > 10)
+                                            <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 5, "...") }}</a></h4>
+                                        @endif
 
+                                        {{--@if(strlen($row['article']) > 10)--}}
+                                        {{--<p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 10, "...")  }}</p>--}}
+                                        {{--                                                <p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
+                                        {{--@endif--}}
+
+                                        <hr class="no-margin">
+
+                                        <h4 class="text-center price-tag">{{ $row['price'] }}$</h4>
+
+                                        <button @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn bg-success w151" value=""><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+
+                    @endforeach
+
+                @endif
+
+            @endforeach
+
+        @endforeach
+
+    @endif
+        </div>
     </div>
-
-
 @endsection

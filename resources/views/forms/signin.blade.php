@@ -22,8 +22,10 @@
             <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus value="{{ Illuminate\Support\Facades\Input::old('email') }}">
             <label for="password" class="sr-only">Password</label>
             <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <a href="{{ url('user/signup') }}">Forgot your password?</a>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <a href="#">Forgot your password?</a>
+            <button class="btn btn-lg btn-primary btn-block primary-color" type="submit">Sign in</button>
+            <hr>
+            <a href="{{ url('user/signup') }}" type="submit" name="submit" style="border: 1px solid #c0c0c0" class="btn btn-lg btn-primary btn-block default-color">Create Account</a>
         </form>
     </div> <!-- /container -->
 

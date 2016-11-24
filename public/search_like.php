@@ -17,7 +17,6 @@ if(!empty($_GET['search'])){
         $query->execute( ["%$user_search%", "%$user_search%"] );
         $result = $query->fetchAll();
 
-
         if(count($result) > 0){
 
             echo json_encode($result);

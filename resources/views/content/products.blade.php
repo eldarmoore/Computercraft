@@ -40,7 +40,7 @@
                                         <div class="caption">
 
                                             @if(strlen($row['title']) > 10)
-                                                <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 6, "...") }}</a></h4>
+                                                <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 5, "...") }}</a></h4>
                                             @endif
 
                                             {{--@if(strlen($row['article']) > 10)--}}

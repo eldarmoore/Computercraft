@@ -45,15 +45,15 @@ $(document).ready(function() {
 
                     if (response) {
 
-                        var autoList = '<ul style="padding: 0;margin: 0">';
+                        var autoList = '<table>';
 
                         $.each(response, function (key, val) {
 
-                            autoList += '<li><img width="40" src="images/products/'+val.url+'/'+val.primary_image+'"><a href="shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></li>';
+                            autoList += '<tr><td style="padding: 5px"><img style="background: #FFFFFF; border: 1px solid #e1e1e1; padding: 2px; border-radius: 1px; max-width: 40px; max-height: 40px;" width="40" src="images/products/'+val.url+'/'+val.primary_image+'"></td><td style="padding: 0 10px"><a href="shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
 
                         });
 
-                        autoList += '</ul>';
+                        autoList += '</table>';
                         $('div.search-result').html(autoList).fadeIn(200);
 
                     } else {
