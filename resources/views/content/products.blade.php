@@ -45,9 +45,9 @@
 
                                             {{--@if(strlen($row['article']) > 10)--}}
                                                 {{--<p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 10, "...")  }}</p>--}}
-{{--                                                <p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
+                                                {{--<p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
                                             {{--@endif--}}
-
+<!-- Review Rating + Comments Section
                                             <p class="pull-right">6 reviews</p>
                                             <p>
                                                 <span class="glyphicon glyphicon-star"></span>
@@ -56,7 +56,7 @@
                                                 <span class="glyphicon glyphicon-star-empty"></span>
                                                 <span class="glyphicon glyphicon-star-empty"></span>
                                             </p>
-
+-->
                                             <hr class="no-margin">
 
                                             <h4 class="text-center price-tag">{{ $row['price'] }}$</h4>
