@@ -25,7 +25,7 @@
             <a href="#">Forgot your password?</a>
             <button class="btn btn-lg btn-primary btn-block primary-color" type="submit">Sign in</button>
             <hr>
-            <a href="{{ url('user/signup') }}" type="submit" name="submit" style="border: 1px solid #c0c0c0" class="btn btn-lg btn-primary btn-block default-color">Create Account</a>
+            <a href="{{ url('user/signup') }}" type="submit" name="submit" class="btn btn-lg btn-default btn-block default-color">Create Account</a>
         </form>
     </div> <!-- /container -->
 

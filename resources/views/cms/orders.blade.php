@@ -20,10 +20,10 @@
                         <td>
                             <?php $i = 0; ?>
                             @foreach( json_decode($row->data) as $item)
-                                <li> <b>{{ ++$i }}</b> {{ $item->name }}, <b>quantity:</b> x {{ $item->quantity }}, <b>price:</b> {{ $item->price }}$ </li>
+                                <li> <b>{{ ++$i }}</b> {{ $item->name }}, <span style="color: #2aabd2">quantity:</span> x {{ $item->quantity }}, <span style="color: #2aabd2">price:</span> {{ $item->price }}$ </li>
                             @endforeach
                         </td>
-                        <td style="text-align: center;"><b>{{ $row->total }}$</b></td>
+                        <td><span style="font-weight: 500">{{ $row->total }}$</span></td>
                     </tr>
                 @endforeach
             </table>

@@ -16,9 +16,9 @@
                     </tr>
                     @foreach($products as $row)
                         <tr>
-                            <td>{{ $row['title'] }}</td>
-                            <td>{{ $row['updated_at'] }}</td>
-                            <td>
+                            <td class="col-md-9">{{ $row['title'] }}</td>
+                            <td class="col-md-2">{{ $row['updated_at'] }}</td>
+                            <td class="col-md-1" style="font-size: 0.9em">
                                 <a href="{{ url('cms/products/' . $row['id'] . '/edit') }}">Edit</a> |
                                 <a href="{{ url('cms/products/' . $row['id']) }}">Delete</a>
                             </td>

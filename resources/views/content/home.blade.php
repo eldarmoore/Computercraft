@@ -2,9 +2,10 @@
 
 @section('slider')
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
-        <div class="form-group-search">
+        <div class="container">
+        <div class="form-group-search" style="">
             <div class="row">
-                <div class="col-md-12">
+                <div>
                     <form action="" method="get" autocomplete="off" class="input-group">
                         <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
                         <span class="input-group-btn">
@@ -14,6 +15,7 @@
                     <div class="search-result"></div>
                 </div><!-- /.col-lg-6 -->
             </div><!-- /.row -->
+        </div>
         </div>
         <div class="carousel-inner">
             <div class="item active"><video controls muted autoplay="" loop="" preload="" poster="http://cwsmgmt.corsair.com/responsive/img/cue_fallback.jpg" id="videoHero" style="top: 70px; height: auto; width: 100%;" src="{{ asset('videos/crystal_hero2.mp4') }}"></video></div>
@@ -30,6 +32,7 @@
 
     <h3 class="text-center">New products</h3>
     <hr>
+    <div class="row">
     @if($new_products)
 
         @foreach($new_products as $row)
@@ -79,6 +82,5 @@
         @endforeach
 
     @endif
-        </div>
     </div>
 @endsection

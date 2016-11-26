@@ -27,6 +27,10 @@ img {
 
 /* Header navigation */
 
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+}
+
 .navbar-brand {
     padding: 15px 0;
 }
@@ -72,7 +76,7 @@ header .navbar-default .navbar-nav a:hover {
 /** nav inbody **/
 
 header .inbody {
-    background: #2e3436;
+    background: rgb(27,27,27);
 }
 
 hr {
@@ -134,7 +138,7 @@ hr {
     display:block;
     background-color: #FFFFFF;
     z-index:1000;
-    width: 400px;
+    width: 430px;
     border-radius: 3px;
 }
 
@@ -156,7 +160,7 @@ hr {
     width: 400px;
     position: absolute;
     top:48%;
-    left:36%;
+    margin-left: 25%;
 }
 
 .form-group-search input.form-control {
@@ -164,15 +168,6 @@ hr {
     border-bottom-left-radius: 2px;
 }
 
-.form-group-search button.btn.btn-default {
-    background-color: #2a88bd;
-    color: #FFFFFF;
-    border: 1px solid #2a88bd;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    box-shadow: none;
-    text-shadow: none;
-}
 .carousel-inner {
     max-height: 500px;
 }
@@ -190,19 +185,6 @@ div.form-group-carousel {
     bottom:auto; /* change to whatever you want */
 }
 
-.btn-default {
-    background-image: none;
-    background-color: #FFFFFF;
-    color: #8c8c8c;
-    border: 1px solid #8c8c8c;
-    font-weight: 100;
-}
-
-.btn-primary {
-    background-color: #337ab7;
-    /*border: 1px solid #8c8c8c;*/
-}
-
 .primary-color {
     background-color: #337ab7;
 }
@@ -210,21 +192,6 @@ div.form-group-carousel {
 .default-color {
     color: #8c8c8c;
     border: 1px solid #8c8c8c;
-}
-
-.btn-cc {
-    display: block;
-    margin:0 auto;
-    width:200px;
-    color: #FFFFFF;
-    border:2px solid #FFFFFF;
-    padding:10px;
-}
-
-.btn-cc:hover {
-    text-decoration: none;
-    color: #FFFFFF;
-    background-color: rgba(255,255,255,0.1);
 }
 
 .product-size {
@@ -242,9 +209,7 @@ div.form-group-carousel {
     color: #FFFFFF;
     font-size: 0.7em;
 }
-.btn {
-    border-radius: 0;
-}
+
 .product p {
     font-size: 0.9em;
 }
@@ -260,14 +225,7 @@ div.form-group-carousel {
     border: 1px;
     width: 20px;
 }
-.add-to-cart-btn {
-    background-color: #419641;
-    color: #FFFFFF;
-    border:none;
-    padding:5px 5px;
-    font-weight: inherit;
-    font-size:1em;
-}
+
 .thumbnail {
     border-radius: 0;
 }
@@ -395,6 +353,40 @@ input[type="radio"]:checked + label {
 .form-signin input[type="password"] {
     margin-bottom: 10px;
 }
+
+/* END - Sign In Form */
+
+/*** FOOTER ***/
+
+footer {
+    margin-top: 20px;
+}
+
+.foot {
+    border-top:1px solid #EEEEEE;
+    /*background-color: rgb(27,27,27);*/
+    color: #8c8c8c;
+    margin-left: -100%;
+    margin-right: -100%;
+    padding:40px;
+}
+
+/* -- BUTTONS --------------- */
+
+.btn {
+    border-radius: 0;
+}
+
+.form-group-search button.btn.btn-default {
+    background-color: #2a88bd;
+    color: #FFFFFF;
+    border: 1px solid #2a88bd;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
 .btn-group-lg > .btn, .btn-lg {
     margin: 10px 0;
     padding: 8px 0;
@@ -405,14 +397,41 @@ input[type="radio"]:checked + label {
     background-image: none;
 }
 
-/* END - Sign In Form */
-
-/*** FOOTER ***/
-
-.foot {
-    background-color: #3c3c3c;
-    color: #FFFFFF;
-    margin-left:-100%;
-    margin-right: -100%;
-    padding:40px;
+.btn-default {
+    background-image: none;
+    background-color: #FFFFFF;
+    color: #8c8c8c;
+    border: 1px solid #8c8c8c;
+    font-weight: 100;
 }
+
+.btn-primary {
+    background-color: #337ab7;
+    /*border: 1px solid #8c8c8c;*/
+}
+
+.btn-cc {
+    display: block;
+    margin:0 auto;
+    width:200px;
+    color: #FFFFFF;
+    border:2px solid #FFFFFF;
+    padding:10px;
+}
+
+.btn-cc:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.add-to-cart-btn {
+    background-color: #419641;
+    color: #FFFFFF;
+    border:none;
+    padding:5px 5px;
+    font-weight: inherit;
+    font-size:1em;
+}
+
+/*** -- END BUTTONS --------------- ***/

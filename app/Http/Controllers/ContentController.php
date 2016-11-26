@@ -38,7 +38,7 @@ class ContentController extends MainController
     {
         //self::$data['menu'] = []; //NO MENU SIMULATION!!!
         self::$data['content'] = Content::all()->toArray();
-        return view('cms.add_product', self::$data);
+        return view('cms.add_content', self::$data);
     }
 
     /**
