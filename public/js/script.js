@@ -49,7 +49,7 @@ $(document).ready(function() {
 
                         $.each(response, function (key, val) {
 
-                            autoList += '<tr><td style="padding: 5px"><img style="background: #FFFFFF; border: 1px solid #e1e1e1; padding: 2px; border-radius: 1px; max-width: 40px; max-height: 40px;" width="40" src="images/products/'+val.url+'/'+val.primary_image+'"></td><td style="padding: 0 10px"><a href="shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
+                            autoList += '<tr><td style="padding: 1px 2px"><img style="background: #FFFFFF; border: 1px solid #e1e1e1; padding: 2px; border-radius: 1px; max-width: 40px; max-height: 40px; text-shadow: none" width="30" src="images/products/'+val.url+'/'+val.primary_image+'"></td><td style="padding: 0 10px"><a href="shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
 
                         });
 
@@ -96,7 +96,7 @@ $('.my-source-field').on('keyup', function(){
     $('.my-target-field').val(sr);
 });
 
-$('.sm-box').delay(3000).slideUp();
+$('.sm-box').delay(3000).fadeOut();
 
 $('.add-to-cart-btn').on('click', function(){
 

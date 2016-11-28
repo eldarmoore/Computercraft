@@ -138,13 +138,13 @@ hr {
     display:block;
     background-color: #FFFFFF;
     z-index:1000;
-    width: 430px;
+    width: 100%;
     border-radius: 3px;
 }
 
 .search-result a {
     font-weight: 100;
-    font-size: 0.7em;
+    font-size: 0.6em;
     color: #8c8c8c;
 }
 
@@ -158,9 +158,6 @@ hr {
 
 .form-group-search {
     width: 400px;
-    position: absolute;
-    top:48%;
-    margin-left: 25%;
 }
 
 .form-group-search input.form-control {
@@ -170,6 +167,13 @@ hr {
 
 .carousel-inner {
     max-height: 500px;
+}
+
+.carousel-caption {
+    right: 25%;
+    left: 25%;
+    top: 26%;
+    text-shadow: none;
 }
 
 div.carousel-example-generic {

@@ -11,17 +11,28 @@
             @if($menu)
                 <table class="table table-bordered">
                     <tr>
-                        <th>Link</th>
-                        <th>Url</th>
-                        <th>Last Update</th>
-                        <th>Operation</th>
+                        <th class="col-md-5">Link</th>
+                        <th class="col-md-5">Url</th>
+                        <th class="col-md-1">Last Update</th>
+                        <th class="col-md-1">Operation</th>
                     </tr>
                     @foreach($menu as $row)
+
+                        <?php
+
+                        // $datetime is something like: 2014-01-31 13:05:59
+                        $updated_at = $row['updated_at'];
+                        $time = strtotime($updated_at);
+                        $updated_at = date('d M Y', $time);
+                        // $myFormatForView is something like: 01/31/14 1:05 PM
+
+                        ?>
+
                         <tr>
                             <td>{{ $row['link'] }}</td>
                             <td><a target="_blank" href="{{ url( $row['url']) }}">{{ $row['url'] }}</a></td>
-                            <td>{{ $row['updated_at'] }}</td>
-                            <td>
+                            <td style="text-align: center">{{ $updated_at }}</td>
+                            <td style="text-align: center">
                                 <a href="{{ url('cms/menu/' . $row['id'] . '/edit') }}">Edit</a> |
                                 <a href="{{ url('cms/menu/' . $row['id']) }}">Delete</a>
                             </td>

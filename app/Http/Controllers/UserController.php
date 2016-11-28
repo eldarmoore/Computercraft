@@ -69,7 +69,8 @@ class UserController extends MainController
         return redirect('user/signin');
     }
 
-    public function getProfile(){
-        echo 'TO DO - Profile!';
+    public function getProfile($user_id){
+        self::$data['user'] = User::find($user_id)->toArray();
+        return view('content.profile', self::$data);
     }
 }

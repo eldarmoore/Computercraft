@@ -34,6 +34,11 @@ class ProductController extends MainController
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function receiveInformation(){
+
+    }
+
     public function create()
     {
         return view('cms.add_product', self::$data);

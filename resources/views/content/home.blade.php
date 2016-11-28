@@ -2,25 +2,62 @@
 
 @section('slider')
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
-        <div class="container">
-        <div class="form-group-search" style="">
-            <div class="row">
-                <div>
-                    <form action="" method="get" autocomplete="off" class="input-group">
-                        <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
-                        </span>
-                    </form>
-                    <div class="search-result"></div>
-                </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </div>
-        </div>
+
         <div class="carousel-inner">
-            <div class="item active"><img src="{{ asset('images/Cases-TLC-HeroShot01.jpg') }}" alt=""></div>
-            <div class="item "><img src="{{ asset('images/Cases-TLC-HeroShot02.jpg') }}" alt=""></div>
-            <div class="item "><img src="{{ asset('images/Cases-TLC-HeroShot03.jpg') }}" alt=""></div>
+            <div  class="item active"><img style="width: 100%"src="{{ asset('images/Cases-TLC-HeroShot01.jpg') }}" alt=""></div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <div class="form-group-search">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <form action="" method="get" autocomplete="off" class="input-group">
+                                    <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
+                                    </span>
+                                </form>
+                                <div class="search-result"></div>
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    </div>
+                </div>
+            </div>
+            <div  class="item "><img style="width: 100%" src="{{ asset('images/Cases-TLC-HeroShot02.jpg') }}" alt=""></div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <div class="form-group-search">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <form action="" method="get" autocomplete="off" class="input-group">
+                                    <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
+                                    </span>
+                                </form>
+                                <div class="search-result"></div>
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    </div>
+                </div>
+            </div>
+            <div  class="item "><img style="width: 100%" src="{{ asset('images/Cases-TLC-HeroShot03.jpg') }}" alt=""></div>
+            <div class="container">
+                <div class="carousel-caption">
+                    <div class="form-group-search">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <form action="" method="get" autocomplete="off" class="input-group">
+                                    <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
+                                    </span>
+                                </form>
+                                <div class="search-result"></div>
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    </div>
+                </div>
+            </div>
 
             {{--<div class="item active"><video controls muted autoplay="" loop="" preload="" poster="http://cwsmgmt.corsair.com/responsive/img/cue_fallback.jpg" id="videoHero" style="top: 70px; height: auto; width: 100%;" src="{{ asset('videos/crystal_hero2.mp4') }}"></video></div>--}}
             {{--<div class="item "><video autoplay="" loop="" preload="" poster="http://cwsmgmt.corsair.com/responsive/img/cue_fallback.jpg" id="videoHero" style="top: 70px; height: auto; width: 100%;" src="{{ asset('videos/fans_hero3.mp4') }}"></video></div>--}}

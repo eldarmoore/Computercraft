@@ -10,15 +10,26 @@
             @if($products)
                 <table class="table table-bordered">
                     <tr>
-                        <th>Title</th>
-                        <th>Last Update</th>
-                        <th>Operation</th>
+                        <th class="col-md-10">Title</th>
+                        <th class="col-md-1" style="text-align: center">Last Update</th>
+                        <th class="col-md-1" style="font-size: 0.9em; text-align: center">Operation</th>
                     </tr>
                     @foreach($products as $row)
+
+                        <?php
+
+                        // $datetime is something like: 2014-01-31 13:05:59
+                        $updated_at = $row['updated_at'];
+                        $time = strtotime($updated_at);
+                        $updated_at = date('d M Y', $time);
+                        // $myFormatForView is something like: 01/31/14 1:05 PM
+
+                        ?>
+
                         <tr>
-                            <td class="col-md-9">{{ $row['title'] }}</td>
-                            <td class="col-md-2">{{ $row['updated_at'] }}</td>
-                            <td class="col-md-1" style="font-size: 0.9em">
+                            <td>{{ $row['title'] }}</td>
+                            <td>{{ $updated_at }}</td>
+                            <td>
                                 <a href="{{ url('cms/products/' . $row['id'] . '/edit') }}">Edit</a> |
                                 <a href="{{ url('cms/products/' . $row['id']) }}">Delete</a>
                             </td>

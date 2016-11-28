@@ -74,7 +74,7 @@
                             @endforeach
                         @endif
                     </ul>
-                    <ul class="nav navbar-nav pull-right">
+                    <ul class="nav navbar-nav pull-right" style="font-size: 0.8em;">
                         @if($total_cart = Cart::getTotalQuantity() )
                             <li class="fixer"><a style="background-color: #FFFFFF; color: #a94442;" href="{{ url('shop/checkout') }}"><span class="glyphicon glyphicon-shopping-cart"></span> <span style="font-size: 14px;"><b>{{ $total_cart }}</b></span></a></li>
                         @endif
@@ -82,7 +82,8 @@
                             <li><a href="{{ url('user/signin') }}">Sign in</a></li>
                             <li><a href="{{ url('user/signup') }}">Sign up</a></li>
                         @else
-                            <li><a href="{{ url('user/profile') }}"><span class="glyphicon glyphicon-user"></span> Welcome, {{ Session::get('user_name') }}</a></li>
+
+                            <li><a href="{{ url('user/profile/' . Session::get('user_id') ) }}"><span class="glyphicon glyphicon-user"></span> {{ Session::get('user_name') }}</a></li>
 
                             @if(Session::has('is_admin'))
                                 <li><a href="{{ url('cms/dashboard') }}"><span class="glyphicon glyphicon-th-large"></span> Dashboard</a></li>
@@ -102,7 +103,7 @@
     @yield('slider')
 
     <div class="container">
-        <br><br><br>
+        <br><br><br><br>
         <!-- Content -->
         @yield('content')
     </div>

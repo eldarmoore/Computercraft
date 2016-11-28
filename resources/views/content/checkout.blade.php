@@ -38,7 +38,7 @@
             <hr>
                 <h3>Total: {{ Cart::getTotal() }}$</h3>
 
-            <p><a href="{{ url('shop/order') }}" class="btn btn-primary" href="{{ url('shop/order-thanks') }}>Order now</a>  <a class="btn btn-default" href="{{ url('shop/cart-clear') }}">Clear Cart</a></p>
+            <p><a href="{{ url('shop/order') }}" class="btn btn-primary" href="{{ url('shop/order-thanks') }}">Order now</a> <a class="btn btn-default" href="{{ url('shop/cart-clear') }}">Clear Cart</a></p>
         </div>
 
     @else
