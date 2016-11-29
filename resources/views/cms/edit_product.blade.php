@@ -32,6 +32,10 @@
                     <input type="text" name="sn" value="{{ $product['sn'] }}" class="form-control" id="sn" placeholder="sn">
                 </div>
                 <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="text" name="quantity" value="{{ $product['quantity'] }}" class="form-control" id="quantity" placeholder="Quantity">
+                </div>
+                <div class="form-group">
                     <label for="article">Article:</label>
                     <textarea name="article" id="summernote" class="form-control" col="30" rows="10">{{ $product['article'] }}</textarea>
                 </div>
@@ -41,7 +45,8 @@
                 </div>
                 <div class="form-group">
                     <label for="image[]">Change image:</label>
-                    <div>
+                    <div class="row">
+                        <div>
                         <?php
                         $img = $product['image'];
                         $img = explode(",",$img);
@@ -51,17 +56,22 @@
                         @foreach($img as $key=>$i)
 
                             @if($i !== '')
-                                <input type="radio" class="radio" name="primary_image" id="{{ $key }}" value="{{ $i }}" <?php if($selected_picture == $key){echo("selected");}?> />
-                                <label for="{{ $key }}" class="label"><img src="{{ asset('images/products/' . $product['url'] . '/' . $i) }}" alt="" style="padding: 2px;max-height: 70px;max-width: 70px"></label>
+                                <div style="height: 100px; width: 100px; margin: 2px;" class="pull-left">
+                                    <input type="radio" class="radio" name="primary_image" id="{{ $key }}" value="{{ $i }}" <?php if($selected_picture == $key){echo("selected");}?> />
+                                    <label for="{{ $key }}" class="label"><img src="{{ asset('images/products/' . $product['url'] . '/' . $i) }}" alt="" style="padding: 2px;max-height: 70px;max-width: 70px"></label>
+                                </div>
                             @endif
 
                         @endforeach
                     </div>
 
-                        <br>
+                    <div class="col-md-12">
+                        <hr>
 
-                    <input type="file" name="image[]" multiple>
+                        <input type="file" name="image[]" multiple>
+                    </div>
                 </div>
+                    <br>
                 <a href="{{ url('cms/products') }}" class="btn btn-default">Cancel</a>
                 <button type="submit" class="btn btn-primary">Save products</button>
             </form>

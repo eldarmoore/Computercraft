@@ -126,6 +126,7 @@ class Product extends Model {
         $product->image = $images;
         $product->price = $request['price'];
         $product->sn = $request['sn'];
+        $product->quantity = $request['quantity'];
         $product->categorie_id = $request['categorie_id'];
         $product->save();
         Session::flash('sm', 'Product has been saved');
@@ -159,7 +160,10 @@ class Product extends Model {
         $product->title = $request['title'];
         $product->article = $request['article'];
         $product->url = $request['url'];
-        $product->primary_image = $request['primary_image'];
+
+        if($request['primary_image']){
+            $product->primary_image = $request['primary_image'];
+        }
 
         if($images){
             $product->image = $images;
@@ -167,6 +171,7 @@ class Product extends Model {
 
         $product->price = $request['price'];
         $product->sn = $request['sn'];
+        $product->quantity = $request['quantity'];
         $product->categorie_id = $request['categorie_id'];
         $product->save();
         Session::flash('sm', 'Product has been updated');

@@ -32,6 +32,10 @@
                     <input type="text" name="sn" value="{{ Illuminate\Support\Facades\Input::old('sn') }}" class="form-control" id="sn" placeholder="sn">
                 </div>
                 <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="text" name="quantity" value="{{ Illuminate\Support\Facades\Input::old('quantity') }}" class="form-control" id="quantity" placeholder="Quantity">
+                </div>
+                <div class="form-group">
                     <label for="article">Article:</label>
                     <textarea name="article" id="summernote" class="form-control" col="30" rows="10">{{ Illuminate\Support\Facades\Input::old('article') }}</textarea>
                 </div>

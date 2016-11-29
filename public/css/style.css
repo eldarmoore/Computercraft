@@ -253,13 +253,6 @@ div.form-group-carousel {
 .products {
     width: 16em;
 }
-.img-container {
-    max-width:155px;
-    max-height: 155px;
-    display: block;
-    width: auto;
-    height: auto;
-}
 
 /* If you want text inside of the container */
 .text {
@@ -376,8 +369,7 @@ footer {
     border-top:1px solid #EEEEEE;
     /*background-color: rgb(27,27,27);*/
     color: #8c8c8c;
-    margin-left: -100%;
-    margin-right: -100%;
+
     padding:40px;
 }
 
@@ -470,6 +462,93 @@ footer {
         font-size: 2em;
         height: auto;
         overflow-y: hidden;
+    }
+
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) {
+
+    .img-container {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .img-container {
+        display: block;
+        width: 147.5px;
+        height: 147.5px;
+    }
+
+    .thumbnail a > img, .thumbnail > img {
+        display: block;
+        max-width: 147.5px;
+        max-height: 147.5px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    .img-container {
+        display: block;
+        width: 121px;
+        height: 121px;
+    }
+
+    .thumbnail a > img, .thumbnail > img {
+        display: block;
+        max-width: 121px;
+        max-height: 121px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+    .img-container {
+        display: block;
+        width: 155px;
+        height: 155px;
+    }
+
+    .thumbnail a > img, .thumbnail > img {
+        display: block;
+        max-width: 155px;
+        max-height: 155px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+}
+
+@media (min-width: 1201px) {
+
+    .img-container {
+        display: block;
+        width: 155px;
+        height: 155px;
+    }
+
+    .thumbnail a > img, .thumbnail > img {
+        display: block;
+        max-width: 155px;
+        max-height: 155px;
+        margin-right: auto;
+        margin-left: auto;
     }
 
 }

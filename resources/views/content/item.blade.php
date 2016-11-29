@@ -26,9 +26,9 @@
                         </div>
                         <div>
                         @foreach($img as $pic)
-                            <div style="padding: 2px; margin:2px 0; margin-right: 2px; height: 79px; width: 79px; border: 1px solid #EEEEEE;text-align: center" class="pull-left">
+                            <div style="padding: 2px; margin:2px 0; margin-right: 2px; height: 88px; width: 88px; border: 1px solid #EEEEEE;text-align: center" class="pull-left">
                                 <a href="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" data-lightbox="roadtrip"><img
-                                        src="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" alt="" style="max-height: 70px; max-width: 70px;"></a>
+                                        src="{{ asset('/images/products/' . $item['url'] . '/' . $pic) }}" alt="" style="max-height: 80px; max-width: 80px;"></a>
                             </div>
                         @endforeach
                         </div>

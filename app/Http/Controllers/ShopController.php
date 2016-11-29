@@ -70,7 +70,7 @@ class ShopController extends MainController
         } else {
 
             Order::saveOrder();
-            return redirect('shop');
+            return redirect('/');
 
         }
 

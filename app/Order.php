@@ -6,17 +6,27 @@ use Illuminate\Database\Eloquent\Model;
 use Cart;
 use Session;
 use DB;
+use App\Product;
 
 class Order extends Model
 {
     static public function saveOrder(){
         $cartCollection = Cart::getContent();
+
         $order = new self();
         $order->user_id = Session::get('user_id');
         $order->data = $cartCollection->toJson();
         $order->total = Cart::getTotal();
         $order->save();
         Cart::clear();
+
+        foreach ($cartCollection as $cc){
+//            $product = Product::where('id', '=', $cc['id'])->first();
+            $product = Product::find($cc['id']);
+            $product->quantity = $product->quantity - $cc['quantity'];
+            $product->save();
+        }
+
         Session::flash('sm', 'Your order is saved');
     }
 

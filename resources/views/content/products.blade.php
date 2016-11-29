@@ -31,7 +31,7 @@
 
                             @if($sub_cat['sub_category'] == $cat['id'])
 
-                                <div class="col-sm-2 col-lg-2 col-md-2">
+                                <div class="col-sm-3 col-lg-2 col-md-2">
                                     <div class="thumbnail product">
                                         <?php $image = explode(',', $row['image']); ?>
                                         <div class="img-container">
@@ -40,7 +40,7 @@
                                         <div class="caption">
 
                                             @if(strlen($row['title']) > 10)
-                                                <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 5, "...") }}</a></h4>
+                                                <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 8, "...") }}</a></h4>
                                             @endif
 
                                             {{--@if(strlen($row['article']) > 10)--}}

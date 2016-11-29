@@ -2,62 +2,26 @@
 
 @section('slider')
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
-
+        <div class="form-group-search">
+            <div class="container">
+                <div>
+                    <form action="" method="get" autocomplete="off" class="input-group">
+                        <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
+                        <span class="input-group-btn">
+                                        <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
+                                    </span>
+                    </form>
+                    <div class="search-result"></div>
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div>
         <div class="carousel-inner">
             <div  class="item active"><img style="width: 100%"src="{{ asset('images/Cases-TLC-HeroShot01.jpg') }}" alt=""></div>
-            <div class="container">
-                <div class="carousel-caption">
-                    <div class="form-group-search">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <form action="" method="get" autocomplete="off" class="input-group">
-                                    <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                                        <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
-                                    </span>
-                                </form>
-                                <div class="search-result"></div>
-                            </div><!-- /.col-lg-6 -->
-                        </div><!-- /.row -->
-                    </div>
-                </div>
-            </div>
+
             <div  class="item "><img style="width: 100%" src="{{ asset('images/Cases-TLC-HeroShot02.jpg') }}" alt=""></div>
-            <div class="container">
-                <div class="carousel-caption">
-                    <div class="form-group-search">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <form action="" method="get" autocomplete="off" class="input-group">
-                                    <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                                        <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
-                                    </span>
-                                </form>
-                                <div class="search-result"></div>
-                            </div><!-- /.col-lg-6 -->
-                        </div><!-- /.row -->
-                    </div>
-                </div>
-            </div>
+
             <div  class="item "><img style="width: 100%" src="{{ asset('images/Cases-TLC-HeroShot03.jpg') }}" alt=""></div>
-            <div class="container">
-                <div class="carousel-caption">
-                    <div class="form-group-search">
-                        <div class="container">
-                            <div class="carousel-caption">
-                                <form action="" method="get" autocomplete="off" class="input-group">
-                                    <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                                        <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
-                                    </span>
-                                </form>
-                                <div class="search-result"></div>
-                            </div><!-- /.col-lg-6 -->
-                        </div><!-- /.row -->
-                    </div>
-                </div>
-            </div>
+
 
             {{--<div class="item active"><video controls muted autoplay="" loop="" preload="" poster="http://cwsmgmt.corsair.com/responsive/img/cue_fallback.jpg" id="videoHero" style="top: 70px; height: auto; width: 100%;" src="{{ asset('videos/crystal_hero2.mp4') }}"></video></div>--}}
             {{--<div class="item "><video autoplay="" loop="" preload="" poster="http://cwsmgmt.corsair.com/responsive/img/cue_fallback.jpg" id="videoHero" style="top: 70px; height: auto; width: 100%;" src="{{ asset('videos/fans_hero3.mp4') }}"></video></div>--}}
@@ -86,10 +50,10 @@
 
                         @if($sub_cat['sub_category'] == $cat['id'])
 
-                            <div class="col-sm-2 col-lg-2 col-md-2">
+                            <div class="col-sm-3 col-lg-2 col-md-2">
                                 <div class="thumbnail product">
                                     <?php $image = explode(',', $row['image']); ?>
-                                    <div style="max-height: 155px; max-width: 155px;">
+                                    <div class="img-container">
                                         <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['url'] . '/' . $row['primary_image']) }}" alt=""></a>
                                     </div>
                                     <div class="caption">

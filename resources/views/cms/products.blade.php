@@ -10,7 +10,8 @@
             @if($products)
                 <table class="table table-bordered">
                     <tr>
-                        <th class="col-md-10">Title</th>
+                        <th class="col-md-9">Title</th>
+                        <th class="col-md-1" style="text-align: center">Quantity</th>
                         <th class="col-md-1" style="text-align: center">Last Update</th>
                         <th class="col-md-1" style="font-size: 0.9em; text-align: center">Operation</th>
                     </tr>
@@ -28,6 +29,7 @@
 
                         <tr>
                             <td>{{ $row['title'] }}</td>
+                            <td style="text-align: center">{{ $row['quantity'] }}</td>
                             <td>{{ $updated_at }}</td>
                             <td>
                                 <a href="{{ url('cms/products/' . $row['id'] . '/edit') }}">Edit</a> |
