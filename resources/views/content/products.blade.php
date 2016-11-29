@@ -34,7 +34,7 @@
                                 <div class="col-sm-2 col-lg-2 col-md-2">
                                     <div class="thumbnail product">
                                         <?php $image = explode(',', $row['image']); ?>
-                                        <div style="height: 155px; width: 155px;">
+                                        <div class="img-container">
                                             <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['url'] . '/' . $row['primary_image']) }}" alt=""></a>
                                         </div>
                                         <div class="caption">

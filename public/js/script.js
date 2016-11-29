@@ -79,11 +79,6 @@ $(document).ready(function() {
         }
     });
 
-    $('#summernote').summernote({
-        height: 300,
-        minHeight: 300,             // set minimum height of editor
-        maxHeight: 300,             // set maximum height of editor
-    });
 });
 
 
@@ -111,6 +106,7 @@ $('.add-to-cart-btn').on('click', function(){
     });
 });
 
+// Update Cart Ajax
 $('.update-cart').on('click', function(){
     $.ajax({
         url: BASE_URL + 'shop/update-cart',
@@ -123,3 +119,9 @@ $('.update-cart').on('click', function(){
     });
 });
 
+// Keep width and height of the target equal.
+// Currently in use for products images for proper scaling in case image resolution is not equal.
+var cw = $('.child').width();
+$('.child').css({
+    'height': cw + 'px'
+});

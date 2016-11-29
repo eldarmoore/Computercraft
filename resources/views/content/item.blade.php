@@ -8,6 +8,8 @@
         @if($item)
 
             <div class="col-md-12">
+                <h2>{{ $item['title'] }}</h2>
+
                 <div class="row">
                     <br>
                     <div class="col-md-4">
@@ -19,7 +21,7 @@
                         $img = array_filter( explode(",", $item['image'] ));
 
                         ?>
-                        <div style="height: 322px; width: 322px; border: 1px solid #EEEEEE;text-align: center">
+                        <div style=" border: 1px solid #EEEEEE;text-align: center">
                             <img style="max-height: 319px; max-width: 319px; padding: 10px;" src="{{ asset('/images/products/' . $item['url'] . '/' . $item['primary_image']) }}" alt="">
                         </div>
                         <div>
@@ -33,9 +35,8 @@
                     </div>
 
                     <div class="col-md-8">
-                        <h2>{{ $item['title'] }}</h2>
 
-                        <div style="background-color: #e0e0e0; margin: 15px 0; padding: 20px 10px">
+                        <div style="background-color: #e0e0e0; padding: 20px 10px; width: 100%;" class="pull-left">
 
                             <p><span class="price-tag-item">Price: <b>{{ $item['price'] }}$</b></span></p>
 
@@ -58,12 +59,12 @@
 
                         </div>
 
+                        <div class="pull-left">
                         <hr>
                         <h3>Product description</h3>
                         <p>{!! $item['article'] !!}</p>
-
+                        </div>
                     </div>
-
                 </div>
             </div>
 
