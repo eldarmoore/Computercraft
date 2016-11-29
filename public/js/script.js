@@ -37,7 +37,7 @@ $(document).ready(function() {
         if (userText.length > 0) {
 
             $.ajax({
-                url: BASE_URL + 'search_like.php',
+                url: BASE_URL + '/requestProducts',
                 type: "GET",
                 dataType: "json",
                 data: {search: userText},

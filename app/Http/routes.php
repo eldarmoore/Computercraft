@@ -42,4 +42,5 @@ Route::controller('cms', 'CmsController');
 
 /* Pages */
 Route::get('/','PagesController@index');
+Route::get('requestProducts','ProductController@requestProducts');
 Route::get('{url}', 'PagesController@boot');
