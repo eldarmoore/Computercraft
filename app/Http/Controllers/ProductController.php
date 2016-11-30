@@ -44,7 +44,7 @@ class ProductController extends MainController
 
             if($user_search){
 
-                $result = DB::table('products')->where('title', 'like', "%$user_search%")->limit(5)->get();
+                $result = DB::table('products')->where('title', 'like', "%$user_search%")->limit(10)->get();
 
 //                $sql = "SELECT products.*,categories.url sub_category,main_categories.url category
 //                FROM products

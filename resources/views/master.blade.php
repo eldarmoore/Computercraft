@@ -99,7 +99,11 @@
                                 <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
                             </span>
                     </form>
-                    <div class="search-result"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="search-result" style="width: 100%;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             {{-- Error Message --}}
@@ -111,7 +115,7 @@
     @yield('slider')
 
     <div class="container">
-        <br><br><br><br>
+        <br>
         <!-- Content -->
         @yield('content')
 
