@@ -2,14 +2,14 @@
 
 @section('slider')
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
-        <div class="form-group-search">
+        <div class="form-group-search"">
             <div class="container">
                 <div>
-                    <form action="" method="get" autocomplete="off" class="input-group">
-                        <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
-                        <span class="input-group-btn">
-                                        <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
-                                    </span>
+                    <form action="" method="get" autocomplete="off" class="input-group" style="position: absolute;top: 48%;margin-left: 30%;margin-right: 30%;">
+                            <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
+                            <span class="input-group-btn">
+                            <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
+                        </span>
                     </form>
                     <div class="search-result"></div>
                 </div><!-- /.col-lg-6 -->

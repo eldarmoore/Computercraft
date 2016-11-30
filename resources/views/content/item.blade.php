@@ -40,7 +40,7 @@
 
                             <p><span class="price-tag-item">Price: <b>{{ $item['price'] }}$</b></span></p>
 
-                            @if($item['quantity'])
+                            @if($item['quantity'] > 0)
                                 <div style="background-color: #FFFFFF; padding: 4px; width: 150px;">
                                     <h4><span style="color: #2ca02c;" class="glyphicon glyphicon-ok-circle"></span> In Stock!</h4>
                                 </div>

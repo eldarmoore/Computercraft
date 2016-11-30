@@ -19,11 +19,8 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-
                     <a class="navbar-brand" href="{{ url('') }}"><img src="{{ asset('images/logo.svg') }}" alt="" height="20"></a>
-
                 </div>
-
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
@@ -74,30 +71,34 @@
                             @endforeach
                         @endif
                     </ul>
-                    <ul class="nav navbar-nav pull-right" style="font-size: 0.8em;">
-                        @if($total_cart = Cart::getTotalQuantity() )
-                            <li class="fixer"><a style="background-color: #FFFFFF; color: #a94442;" href="{{ url('shop/checkout') }}"><span class="glyphicon glyphicon-shopping-cart"></span> <span style="font-size: 14px;"><b>{{ $total_cart }}</b></span></a></li>
-                        @endif
-                        @if( !Session::has('user_id') )
-                            <li><a href="{{ url('user/signin') }}">Sign in</a></li>
-                            <li><a href="{{ url('user/signup') }}">Sign up</a></li>
-                        @else
-
-                            <li><a href="{{ url('user/profile/' . Session::get('user_id') ) }}"><span class="glyphicon glyphicon-user"></span> {{ Session::get('user_name') }}</a></li>
-
-                            @if(Session::has('is_admin'))
-                                <li><a href="{{ url('cms/dashboard') }}"><span class="glyphicon glyphicon-th-large"></span> Dashboard</a></li>
+                    <div class="row">
+                        <ul class="nav navbar-nav pull-right row" style="font-size: 0.8em;">
+                            @if($total_cart = Cart::getTotalQuantity() )
+                                <li class="fixer"><a style="background-color: #FFFFFF; color: #a94442;" href="{{ url('shop/checkout') }}"><span class="glyphicon glyphicon-shopping-cart"></span> <span style="font-size: 14px;"><b>{{ $total_cart }}</b></span></a></li>
                             @endif
-                            <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
-                        @endif
-                    </ul>
+                            @if( !Session::has('user_id') )
+                                <li><a href="{{ url('user/signin') }}">Sign in</a></li>
+                                <li><a href="{{ url('user/signup') }}">Sign up</a></li>
+                            @else
+
+                                <li><a href="{{ url('user/profile/' . Session::get('user_id') ) }}"><span class="glyphicon glyphicon-user"></span> {{ Session::get('user_name') }}</a></li>
+
+                                @if(Session::has('is_admin'))
+                                    <li><a href="{{ url('cms/dashboard') }}"><span class="glyphicon glyphicon-th-large"></span> Dashboard</a></li>
+                                @endif
+                                <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                            @endif
+                        </ul>
+                    </div>
                 </div><!--/.nav-collapse -->
+                <div class="row">
+
+                </div>
             </div>
             {{-- Error Message --}}
             @if($errors->any()) @include('includes.errors') @endif
             @if( Session::has('sm')) @include('includes.sm') @endif
         </nav>
-
     </header>
 
     @yield('slider')
