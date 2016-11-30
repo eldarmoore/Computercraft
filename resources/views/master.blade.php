@@ -89,10 +89,17 @@
                                 <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                             @endif
                         </ul>
+
                     </div>
                 </div><!--/.nav-collapse -->
-                <div class="row">
-
+                <div class="form-group-search" style="margin-bottom: 10px; width: 100%;">
+                    <form action="" method="get" autocomplete="off" class="input-group">
+                        <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
+                        <span class="input-group-btn">
+                                <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
+                            </span>
+                    </form>
+                    <div class="search-result"></div>
                 </div>
             </div>
             {{-- Error Message --}}
@@ -107,9 +114,7 @@
         <br><br><br><br>
         <!-- Content -->
         @yield('content')
-    </div>
 
-    <div class="container">
         <!-- Footer -->
         <footer>
             <div class="row foot">

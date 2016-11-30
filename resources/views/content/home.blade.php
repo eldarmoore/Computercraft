@@ -1,20 +1,8 @@
 @extends('master')
 
 @section('slider')
+
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
-        <div class="form-group-search"">
-            <div class="container">
-                <div>
-                    <form action="" method="get" autocomplete="off" class="input-group" style="position: absolute;top: 48%;margin-left: 30%;margin-right: 30%;">
-                            <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
-                            <span class="input-group-btn">
-                            <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
-                        </span>
-                    </form>
-                    <div class="search-result"></div>
-                </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
-        </div>
         <div class="carousel-inner">
             <div  class="item active"><img style="width: 100%"src="{{ asset('images/Cases-TLC-HeroShot01.jpg') }}" alt=""></div>
 

@@ -51,6 +51,7 @@ class ProductController extends MainController
 //                INNER JOIN categories ON products.categorie_id = categories.id
 //                LEFT JOIN categories main_categories ON categories.sub_category = main_categories.id
 //                WHERE products.id LIKE ? OR products.article LIKE ? LIMIT 5";
+
 //                $query = $db->prepare($sql);
 //                $query->setFetchMode(PDO::FETCH_OBJ);
 //                $query->execute( ["%$user_search%", "%$user_search%"] );
