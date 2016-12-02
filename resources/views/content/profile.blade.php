@@ -6,7 +6,7 @@
     @if(Session::get('user_id') == $user['id'])
     <div class="row">
 
-        <div class="container" style="background-color: #EEEEEE; padding: 10px 0;">
+        <div class="container" style="background-color: #EEEEEE;">
 
             @if($user)
 
@@ -14,7 +14,7 @@
                     <img style="background-color: #FFFFFF;" src="{{ asset('/images/default.png') }}" alt="">
                 </div>
 
-            <?php
+                <?php
 
                 // $datetime is something like: 2014-01-31 13:05:59
                 $datetimeFromMysql = $user['created_at'];
@@ -22,7 +22,7 @@
                 $myFormatForView = date('d-m-Y', $time);
                 // $myFormatForView is something like: 01/31/14 1:05 PM
 
-                    ?>
+                ?>
 
                 <div class="col-md-9">
                     <h1>{{ $user['name'] }}</h1>

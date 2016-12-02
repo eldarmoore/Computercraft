@@ -4,12 +4,36 @@
 
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
         <div class="carousel-inner">
-            <div  class="item active"><img style="width: 100%"src="{{ asset('images/Cases-TLC-HeroShot01.jpg') }}" alt=""></div>
 
-            <div  class="item "><img style="width: 100%" src="{{ asset('images/Cases-TLC-HeroShot02.jpg') }}" alt=""></div>
+            @if($carousel)
 
-            <div  class="item "><img style="width: 100%" src="{{ asset('images/Cases-TLC-HeroShot03.jpg') }}" alt=""></div>
+                <?php $active = 'active'; ?>
 
+                @foreach($carousel as $slider)
+
+                    <div  class="item {{ $active }}"><img style="width: 100%"src="{{ asset('images/carousel/' . $slider->image) }}" alt="">
+                        <div class="container">
+                            <div class="carousel-caption">
+                                <h1 style="padding: 15px">{{ $slider->title }}</h1>
+                                <p>{{ $slider->article }}</p>
+                                <p><a class="btn btn-lg btn-primary" href="#" role="button" style="padding: 15px;">
+
+                                @if($slider->button)
+
+                                    {{ $slider->button }}
+
+                                @endif
+
+                                </a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php $active = ''; ?>
+
+                @endforeach
+
+            @endif
 
             {{--<div class="item active"><video controls muted autoplay="" loop="" preload="" poster="http://cwsmgmt.corsair.com/responsive/img/cue_fallback.jpg" id="videoHero" style="top: 70px; height: auto; width: 100%;" src="{{ asset('videos/crystal_hero2.mp4') }}"></video></div>--}}
             {{--<div class="item "><video autoplay="" loop="" preload="" poster="http://cwsmgmt.corsair.com/responsive/img/cue_fallback.jpg" id="videoHero" style="top: 70px; height: auto; width: 100%;" src="{{ asset('videos/fans_hero3.mp4') }}"></video></div>--}}

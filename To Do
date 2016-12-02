@@ -1,11 +1,26 @@
-* When Delete Category make sure any other category that inherit follow.
-* Redesign Images Saving Process for multiple images per product.
+V Redesign Images Saving Process for multiple images per product.
 V BUG * Add new product, unable to save image file.
-* Improve item page
+V Improve item page
 * Facebook SDK
-* Users page
-* Inventory
-* Modify index page
-* Modify CMS
+V Users page
+V Inventory
+V Modify index page
+V Modify CMS
 * Migration
 * Comments
+V Substract Product Quantity after order.
+V Ajax search product Autocomplete.
+
+* - Slider
+* - Signup/Signin
+* - Logo
+
+
+
+BUGS
+V - Image resize in different resolutions messed up... FIXED!
+V - Product and Products page are not responsive... FIXED!
+* - In Mobile resolution navigation "Hamburger" disappears...
+V - Ajax Search Autocomplete does not work outside of index page, images/url - FIXED -added BASE URL to src...
+V - Ajax Search Autocomplete does not work when user not logged in.. "Disabled" Middleware construct in ProductController.php
+

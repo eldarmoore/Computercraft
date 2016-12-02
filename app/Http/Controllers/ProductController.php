@@ -12,12 +12,13 @@ use DB;
 
 class ProductController extends MainController
 {
+// *  interfere with Ajax product search when not logged in.!!!!!
 
-    function __construct()
-    {
-        parent::__construct();
-        $this->middleware('adminLoged');
-    }
+//    function __construct()
+//    {
+//        parent::__construct();
+//        $this->middleware('adminLoged');
+//    }
 
     /**
      * Display a listing of the resource.
