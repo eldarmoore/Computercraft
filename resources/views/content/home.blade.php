@@ -14,8 +14,8 @@
                     <div  class="item {{ $active }}"><img style="width: 100%"src="{{ asset('images/carousel/' . $slider->image) }}" alt="">
                         <div class="container">
                             <div class="carousel-caption">
-                                <h1 style="padding: 15px">{{ $slider->title }}</h1>
-                                <p>{{ $slider->article }}</p>
+                                <h1 style="padding: 15px">{!! $slider->title !!}</h1>
+                                <p>{!! $slider->article !!}</p>
                                 <p><a class="btn btn-lg btn-primary" href="#" role="button" style="padding: 15px;">
 
                                 @if($slider->button)

@@ -126,3 +126,11 @@ var cw = $('.child').width();
 $('.child').css({
     'height': cw + 'px'
 });
+
+$(document).ready(function() {
+    $('#summernote').summernote({
+        height: 300,
+        minHeight: 300,
+        maxHeight: 300,
+    });
+});

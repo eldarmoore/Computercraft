@@ -96,7 +96,7 @@
                     <form action="" method="get" autocomplete="off" class="input-group">
                         <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
                         <span class="input-group-btn">
-                                <button type="submit" name="submit" class="btn btn-default" type="button">Search</button>
+                                <button type="submit" name="submit" class="btn btn-default" type="button" style="height: 34px;">Search</button>
                             </span>
                     </form>
                     <div class="col-md-12">
