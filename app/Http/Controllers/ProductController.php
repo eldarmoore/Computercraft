@@ -136,6 +136,12 @@ class ProductController extends MainController
      */
     public function destroy($id)
     {
+        $product = Product::find($id)->toArray();
+        $product = public_path() . '/images/products/' . $product['url'];
+
+        Product::recursiveRemoveDirectory($product);
+
+        //$success = Storage::delete($product);
         Product::destroy($id);
         Session::flash('sm', 'Product has been deleted');
         return redirect('cms/products');

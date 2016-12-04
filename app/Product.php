@@ -178,4 +178,18 @@ class Product extends Model {
 
     }
 
+    // Remove Directory and files within (if exist)
+    static public function recursiveRemoveDirectory($directory)
+    {
+        foreach(glob("{$directory}/*") as $file)
+        {
+            if(is_dir($file)) {
+                recursiveRemoveDirectory($file);
+            } else {
+                unlink($file);
+            }
+        }
+        rmdir($directory);
+    }
+
 }
