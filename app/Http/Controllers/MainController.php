@@ -17,6 +17,5 @@ class MainController extends Controller
     {
         self::$data['menu'] = Menu::all()->toArray();
         self::$data['categories'] = Categorie::all()->toArray();
-        self::$data['carousel'] = DB::table('carousel')->where('status', '=', 1)->get();
     }
 }

@@ -6,6 +6,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Content;
+use DB;
 
 class PagesController extends MainController
 {
@@ -13,6 +14,7 @@ class PagesController extends MainController
     public function index() {
         self::$data['title'] = self::$data['title'] . ' | Home page';
         self::$data['new_products'] = Product::orderBy('id', 'desc')->take(6)->get();
+        self::$data['sliders'] = DB::table('sliders')->where('status', '=', 1)->get();
         return view('content.home', self::$data);
     }
 

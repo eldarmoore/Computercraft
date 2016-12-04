@@ -37,6 +37,7 @@ Route::resource('cms/categories', 'CategoryController');
 Route::resource('cms/content', 'ContentController');
 Route::resource('cms/menu', 'MenuController');
 Route::resource('cms/users', 'UserController');
+Route::resource('cms/sliders', 'SliderController');
 Route::controller('cms', 'CmsController');
 
 

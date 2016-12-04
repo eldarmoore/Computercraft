@@ -5,11 +5,11 @@
     <div class="carousel slide carousel-example-generic" data-ride="carousel" id="featured">
         <div class="carousel-inner">
 
-            @if($carousel)
+            @if($sliders)
 
                 <?php $active = 'active'; ?>
 
-                @foreach($carousel as $slider)
+                @foreach($sliders as $slider)
 
                     <div  class="item {{ $active }}"><img style="width: 100%"src="{{ asset('images/carousel/' . $slider->image) }}" alt="">
                         <div class="container">
