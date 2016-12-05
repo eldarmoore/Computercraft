@@ -160,13 +160,13 @@ hr {
 }
 
 .carousel-inner {
-    max-height: 500px;
+    max-height: 400px;
 }
 
 .carousel-caption {
     right: 25%;
     left: 25%;
-    top: 26%;
+    top: 10%;
     text-shadow: none;
 }
 

@@ -24,31 +24,19 @@
                     <input type="text" name="link" value="{{ $slider['link'] }}" class="form-control my-target-field" id="link" placeholder="Link">
                 </div>
                 <div class="form-group">
-                    <label for="image[]">Change image:</label>
+                    <label for="image">Slider image:</label>
                     <div class="row">
-                        <div>
-                        <?php
-                        $img = $slider['image'];
-                        $img = explode(",",$img);
-                        $selected_picture = '';
-                        ?>
-
-                        @foreach($img as $key=>$i)
-
-                            @if($i !== '')
-                                <div style="height: 100px; width: 100px; margin: 2px;" class="pull-left">
-                                    <input type="radio" class="radio" name="primary_image" id="{{ $key }}" value="{{ $i }}" <?php if($selected_picture == $key){echo("selected");}?> />
-                                    <label for="{{ $key }}" class="label"><img src="{{ asset('images/sliders/' . $slider['link'] . '/' . $i) }}" alt="" style="padding: 2px;max-height: 70px;max-width: 70px"></label>
+                        <div class="container">
+                            @if($slider['image'])
+                                <div>
+                                    <img src="{{ asset('images/carousel/' . $slider['image']) }}" alt="">
                                 </div>
                             @endif
-
-                        @endforeach
+                        </div>
                     </div>
-
-                    <div class="col-md-12">
-                        <hr>
-
-                        <input type="file" name="image[]" multiple>
+                    <label for="image" style="margin-top: 20px;">Change image:</label>
+                    <div>
+                        <input type="file" name="image">
                     </div>
                 </div>
                     <br>

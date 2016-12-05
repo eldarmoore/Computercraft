@@ -5,9 +5,9 @@
     <h1 class="page-header">Add new slider -</h1>
 
     <div class="row">
-        @if($categories)
         <div class="col-md-6">
             <form action="{{ url('cms/sliders') }}" method="post" enctype="multipart/form-data">
+
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <label for="title">Title:</label>
@@ -19,11 +19,11 @@
                 </div>
                 <div class="form-group">
                     <label for="button">Button:</label>
-                    <input type="text" name="button" value="{{ Illuminate\Support\Facades\Input::old('url') }}" class="form-control my-target-field" id="button" placeholder="Button">
+                    <input type="text" name="button" value="{{ Illuminate\Support\Facades\Input::old('button') }}" class="form-control" id="button" placeholder="Button">
                 </div>
                 <div class="form-group">
-                    <label for="url">Url:</label>
-                    <input type="text" name="url" value="{{ Illuminate\Support\Facades\Input::old('url') }}" class="form-control my-target-field" id="url" placeholder="Url">
+                    <label for="link">Link:</label>
+                    <input type="text" name="link" value="{{ Illuminate\Support\Facades\Input::old('link') }}" class="form-control" id="link" placeholder="Link">
                 </div>
                 <div class="form-group">
                     <label for="image">Slider image:</label>
@@ -34,11 +34,6 @@
 
             </form>
         </div>
-        @else
-            <div class="col-md-12">
-                <p>No Slider  <a href="{{ url('cms/sliders/create') }}">Add Slider </a></p>
-            </div>
-        @endif
     </div>
 
 @endsection

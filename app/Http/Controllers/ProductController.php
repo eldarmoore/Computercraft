@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Functions;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Requests\ProductRequest;
