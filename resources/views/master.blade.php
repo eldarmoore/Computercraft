@@ -112,6 +112,12 @@
         </nav>
     </header>
 
+    <?php
+
+            phpcon
+
+    ?>
+
     @yield('slider')
 
     <div class="container">
