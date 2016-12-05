@@ -1,7 +1,5 @@
 @extends('master')
 
-@section('slider')
-
 @section('content')
 
     @if($contents)

@@ -15,8 +15,19 @@
                 </tr>
 
                 @foreach($orders as $row)
+
+                    <?php
+
+                    // $datetime is something like: 2014-01-31 13:05:59
+                    $created_at = $row->created_at;
+                    $time = strtotime($created_at);
+                    $created_at = date('d-m-Y', $time);
+                    // $myFormatForView is something like: 01/31/14 1:05 PM
+
+                    ?>
+
                     <tr>
-                        <td><div><b>{{ $row->name }}</b></div><div style="font-size: 0.8em;">{{ $row->created_at }}</div></td>
+                        <td><div><b>{{ $row->name }}</b></div><div style="font-size: 0.8em;">{{ $created_at }}</div></td>
                         <td>
                             <?php $i = 0; ?>
                             @foreach( json_decode($row->data) as $item)

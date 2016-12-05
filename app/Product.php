@@ -96,7 +96,7 @@ class Product extends Model {
 
     static public function saveProduct($request){
 
-        $image_name = 'default.jpg';
+        $primary_image = 'default.jpg';
         $images = '';
 
 //        dd($request['image']);
@@ -110,6 +110,7 @@ class Product extends Model {
                     $file = $image;
                     $image_name = date('Y.m.d.H.m.s') . '-' . $file->getClientOriginalName();
                     $images .= $image_name . ',';
+                    $primary_image = $image_name;
                     //dd($request['url']);
                     $image->move( public_path() . '/images/products/' . $request['url'] , $image_name );
 
@@ -124,6 +125,7 @@ class Product extends Model {
         $product->article = $request['article'];
         $product->url = $request['url'];
         $product->image = $images;
+        $product->primary_image = $primary_image;
         $product->price = $request['price'];
         $product->sn = $request['sn'];
         $product->quantity = $request['quantity'];
