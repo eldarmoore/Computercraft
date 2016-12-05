@@ -38,6 +38,7 @@ class Categorie extends Model
         $category->title = $request['title'];
         $category->article = $request['article'];
         $category->url = $request['url'];
+        $category->sub_category = $request['sub_category'];
         $category->image = $image_name;
         $category->save();
         Session::flash('sm', 'Category has been saved');
@@ -57,7 +58,7 @@ class Categorie extends Model
         $category->title = $request['title'];
         $category->article = $request['article'];
         $category->url = $request['url'];
-
+        $category->sub_category = $request['sub_category'];
         if($image_name){
             $category->image = $image_name;
         }
