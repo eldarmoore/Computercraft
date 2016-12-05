@@ -3,10 +3,9 @@
 
 @section('content')
 
-    @if(Session::get('user_id') == $user['id'])
-    <div class="row">
+    @if(Session::get('user_id') || Session::get('user_id') == $user['id'])
 
-        <div class="container" style="background-color: #EEEEEE;">
+        <div class="col-md-12" style="background-color: #EEEEEE;padding: 20px 10px;">
 
             @if($user)
 
@@ -33,7 +32,6 @@
             @endif
         </div>
 
-    </div>
     @else
 
         <h1>Page not found.</h1>

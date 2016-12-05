@@ -322,11 +322,11 @@ input[type="radio"]:checked + label {
 
 /* Sign In Form */
 .form-signin {
-    max-width: 400px;
-    padding: 30px;
-    margin: 12em auto;
+    padding: 10px;
+    margin-top: 5em;
     border: 1px solid #e1e1e1;
     border-radius: 3px;
+    background-color: #EEEEEE;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {

@@ -70,7 +70,13 @@ class UserController extends MainController
     }
 
     public function getProfile($user_id){
-        self::$data['user'] = User::find($user_id)->toArray();
-        return view('content.profile', self::$data);
+        $user_id = User::find($user_id);
+        if($user_id){
+            self::$data['user'] = $user_id;
+            return view('content.profile', self::$data);
+        } else {
+            return redirect('');
+        }
+
     }
 }

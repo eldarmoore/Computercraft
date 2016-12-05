@@ -15,7 +15,9 @@
                     <select name="categorie_id" class="form-control" >
                         <option value="">Choose Category...</option>
                         @foreach($categories as $row)
-                            <option @if($pick == $row['id']) selected @endif value="{{ $row['id'] }}">{{ $row['title'] }}</option>
+                            @if($row['sub_category'] > 0)
+                                <option @if($pick == $row['id']) selected @endif value="{{ $row['id'] }}">{{ $row['title'] }}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>

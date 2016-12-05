@@ -6,7 +6,7 @@
 
     <div class="row">
         @if($categories)
-        <div class="col-md-6">
+            <div class="col-md-6">
             <form action="{{ url('cms/products/' . $product['id']) }}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="product_id" value="{{ $product['id'] }}">
@@ -14,9 +14,12 @@
                 <div class="form-group">
                     <label for="categorie_id">Category:</label>
                     <select name="categorie_id" class="form-control" >
-                        @foreach($categories as $row)
+
+                    @foreach($categories as $row)
+                        @if($row->sub_category > 0)
                             <option value="{{ $row->id }}">{{ $row->title }}</option>
-                        @endforeach
+                        @endif
+                    @endforeach
                     </select>
                 </div>
                 <div class="form-group">

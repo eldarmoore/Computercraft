@@ -13,15 +13,19 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <div class="form-group">
                     <label for="title">Title:</label>
-                    <input type="text" name="title" value="{{ $slider['title'] }}" class="form-control my-source-field" id="title" placeholder="Title">
+                    <input type="text" name="title" value="{{ $slider['title'] }}" class="form-control" id="title" placeholder="Title">
                 </div>
                 <div class="form-group">
                     <label for="article">Article:</label>
                     <textarea name="article" id="summernote" class="form-control" col="30" rows="10">{{ $slider['article'] }}</textarea>
                 </div>
                 <div class="form-group">
+                    <label for="button">Button:</label>
+                    <input type="text" name="button" value="{{ $slider['button'] }}" class="form-control" id="button" placeholder="Button">
+                </div>
+                <div class="form-group">
                     <label for="link">Link:</label>
-                    <input type="text" name="link" value="{{ $slider['link'] }}" class="form-control my-target-field" id="link" placeholder="Link">
+                    <input type="text" name="link" value="{{ $slider['link'] }}" class="form-control" id="link" placeholder="Link">
                 </div>
                 <div class="form-group">
                     <label for="image">Slider image:</label>
