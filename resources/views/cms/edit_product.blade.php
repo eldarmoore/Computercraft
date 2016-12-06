@@ -9,8 +9,8 @@
             <div class="col-md-6">
             <form action="{{ url('cms/products/' . $product['id']) }}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
-                <input type="hidden" name="product_id" value="{{ $product['id'] }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <input type="hidden" name="product_id" value="{{ $product['id'] }}">
                 <div class="form-group">
                     <label for="categorie_id">Category:</label>
                     <select name="categorie_id" class="form-control" >

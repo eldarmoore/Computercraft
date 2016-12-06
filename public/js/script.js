@@ -49,7 +49,7 @@ $(document).ready(function() {
 
                         $.each(response, function (key, val) {
 
-                            autoList += '<tr><td style="padding: 1px 2px"><img style="background: #FFFFFF; border: 1px solid #e1e1e1; padding: 2px; border-radius: 1px; max-width: 40px; max-height: 40px; text-shadow: none" width="30" src="'+ BASE_URL + 'images/products/'+val.url+'/'+val.primary_image+'"></td><td style="padding: 0 10px"><a href="'+ BASE_URL + 'shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
+                            autoList += '<tr><td style="padding: 1px 2px;"><img style="background: #FFFFFF; border: 1px solid #e1e1e1; padding: 2px; border-radius: 1px; max-width: 50px; max-height: 50px; text-shadow: none" width="30" src="'+ BASE_URL + 'images/products/'+val.url+'/'+val.primary_image+'"></td><td style="padding: 0 10px"><a style="font-size: 0.8em;" href="'+ BASE_URL + 'shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
 
                         });
 
