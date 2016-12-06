@@ -9,8 +9,8 @@
             <form action="{{ url('cms/menu') }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <label for="link">Link:</label>
-                    <input type="text" name="link" value="{{ Illuminate\Support\Facades\Input::old('link') }}" class="form-control my-source-field" id="link" placeholder="Link">
+                    <label for="menu">Menu name:</label>
+                    <input type="text" name="menu" value="{{ Illuminate\Support\Facades\Input::old('menu') }}" class="form-control my-source-field" id="menu" placeholder="Menu">
                 </div>
                 <div class="form-group">
                     <label for="url">Url:</label>

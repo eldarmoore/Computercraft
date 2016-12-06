@@ -16,15 +16,10 @@
                             <div class="carousel-caption">
                                 <h1 style="padding: 15px;">{!! $slider->title !!}</h1>
                                 <p>{!! $slider->article !!}</p>
-                                <p><a class="btn btn-lg btn-primary" href="{{ url($slider->link) }}" role="button" style="padding: 10px; font-size: 1.2em; font-weight: 100">
 
                                 @if($slider->button)
-
-                                    {{ $slider->button }}
-
+                                <p><a class="btn btn-lg btn-primary" href="{{ url($slider->link) }}" role="button" style="padding: 10px; font-size: 1.2em; font-weight: 100">{{ $slider->button }}</a></p>
                                 @endif
-
-                                </a></p>
                             </div>
                         </div>
                     </div>

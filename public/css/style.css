@@ -130,7 +130,7 @@ hr {
 /* Search Results */
 .search-result {
     padding: 0;
-    /*position: absolute;*/
+    position: absolute;
     display:block;
     background-color: #FFFFFF;
     z-index:1000;

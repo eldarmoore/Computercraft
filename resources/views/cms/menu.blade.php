@@ -11,7 +11,7 @@
             @if($menu)
                 <table class="table table-bordered">
                     <tr>
-                        <th class="col-md-5">Link</th>
+                        <th class="col-md-5">Menu name</th>
                         <th class="col-md-5">Url</th>
                         <th class="col-md-1">Last Update</th>
                         <th class="col-md-1">Operation</th>
