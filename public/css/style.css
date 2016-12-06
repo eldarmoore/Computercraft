@@ -129,6 +129,7 @@ hr {
 
 /* Search Results */
 .search-result {
+    margin-top: -13px;
     padding: 0;
     position: absolute;
     display:block;

@@ -101,7 +101,11 @@
                     </form>
                     <div class="col-md-12">
                         <div class="row">
-                            <div class="search-result" style="width: 100%;"></div>
+                            <div class="search-result" style="width: 100%;">
+                                {{--<table style="border: 1px solid #EEEEEE; width: 100%;">--}}
+                                    {{--<tr><td style="width: 65px"><div style="margin: 5px 5px 0 5px; height: 62px; width: 62px; border: 1px solid #EEEEEE;"><img style="display: inline; margin: 5px; background: #FFFFFF; border-radius: 1px; max-width: 50px; max-height: 50px; text-shadow: none" src="http://localhost/computercraft/public/images/products/crystalseries460xrgbcompactatxmidtowercase/2016.11.14.06.11.58-460X_RGB_01.png"></div></td><td><a style="font-size: 0.8em;" href="#">Super Computer</a></td></tr>--}}
+                                {{--</table>--}}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -45,11 +45,11 @@ $(document).ready(function() {
 
                     if (response) {
 
-                        var autoList = '<table>';
+                        var autoList = '<table style="border: 1px solid #EEEEEE; width: 100%;">';
 
                         $.each(response, function (key, val) {
 
-                            autoList += '<tr><td style="padding: 1px 2px;"><img style="background: #FFFFFF; border: 1px solid #e1e1e1; padding: 2px; border-radius: 1px; max-width: 50px; max-height: 50px; text-shadow: none" width="30" src="'+ BASE_URL + 'images/products/'+val.url+'/'+val.primary_image+'"></td><td style="padding: 0 10px"><a style="font-size: 0.8em;" href="'+ BASE_URL + 'shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
+                            autoList += '<tr><td style="width: 65px;"><div style="margin: 5px 5px 0 5px; height: 62px; width: 62px; border: 1px solid #EEEEEE;"><img style="display: inline; margin: 5px; background: #FFFFFF; border-radius: 1px; max-width: 50px; max-height: 50px; text-shadow: none" src="'+ BASE_URL + 'images/products/'+val.url+'/'+val.primary_image+'"></div></td><td><a style="font-size: 0.8em;" href="'+ BASE_URL + 'shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
 
                         });
 

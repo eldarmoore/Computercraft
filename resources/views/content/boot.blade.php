@@ -1,5 +1,10 @@
 @extends('master')
 
+@section('slider')
+
+    <div>
+    </div>
+
 @section('content')
 
     @if($contents)
