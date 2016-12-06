@@ -14,7 +14,7 @@
     @if($cart)
 
         <div class="col-md-12">
-            <table class="table" style="font-size: 0.7em">
+            <table class="table" style="font-size: 1em">
                 <tr style="background-color: #2e3436; color: #FFFFFF;">
                     <th class="col-md-8">Product</th>
                     <th class="col-md-2" style="text-align: center">Quantity</th>

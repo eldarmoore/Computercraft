@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2016 at 09:48 AM
+-- Generation Time: Dec 06, 2016 at 10:39 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.8
 
@@ -141,8 +141,7 @@ CREATE TABLE `menus` (
 INSERT INTO `menus` (`id`, `link`, `url`, `title`, `updated_at`, `created_at`) VALUES
 (1, 'About', 'about', 'About us', '2016-10-23 00:00:00', '2016-10-23 00:00:00'),
 (2, 'Services', 'services', 'Our service', '2016-10-23 00:00:00', '2016-10-23 00:00:00'),
-(3, 'Contact us', 'contact-us', 'Contact us 2', '2016-10-27 14:47:17', '2016-10-23 00:00:00'),
-(5, 'Hello World', 'helloworld', '123', '2016-12-06 07:40:45', '2016-12-06 07:40:45');
+(3, 'Contact us', 'contact-us', 'Contact us 2', '2016-10-27 14:47:17', '2016-10-23 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -274,7 +273,7 @@ CREATE TABLE `sliders` (
 
 INSERT INTO `sliders` (`id`, `image`, `title`, `article`, `button`, `link`, `status`) VALUES
 (1, 'Cases-TLC-HeroShot01.jpg', 'Not enough CASES!!!', 'More Cases added for your <font color="#3984C6"><span style="background-color: inherit;">"lunch menu"</span></font>, don''t DARE to ask for discounts!<br>', 'Order your lunch now', 'shop/computer_parts/cases', 1),
-(2, 'Cases-TLC-HeroShot02.jpg', 'Bigger the better!!!', 'Bring BIG GUNS to your GAME!<br>', 'Learn more', '#', 1),
+(2, 'Cases-TLC-HeroShot02.jpg', 'Carbide Series® Air 740 High Airflow ATX Cube Case', 'Bring BIG GUNS to your GAME!<br>', 'Learn more', 'shop/computer_parts/cases/carbideseriesair740highairflowatxcubecase', 1),
 (3, 'Cases-TLC-HeroShot03.jpg', 'One more for good measure.', 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.', '', '#', 1);
 
 -- --------------------------------------------------------
