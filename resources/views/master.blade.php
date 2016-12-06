@@ -19,6 +19,12 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                     <a class="navbar-brand" href="{{ url('') }}"><img src="{{ asset('images/logo.svg') }}" alt="" height="20"></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
@@ -89,10 +95,11 @@
                                 <li><a href="{{ url('user/logout') }}"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                             @endif
                         </ul>
-
                     </div>
                 </div><!--/.nav-collapse -->
-                <div class="form-group-search" style="margin-bottom: 10px; width: 100%;">
+            </div>
+            <div class="container">
+                <div class="form-group-search" style="width: 100%">
                     <form action="" method="get" autocomplete="off" class="input-group">
                         <input type="text" name="search" id="search-input" class="form-control search" placeholder="Search for...">
                         <span class="input-group-btn">
@@ -103,7 +110,7 @@
                         <div class="row">
                             <div class="search-result" style="width: 100%;">
                                 {{--<table style="border: 1px solid #EEEEEE; width: 100%;">--}}
-                                    {{--<tr><td style="width: 65px"><div style="margin: 5px 5px 0 5px; height: 62px; width: 62px; border: 1px solid #EEEEEE;"><img style="display: inline; margin: 5px; background: #FFFFFF; border-radius: 1px; max-width: 50px; max-height: 50px; text-shadow: none" src="http://localhost/computercraft/public/images/products/crystalseries460xrgbcompactatxmidtowercase/2016.11.14.06.11.58-460X_RGB_01.png"></div></td><td><a style="font-size: 0.8em;" href="#">Super Computer</a></td></tr>--}}
+                                {{--<tr><td style="width: 65px"><div style="margin: 5px 5px 0 5px; height: 62px; width: 62px; border: 1px solid #EEEEEE;"><img style="display: inline; margin: 5px; background: #FFFFFF; border-radius: 1px; max-width: 50px; max-height: 50px; text-shadow: none" src="http://localhost/computercraft/public/images/products/crystalseries460xrgbcompactatxmidtowercase/2016.11.14.06.11.58-460X_RGB_01.png"></div></td><td><a style="font-size: 0.8em;" href="#">Super Computer</a></td></tr>--}}
                                 {{--</table>--}}
                             </div>
                         </div>
