@@ -39,9 +39,9 @@
 
                     <div class="col-md-8">
 
-                        <div style="background-color: #e0e0e0; padding: 20px 10px; width: 100%;" class="pull-left">
+                        <div style="background-color: #e0e0e0; padding: 20px; width: 100%;" class="pull-left">
 
-                            <p><span class="price-tag-item">Price: <b>{{ $item['price'] }}$</b></span></p>
+                            <p><span style="display: block" class="price-tag-item">Price: <b>{{ $item['price'] }}$</b></span></p>
 
                             @if($item['quantity'] > 0)
                                 <div style="background-color: #FFFFFF; padding: 4px; width: 150px;">

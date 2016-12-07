@@ -45,54 +45,111 @@
     <h3 class="text-center">New products</h3>
     <hr>
     <div class="row">
-    @if($new_products)
 
-        @foreach($new_products as $row)
+        @if(isset($_GET['submit']))
 
-            @foreach($categories as $sub_cat)
+            {{--{{ dd($search_result) }}--}}
+            <h1 style="margin: 0 0 10px 15px;">Search result for: {{ $_GET['search'] }}</h1>
 
-                @if($sub_cat['id'] == $row['categorie_id'])
+        @foreach($search_result as $result)
 
-                    @foreach($categories as $cat)
+                @foreach($categories as $sub_cat)
 
-                        @if($sub_cat['sub_category'] == $cat['id'])
+                    @if($sub_cat['id'] == $result->categorie_id)
 
-                            <div class="col-sm-3 col-lg-2 col-md-2">
-                                <div class="thumbnail product">
-                                    <?php $image = explode(',', $row['image']); ?>
-                                    <div class="img-container">
-                                        <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['url'] . '/' . $row['primary_image']) }}" alt=""></a>
-                                    </div>
-                                    <div class="caption">
+                        @foreach($categories as $cat)
 
-                                        @if(strlen($row['title']) > 10)
-                                            <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 5, "...") }}</a></h4>
-                                        @endif
+                            @if($sub_cat['sub_category'] == $cat['id'])
 
-                                        {{--@if(strlen($row['article']) > 10)--}}
-                                        {{--<p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 10, "...")  }}</p>--}}
-                                        {{--                                                <p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
-                                        {{--@endif--}}
+                                <div class="col-sm-3 col-lg-2 col-md-2">
+                                    <div class="thumbnail product">
+                                        <div class="img-container">
+                                            <a href="{{ url( 'shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $result->url ) }}"><img src="{{ asset( '/images/products/' . $result->url . '/' . $result->primary_image ) }}" alt=""></a>
+                                        </div>
+                                        <div class="caption">
 
-                                        <hr class="no-margin">
+                                            @if(strlen($result->title) > 10)
+                                                <h4 class="title-limit"><a href="{{ url( 'shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $result->url ) }}">{{ \Illuminate\Support\Str::words($result->title, 5, "...") }}</a></h4>
+                                            @endif
 
-                                        <h4 class="text-center price-tag">{{ $row['price'] }}$</h4>
+                                            {{--@if(strlen($row['article']) > 10)--}}
+                                            {{--<p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 10, "...")  }}</p>--}}
+                                            {{--                                                <p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
+                                            {{--@endif--}}
 
-                                        <button @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn bg-success w151" value=""><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
+                                            <hr class="no-margin">
 
+                                            <h4 class="text-center price-tag">{{ $result->price }}$</h4>
+
+                                            <button @if( Cart::get($result->id) ) disabled="disabled" @endif data-id="{{ $result->id }}" type="button" class="add-to-cart-btn btn bg-success w151" value=""><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+
+                            @endif
+
+                        @endforeach
+
+                    @endif
+
+                @endforeach
+
+            @endforeach
+
+        @else
+
+            @if($new_products)
+
+                @foreach($new_products as $row)
+
+                    @foreach($categories as $sub_cat)
+
+                        @if($sub_cat['id'] == $row['categorie_id'])
+
+                            @foreach($categories as $cat)
+
+                                @if($sub_cat['sub_category'] == $cat['id'])
+
+                                    <div class="col-sm-3 col-lg-2 col-md-2">
+                                        <div class="thumbnail product">
+                                            <?php $image = explode(',', $row['image']); ?>
+                                            <div class="img-container">
+                                                <a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}"><img src="{{ asset('/images/products/' . $row['url'] . '/' . $row['primary_image']) }}" alt=""></a>
+                                            </div>
+                                            <div class="caption">
+
+                                                @if(strlen($row['title']) > 10)
+                                                    <h4 class="title-limit"><a href="{{ url('shop/' . $cat['url'] . '/' . $sub_cat['url'] . '/' . $row['url']) }}">{{ \Illuminate\Support\Str::words($row['title'], 5, "...") }}</a></h4>
+                                                @endif
+
+                                                {{--@if(strlen($row['article']) > 10)--}}
+                                                {{--<p class="text-limit">{{ \Illuminate\Support\Str::words($row['article'], 10, "...")  }}</p>--}}
+                                                {{--                                                <p class="text-limit">{{ substr($row['article'], 0, 125) . '...' }}</p>--}}
+                                                {{--@endif--}}
+
+                                                <hr class="no-margin">
+
+                                                <h4 class="text-center price-tag">{{ $row['price'] }}$</h4>
+
+                                                <button @if(Cart::get($row['id'])) disabled="disabled" @endif data-id="{{ $row['id'] }}" type="button" class="add-to-cart-btn btn bg-success w151" value=""><span class="glyphicon glyphicon-shopping-cart pull-left"></span>Add To Cart</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+
+                            @endforeach
+
                         @endif
 
                     @endforeach
 
-                @endif
+                @endforeach
 
-            @endforeach
+            @endif
 
-        @endforeach
+        @endif
 
-    @endif
     </div>
 @endsection
