@@ -49,11 +49,11 @@ $(document).ready(function() {
 
                         $.each(response, function (key, val) {
 
-                            autoList += '<tr><td style="width: 65px;"><div style="margin: 5px 5px 5px 10px; height: 62px; width: 62px; border: 1px solid #EEEEEE;"><img style="display: inline; margin: 5px; background: #FFFFFF; border-radius: 1px; max-width: 50px; max-height: 50px; text-shadow: none" src="'+ BASE_URL + 'images/products/'+val.url+'/'+val.primary_image+'"></div></td><td><a style="font-size: 0.8em;" href="'+ BASE_URL + 'shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
+                            autoList += '<tr><td style="width: 65px;"><div style="margin: 5px 5px 0 5px; height: 62px; width: 62px; border: 1px solid #EEEEEE;"><img style="display: inline; margin: 5px; background: #FFFFFF; border-radius: 1px; max-width: 50px; max-height: 50px; text-shadow: none" src="'+ BASE_URL + 'images/products/'+val.url+'/'+val.primary_image+'"></div></td><td><a style="font-size: 0.8em;" href="'+ BASE_URL + 'shop/'+val.category+'/'+val.sub_category+'/'+val.url+'">'+val.title+'</a></td></tr>';
 
                         });
 
-                        autoList += '</table>';
+                        autoList += '<tr style="height: 5px"></tr></table>';
                         $('div.search-result').html(autoList).fadeIn(200);
 
                     } else {

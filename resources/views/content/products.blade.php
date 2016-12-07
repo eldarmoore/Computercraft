@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('slider')
+
+    <div></div>
+
 @section('content')
 
     @if(isset($cat_title))

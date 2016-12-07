@@ -489,6 +489,17 @@ footer {
         color: #FFFFFF;
     }
 
+    .carousel-caption h1 {
+        font-size: 1em;
+    }
+
+    .carousel-caption p {
+        font-size: 0.8em;
+    }
+
+    .carousel-caption {
+        top:1%;
+    }
 }
 
 @media (min-width: 768px) {
