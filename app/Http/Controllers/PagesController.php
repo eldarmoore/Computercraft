@@ -18,9 +18,7 @@ class PagesController extends MainController
 
         if (isset($_GET['search'])){
             $user_search = filter_var($_GET['search'],  FILTER_SANITIZE_STRING);
-
             self::$data['search_result'] = DB::table('products')->where('title', 'like', "%$user_search%")->get();
-
         }
 
         return view('content.home', self::$data);

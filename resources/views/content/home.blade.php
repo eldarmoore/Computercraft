@@ -42,16 +42,12 @@
 
 @section('content')
 
-    <h3 class="text-center">New products</h3>
-    <hr>
-    <div class="row">
-
         @if(isset($_GET['submit']))
 
-            {{--{{ dd($search_result) }}--}}
-            <h1 style="margin: 0 0 10px 15px;">Search result for: {{ $_GET['search'] }}</h1>
+            <h3 class="text-center">Search result for: <span style="color: #2a88bd"><i>{{ $_GET['search'] }}</i></span></h3>
+            <hr>
 
-        @foreach($search_result as $result)
+            @foreach($search_result as $result)
 
                 @foreach($categories as $sub_cat)
 
@@ -98,6 +94,9 @@
             @endforeach
 
         @else
+
+            <h3 class="text-center">New products</h3>
+            <hr>
 
             @if($new_products)
 
@@ -151,5 +150,4 @@
 
         @endif
 
-    </div>
 @endsection
