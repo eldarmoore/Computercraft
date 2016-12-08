@@ -9,11 +9,10 @@
             @if($users)
                 <table class="table table-bordered">
                     <tr>
-                        <th class="col-md-5" style="text-align: center">Name</th>
+                        <th class="col-md-4" style="text-align: center">Name</th>
                         <th class="col-md-4" style="text-align: center">Email:</th>
-                        <th class="col-md-1" style="text-align: center">Last Update</th>
-                        <th class="col-md-1" style="text-align: center">Status</th>
-                        <th class="col-md-1" style="text-align: center">Operation</th>
+                        <th class="col-md-2" style="text-align: center">Last Update</th>
+                        <th class="col-md-2" style="text-align: center">Operation</th>
                     </tr>
                     @foreach($users as $row)
 
@@ -31,9 +30,8 @@
                         <tr>
                             <td>{{ $row['name'] }}</td>
                             <td>{{ $row['email'] }}</td>
-                            <td>{{ $updated_at }}</td>
-                            <td></td>
-                            <td>
+                            <td style="text-align: center">{{ $updated_at }}</td>
+                            <td style="text-align: center">
                                 <a href="{{ url('cms/products/' . $row['id'] . '/edit') }}">Edit</a> |
                                 <a href="{{ url('cms/products/' . $row['id']) }}">Delete</a>
                             </td>

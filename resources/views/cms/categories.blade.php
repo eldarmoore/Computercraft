@@ -22,8 +22,8 @@
                         <tr>
                             <td>{{ $cat['title'] }}</td>
                             <td><a target="_blank" href="{{ url( 'shop/' . $cat['url'] ) }}">shop/{{ $cat['url'] }}</a></td>
-                            <td>{{ $cat['updated_at'] }}</td>
-                            <td>
+                            <td style="text-align: center">{{ $cat['updated_at'] }}</td>
+                            <td style="text-align: center">
                                 <a href="{{ url('cms/categories/' . $cat['id'] . '/edit') }}">Edit</a> |
                                 <a href="{{ url('cms/categories/' . $cat['id']) }}">Delete</a>
                             </td>
@@ -39,8 +39,8 @@
                                 <tr>
                                     <td>{{ $sub_cat['title'] }}</td>
                                     <td><a target="_blank" href="{{ url( 'shop/' . $cat_url ) }}">shop/{{ $cat_url }}</a></td>
-                                    <td>{{ $sub_cat['updated_at'] }}</td>
-                                    <td>
+                                    <td style="text-align: center">{{ $sub_cat['updated_at'] }}</td>
+                                    <td style="text-align: center">
                                         <a href="{{ url('cms/categories/' . $sub_cat['id'] . '/edit') }}">Edit</a> |
                                         <a href="{{ url('cms/categories/' . $sub_cat['id']) }}">Delete</a>
                                     </td>

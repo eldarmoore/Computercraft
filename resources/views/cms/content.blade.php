@@ -11,15 +11,15 @@
             @if($content)
                 <table class="table table-bordered">
                     <tr>
-                        <th>Title</th>
-                        <th>Last Update</th>
-                        <th>Operation</th>
+                        <th class="col-md-8">Title</th>
+                        <th class="col-md-2">Last Update</th>
+                        <th class="col-md-2">Operation</th>
                     </tr>
                     @foreach($content as $row)
                         <tr>
                             <td>{{ $row['title'] }}</td>
-                            <td>{{ $row['updated_at'] }}</td>
-                            <td>
+                            <td style="text-align: center">{{ $row['updated_at'] }}</td>
+                            <td style="text-align: center">
                                 <a href="{{ url('cms/content/' . $row['id'] . '/edit') }}">Edit</a> |
                                 <a href="{{ url('cms/content/' . $row['id']) }}">Delete</a>
                             </td>

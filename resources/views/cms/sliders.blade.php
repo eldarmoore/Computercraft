@@ -14,8 +14,8 @@
                     <tr>
                         <th class="col-md-2">Image</th>
                         <th class="col-md-2">Title</th>
-                        <th class="col-md-7">Article</th>
-                        <th class="col-md-1">Operation</th>
+                        <th class="col-md-6">Article</th>
+                        <th class="col-md-2">Operation</th>
                     </tr>
 
                     @foreach($sliders as $slider)

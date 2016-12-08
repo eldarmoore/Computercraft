@@ -9,9 +9,9 @@
         <div class="col-md-12">
             <table class="table table-bordered">
                 <tr>
-                    <th width="150">User</th>
-                    <th>Order details</th>
-                    <th>Total</th>
+                    <th class="col-md-2">User</th>
+                    <th class="col-md-9">Order details</th>
+                    <th class="col-md-1">Total</th>
                 </tr>
 
                 @foreach($orders as $row)
@@ -31,7 +31,7 @@
                         <td>
                             <?php $i = 0; ?>
                             @foreach( json_decode($row->data) as $item)
-                                <li> <b>{{ ++$i }}</b> {{ $item->name }}, <span style="color: #2aabd2">quantity:</span> x {{ $item->quantity }}, <span style="color: #2aabd2">price:</span> {{ $item->price }}$ </li>
+                                <li>{{ $item->quantity }} x {{ $item->name }}, <span style="background-color: #2aabd2; color: #FFFFFF; padding: 3px;">{{ $item->price }}$</span>  </li>
                             @endforeach
                         </td>
                         <td><span style="font-weight: 500">{{ $row->total }}$</span></td>

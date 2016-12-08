@@ -10,10 +10,10 @@
             @if($products)
                 <table class="table table-bordered">
                     <tr>
-                        <th class="col-md-9">Title</th>
+                        <th class="col-md-7">Title</th>
                         <th class="col-md-1" style="text-align: center">Quantity</th>
-                        <th class="col-md-1" style="text-align: center">Last Update</th>
-                        <th class="col-md-1" style="font-size: 0.9em; text-align: center">Operation</th>
+                        <th class="col-md-2" style="text-align: center">Last Update</th>
+                        <th class="col-md-2" style="font-size: 0.9em; text-align: center">Operation</th>
                     </tr>
                     @foreach($products as $row)
 
@@ -30,8 +30,8 @@
                         <tr>
                             <td>{{ $row['title'] }}</td>
                             <td style="text-align: center">{{ $row['quantity'] }}</td>
-                            <td>{{ $updated_at }}</td>
-                            <td>
+                            <td style="text-align: center">{{ $updated_at }}</td>
+                            <td style="text-align: center">
                                 <a href="{{ url('cms/products/' . $row['id'] . '/edit') }}">Edit</a> |
                                 <a href="{{ url('cms/products/' . $row['id']) }}">Delete</a>
                             </td>
