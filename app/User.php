@@ -53,5 +53,4 @@ class User extends Model
         Session::flash('sm', 'Your account has been successfully created.');
     }
 
-
 }

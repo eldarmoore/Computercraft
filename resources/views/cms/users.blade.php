@@ -32,8 +32,8 @@
                             <td>{{ $row['email'] }}</td>
                             <td style="text-align: center">{{ $updated_at }}</td>
                             <td style="text-align: center">
-                                <a href="{{ url('cms/products/' . $row['id'] . '/edit') }}">Edit</a> |
-                                <a href="{{ url('cms/products/' . $row['id']) }}">Delete</a>
+                                <a href="{{ url('cms/user/' . $row['id'] . '/edit') }}">Edit</a> |
+                                <a href="{{ url('cms/user/' . $row['id']) }}">Delete</a>
                             </td>
                         </tr>
                     @endforeach

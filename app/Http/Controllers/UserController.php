@@ -55,6 +55,11 @@ class UserController extends MainController
         }
     }
 
+    public function show($id){
+        self::$data['user_id'] = $id;
+        return view('cms.delete_user', self::$data);
+    }
+
     public function getLogout(){
 
         Session::forget('user_id');
@@ -78,5 +83,12 @@ class UserController extends MainController
             return redirect('');
         }
 
+    }
+
+    public function destroy($id)
+    {
+        User::destroy($id);
+        Session::flash('sm', 'User has been deleted');
+        return redirect('cms/users');
     }
 }
